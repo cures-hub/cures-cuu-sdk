@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'CUU_Example' do
+  platform :ios, '11.3'
+  pod 'CUU', :path => '../'
+
+  target 'CUU_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

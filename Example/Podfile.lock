@@ -1,0 +1,24 @@
+PODS:
+  - CUU (1.0.0):
+    - CUU/CUUCore (= 1.0.0)
+    - CUU/FeatureKit (= 1.0.0)
+    - CUU/InteractionKit (= 1.0.0)
+  - CUU/CUUCore (1.0.0)
+  - CUU/FeatureKit (1.0.0):
+    - CUU/CUUCore
+  - CUU/InteractionKit (1.0.0):
+    - CUU/CUUCore
+
+DEPENDENCIES:
+  - CUU (from `../`)
+
+EXTERNAL SOURCES:
+  CUU:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CUU: fc53473d17cef3b151bf1f447e74104abe4e2854
+
+PODFILE CHECKSUM: bc8b24ecbdf770bf7541292965c5b507fc7cad87
+
+COCOAPODS: 1.4.0

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CUUApiEndpoint</key>
+	<string>&lt;your-api-endpoint&gt;</string>
+	<key>CUUTrackingToken</key>
+	<string>&lt;your-tracking-token&gt;</string>
+	<key>CUUCommitHash</key>
+	<string>&lt;your-commit-hash&gt;</string>
+	<key>CUUProjectID</key>
+	<string>&lt;your-project-id&gt;</string>
+</dict>
+</plist>
