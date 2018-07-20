@@ -1,3 +1,7 @@
+<p align="center">
+<img src=".github/cuu.jpeg" alt="CUU" width="250" />
+</p>
+
 # CUU
 
 [![Build Status](https://travis-ci.org/cures-hub/cures-cuu-sdk.svg?branch=master)](https://travis-ci.org/cures-hub/cures-cuu-sdk)
@@ -18,14 +22,53 @@ it, simply add the following line to your Podfile:
 pod 'CUU'
 ```
 
-CUU require a [`CUU.plist`](Example/CUU/CUU.plist) to be present at build time.
+CUU requires a [`CUU.plist`](Example/CUU/CUU.plist) to be present at build time.
 As the current commit hash needs to be written to this file, we recommend creating it with your CI/CD system.
+
+## Setup
+
+To be able to use all feature of CUU, you need to set up your project for it. 
+
+In your AppDelegate, import CUU, let the AppDelegate conform to the IKAppDelegate protocol and start CUU.
+You must also introduce a new var window in the AppDelegate.
+
+```swift
+class AppDelegate: UIResponder, UIApplicationDelegate, IKAppDelegate {
+
+    var window: UIWindow?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Start the CUU framework for tracking features and interactions within the app.
+        CUU.start()
+        
+        // Do your own stuff.
+
+        return true
+    }
+}
+```
+
+For every view controller which you want to be tracked, you need to inherit from one of the CUUViewController classes.
+There is a subclass available for all types of View Controller, e.g. CUUPageViewController or CUUTabBarController.
+For every event you want to track, call CUU's FeatureKit.seed(name: String) method.
+
+```swift
+class ViewController: CUUViewController {
+    @IBAction func didTapTryFeatureKitButton(_ sender: UIButton) {
+        // Notify the FeatureKit component of CUU that a step of a feature was triggered.
+        FeatureKit.seed(name: "TryFeatureKitButtonTapAction")
+    }
+}
+```
 
 ## Author
 
 - [Lara Marie Reimer](http://github.com/laramarie)
 - [Jan Philip Bernius](http://github.com/jpbernius)
 - [Jan Ole Johanßen](http://github.com/janjohanssen)
+
+## Contributors
+- [Michael Fröhlich](https://github.com/FroeMic)
 
 ## License
 

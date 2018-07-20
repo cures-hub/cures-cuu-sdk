@@ -9,8 +9,9 @@
 import UIKit
 import CUU
 
-class ViewController: UIViewController {
+class ViewController: CUUViewController {
     @IBAction func didTapTryFeatureKitButton(_ sender: UIButton) {
+        // Notify the FeatureKit component of CUU that a step of a feature was triggered.
         FeatureKit.seed(name: "TryFeatureKitButtonTapAction")
     }
     
