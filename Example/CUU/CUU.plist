@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>CUUApiEndpoint</key>
-	<string>&lt;your-api-endpoint&gt;</string>
+	<string>INSERT API ENDPOINT HERE</string>
 	<key>CUUTrackingToken</key>
-	<string>&lt;your-tracking-token&gt;</string>
+	<string>INSERT TRACKING TOKEN HERE</string>
 	<key>CUUCommitHash</key>
-	<string>&lt;your-commit-hash&gt;</string>
+	<string>INSERT COMMIT HASH OF CHANGESET HERE</string>
 	<key>CUUProjectID</key>
-	<string>&lt;your-project-id&gt;</string>
+	<string>INSERT CUU PROJECT ID HERE</string>
 </dict>
 </plist>

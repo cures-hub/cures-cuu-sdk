@@ -5,10 +5,11 @@
 //  Created by Lara Marie Reimer on 16.01.18.
 //
 
-
-
 import Foundation
 
+/**
+ *  Class for handling user data.
+ **/
 class CUUUserManager {
     static let sharedManager = CUUUserManager()
     

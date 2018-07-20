@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CUU'
-  s.version          = '1.0.0'
+  s.version          = '2.0.0'
   s.summary          = 'CUU is a framework to help analyzing th usage of your applications.'
 
 # This description is used to generate tags and improve search results.
@@ -24,7 +24,7 @@ CUU is a project to help analyzing the usage of your app by providing functional
   s.homepage         = 'https://cuu.ase.in.tum.de'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.authors           = 'Lara Marie Reimer', 'Jan Philip Bernius', 'Jan Ole Johanßen'
+  s.author           = 'Lara Marie Reimer', 'Jan Philip Bernius', 'Jan Ole Johanßen'
   s.source           = { :git => 'https://github.com/cures-hub/cures-cuu-sdk.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/ls1intum'
 
@@ -33,24 +33,8 @@ CUU is a project to help analyzing the usage of your app by providing functional
   s.source_files = 'CUU/Classes/**/*'
   s.swift_version = "4.0"
   
-#s.resource_bundles = {
-#  'CUU' => ['CUU/Assets/*.png']
-#  }
-
-  # --- Subspecs --- #
-
-    s.subspec 'CUUCore' do |cuucore|
-    cuucore.source_files = 'CUU/Classes/CUUCore/**/*'
-    end
-
-  s.subspec 'FeatureKit' do |featurekit|
-    featurekit.source_files = 'CUU/Classes/FeatureKit/**/*'
-    featurekit.dependency 'CUU/CUUCore'
-  end
-
-  s.subspec 'InteractionKit' do |interactionkit|
-    interactionkit.source_files = 'CUU/Classes/InteractionKit/**/*'
-    interactionkit.dependency 'CUU/CUUCore'
-  end
+  s.resource_bundles = {
+  'CUU' => ['CUU/Assets/*']
+  }
 
 end
