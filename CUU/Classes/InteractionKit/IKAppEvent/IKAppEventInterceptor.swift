@@ -27,8 +27,9 @@ public class IKAppEventInterceptor: IKInterceptor {
     func log(_ type: IKAppEventType)  {
         if isActive {
             let event = appEventFactory.appEvent(ofType: type)
-            let crumb = appEventFactory.crumb(from: event)
-            interceptionDelegate.interceptor(self, captured: event, crumb: crumb)
+            let characteristics = appEventFactory.characteristics(from: event)
+            let crumb = appEventFactory.crumb(with: characteristics, title: event.title)
+            interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
         }
     }
     

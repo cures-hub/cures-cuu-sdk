@@ -47,7 +47,7 @@ class CUUStartViewController: UIViewController, CUUStartViewDelegate {
         // Persist state
         let rawValues = selection.map({ $0.rawValue })
         UserDefaults.standard.set(rawValues, forKey: CUUConstants.CUUUserDefaultsKeys.optionsKey)
-
+        
         self.dismiss(animated: true, completion: nil)
     }
 }

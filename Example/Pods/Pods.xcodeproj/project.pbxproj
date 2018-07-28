@@ -1,0 +1,1411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		007E292555C11DE1B35CA5609EA5A3FA /* IKDefaultGestureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE09703D91F630D58373A3526823C23 /* IKDefaultGestureFactory.swift */; };
+		00AF633E1EDB36958118D3B05E6C59EA /* IKViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC231E312EE874B033F0EC41A092764F /* IKViewEvent.swift */; };
+		026FF0B035D44D8F64167241742F73FF /* IKGestureFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2631B7C713544659D191170CBC907F /* IKGestureFactory.swift */; };
+		02E54E1755915E750773BFA35FBEAE1E /* CUUSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9556A541AED36B0BABB3D493CD5AB4EC /* CUUSessionManager.swift */; };
+		08882AE8B71A9FC17EA72F4B5A911E55 /* IKMultiDirectionSwipeGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42DC50B8A29900964E94029A418214D /* IKMultiDirectionSwipeGestureRecognizer.swift */; };
+		0B675C44ABB44D8AD51D6AEC1FD6538D /* CUUUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3134A98D16FBCE7F01EE4089B3F132BD /* CUUUtils.swift */; };
+		104E304EB02A016A9C793F8EB6843C6C /* IKSensorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D11E7C02C5EC6AE799D54004A6E9CE /* IKSensorType.swift */; };
+		180D9EA58E2BFE36714996BF9D1758A4 /* Checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C226B6985829C3069E6346810852233A /* Checked@2x.png */; };
+		196CDBD468D806ACBCF7C212025A9975 /* IKDefaultEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF01099AA8B2D7A7936C3C108A14205B /* IKDefaultEvent.swift */; };
+		19F8FF2955DC0E3516661F0C2F4F902C /* CUUViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B592D1EAE797FCDF54FA1B6DD3C3836 /* CUUViewControllers.swift */; };
+		1AC5107E9FE6231F13DDDE380E5CA856 /* UIViewController+IKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F094CDBB250E7A6D2F0A3F91D726E5 /* UIViewController+IKUtils.swift */; };
+		1FC10C24E924F16A95A5C5A70EEB1790 /* IKCoreMotionShakeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D25095D001659D86C8C5DCA8FC773B /* IKCoreMotionShakeDelegate.swift */; };
+		220E91E447BDD541E7F2263BC881D995 /* IKTouchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3BA36830D30F450C7B6A7C52CCF2F9 /* IKTouchType.swift */; };
+		22149C6D4BC2EE97358773944AD92A84 /* IKViewEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CB6447BDF42C78AA5F3D5FADDD16DE /* IKViewEventType.swift */; };
+		256F88DB449EFC9E2ACD7B540E6A351E /* IKAppEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7871BAB47797C71FCAFBE0CE8249C8 /* IKAppEvent.swift */; };
+		26ABF42711EC501036ADF73685714CC8 /* CUUStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6028C951455C4A415D27CE35F7BCD78 /* CUUStartView.swift */; };
+		281CD60A384ADC7CCF7A16535B9CAE29 /* IKDefaultInterceptorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D403DF43A04B4BF42EA2AB7D8DA154 /* IKDefaultInterceptorConfiguration.swift */; };
+		2F4B6A468D86CF70DEBCA028C6FDB63F /* Checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 7192B9DF401E259849122467EDACB3B3 /* Checked.png */; };
+		3262194C5E83AE3444F32F96F940C6D6 /* IKInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B238F7085737421527723098905DDA58 /* IKInterceptor.swift */; };
+		371830600D9F6E677AE41055AADE6B4C /* IKDeviceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C4DD5FC69A0CACB6E28006A6A99EEE /* IKDeviceFactory.swift */; };
+		3CBE3B406BFB460E25B4673239D3D5AB /* IKTouchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E358EA79C459B98C91487B225C8BD02 /* IKTouchFactory.swift */; };
+		4C16BA2DA944C1EE1361E8C324CD694A /* IKDefaultTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3E903E23A623787AE6A8EEF3BABA2B /* IKDefaultTouch.swift */; };
+		4D095E68A8F6904CFDB670A7BEC36F2B /* IKGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347C2FE3DB5E5CB09952CC28E08FBFE5 /* IKGesture.swift */; };
+		506E7CFBF795741C108BB9FE255568F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		51240F15943D7F4688C7CD1E50198FA1 /* IKDefaultSensorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B3149125CE83B2AB141120CBB90151 /* IKDefaultSensorFactory.swift */; };
+		51E9EBCAA5487D2D71640319354CD749 /* Unchecked@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A66748E93ADBC67360951F3F774E9477 /* Unchecked@3x.png */; };
+		543CF60630A8E006E2F9FBAB96BC05F8 /* IKInterceptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213C6F5CC1CC25D2974C2A68B44C994C /* IKInterceptionDelegate.swift */; };
+		565D2D3AF3FD10C2B8ADDBB2D770713C /* IKDefaultDeviceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB194999D143A8EEE7C8F9D329C453F /* IKDefaultDeviceFactory.swift */; };
+		56BBB72655DEAF0D3E244D79C7526ECE /* IKMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E1435C26C842614738B0331BD1E765 /* IKMotion.swift */; };
+		5E3EA16A0FC11971B6D4D25E93584ABD /* CUU-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CF4F38AC43857759768482C1D0F71AF /* CUU-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F7BDCB5842C07D8F467EAB597226A9B /* CUUCrumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1313FCF8FF8A3400F82DA5646A33E6 /* CUUCrumb.swift */; };
+		630E4A8265BEB0BC8312830EC3B34FF8 /* IKTouchInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05023315442F9913E1263818A1C8A82E /* IKTouchInterceptor.swift */; };
+		6624AB8FF6C63C38A8B50C3252D51391 /* IKDefaultViewEventFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816297C9CE5822DB359AA63B646BB2B2 /* IKDefaultViewEventFactory.swift */; };
+		680862CDE4F45799286C91AB945B8E30 /* IKDefaultTouchFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1573C3B7FA8E22FE27834EEADE4B0F /* IKDefaultTouchFactory.swift */; };
+		68EAB4E60073F705582F03B2658777B7 /* CUU.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A61560E28E3E806902D8EE362929C3 /* CUU.swift */; };
+		6F99D049A8B63580B569905FC3810194 /* CUUConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86C497BEB276760FAD7A1025C8F655 /* CUUConfiguration.swift */; };
+		72B19EDDC1B7D7A168E2B1589D693D7B /* CUUStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6A409AE448AC3276C818A8F4937AB /* CUUStartViewController.swift */; };
+		7584157A828D59DA1C00E646625A5D49 /* IKDefaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA2737BE4D9ED5A90DE82BF22DAEDFD /* IKDefaultConfiguration.swift */; };
+		75D64FD240295565A7E595B118DB653F /* IKGestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7D491867AFC99CD184FCC46381C1AD /* IKGestureType.swift */; };
+		776BF9C90F8CC1E9CE2ED04A62CA2FBD /* IKDefaultEventFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1209911F06DBC2A509759E68304DF /* IKDefaultEventFactory.swift */; };
+		795C3261C6053F6E0D615137C5977227 /* Pods-CUU_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A5513129D4488DE967FD000AE95C /* Pods-CUU_Example-dummy.m */; };
+		799827C4BA15D791C4E1DDED878978DC /* IKDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B79CA5668A2A7D1F8B1E15680D9889 /* IKDevice.swift */; };
+		7D01ED35ADAA637E84D507869F90F175 /* IKAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0323C497D9E9056C056C334DC8344F /* IKAppDelegate.swift */; };
+		7E5610E54B8564A88238743C9145E8DD /* Checked@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1872690D1672C4FF46DD7C814BFD77FA /* Checked@3x.png */; };
+		7E66F2DD0D8728EE6962CF6C7848B889 /* IKDefaultAppEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A32FFDB4CA5ADC285B2D30B6A1F8B0A /* IKDefaultAppEvent.swift */; };
+		7FB4C943B7280CDC3B5B90A3DDA641D3 /* IKDefaultAppEventFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E031A0D6C73E549F779033B784367 /* IKDefaultAppEventFactory.swift */; };
+		82B1605A43C7F5F4216938561426C868 /* IKGestureInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02B33F91E0FD02FFD82BA05BC449676 /* IKGestureInterceptor.swift */; };
+		82B8033E1F840A356C9401C62F8DAC7E /* IKSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1976D98ED6B55B62DD19EF51E58463A2 /* IKSensor.swift */; };
+		844902DE6FDEEC79F4B77B1EA87A9322 /* IKMotionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96696263C8C0D90A9216E9EE08C893FC /* IKMotionFactory.swift */; };
+		8460E2705C9494DE915D1A669FD24015 /* UISwipeGestureRecognizerDirection+IKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F2D18CD6359DB2245AE0B14BBED54 /* UISwipeGestureRecognizerDirection+IKUtils.swift */; };
+		8A22FFFAF2D22714EC249952423AA515 /* IKEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EACB72C12A07F919D08F8113E0FAB1 /* IKEvent.swift */; };
+		8BA7C998504F8F7D0744BD9A98E01270 /* IKDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856339980C515F2FC227A8A69135964F /* IKDataObject.swift */; };
+		8F41D0D8210B59950013E1B8 /* IKInteraction+CoreDataProperties copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0D6210B59940013E1B8 /* IKInteraction+CoreDataProperties copy.swift */; };
+		8F41D0D9210B59950013E1B8 /* IKInteraction+CoreDataClass copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0D7210B59950013E1B8 /* IKInteraction+CoreDataClass copy.swift */; };
+		8F41D0EE210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0DE210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataClass.swift */; };
+		8F41D0EF210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0DF210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataProperties.swift */; };
+		8F41D0F0210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0E0210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataClass.swift */; };
+		8F41D0F1210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0E1210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataProperties.swift */; };
+		8F41D0F2210B5B0A0013E1B8 /* IKSensorCharacteristics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0E2210B5B0A0013E1B8 /* IKSensorCharacteristics+CoreDataClass.swift */; };
+		8F41D0F3210B5B0A0013E1B8 /* IKSensorCharacteristics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0E3210B5B0A0013E1B8 /* IKSensorCharacteristics+CoreDataProperties.swift */; };
+		8F41D0F4210B5B0A0013E1B8 /* IKTouchCharacteristics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0E4210B5B0A0013E1B8 /* IKTouchCharacteristics+CoreDataClass.swift */; };
+		8F41D0F5210B5B0A0013E1B8 /* IKTouchCharacteristics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0E5210B5B0A0013E1B8 /* IKTouchCharacteristics+CoreDataProperties.swift */; };
+		8F41D0F6210B5B0A0013E1B8 /* IKViewEventCharacteristics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0E6210B5B0A0013E1B8 /* IKViewEventCharacteristics+CoreDataClass.swift */; };
+		8F41D0F7210B5B0A0013E1B8 /* IKViewEventCharacteristics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0E7210B5B0A0013E1B8 /* IKViewEventCharacteristics+CoreDataProperties.swift */; };
+		8F41D0F8210B5B0A0013E1B8 /* IKDeviceCharacteristics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0E8210B5B0A0013E1B8 /* IKDeviceCharacteristics+CoreDataClass.swift */; };
+		8F41D0F9210B5B0A0013E1B8 /* IKDeviceCharacteristics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0E9210B5B0A0013E1B8 /* IKDeviceCharacteristics+CoreDataProperties.swift */; };
+		8F41D0FA210B5B0A0013E1B8 /* IKEventCharacteristics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0EA210B5B0A0013E1B8 /* IKEventCharacteristics+CoreDataClass.swift */; };
+		8F41D0FB210B5B0A0013E1B8 /* IKEventCharacteristics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0EB210B5B0A0013E1B8 /* IKEventCharacteristics+CoreDataProperties.swift */; };
+		8F41D0FC210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0EC210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataClass.swift */; };
+		8F41D0FD210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0ED210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataProperties.swift */; };
+		8F41D100210B693A0013E1B8 /* IKCharacteristics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0FE210B693A0013E1B8 /* IKCharacteristics+CoreDataClass.swift */; };
+		8F41D101210B693A0013E1B8 /* IKCharacteristics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0FF210B693A0013E1B8 /* IKCharacteristics+CoreDataProperties.swift */; };
+		8FBBA76B21066861003777D8 /* IKData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBA76921066861003777D8 /* IKData.xcdatamodeld */; };
+		8FBBA76D21078985003777D8 /* IKCoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBA76C21078985003777D8 /* IKCoreDataStorage.swift */; };
+		9031100D650BC1F9F75EE0F187C3D0FF /* Pods-CUU_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD6FF0FAF32B2F92500DFB18D545FB1 /* Pods-CUU_Tests-dummy.m */; };
+		9092EA58025FDBF3CE5498EA512AF0B6 /* IKDefaultViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE60FB547B3BE3E447333E5CEA418C7B /* IKDefaultViewEvent.swift */; };
+		91723459A727329EB76FC78E41D78C43 /* CUUConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A193D7AFF0D095D060B9BC725F017B /* CUUConstants.swift */; };
+		92385859AF0FE9807D6676CBCDB7C6DB /* IKCoreMotionShakeDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F3FAEB2C9C13523110F2D3FBC1A88 /* IKCoreMotionShakeDetector.swift */; };
+		9B2029A7A5E812E18855F6398362DA5F /* Pods-CUU_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC285ACE3A31FBFE71D5B621A937C182 /* Pods-CUU_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C25F8F6713CF801714B02D9023A854F /* CUU.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A6F64BF785E10D2E295D0A776F14513D /* CUU.bundle */; };
+		9EDEA68608920F2C67A3146EF913F2DF /* IKDefaultMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183FAE3E03A9FEDAABF93251B1101B08 /* IKDefaultMotion.swift */; };
+		9FF8DB5B15742BD282BB1C43FE17B3A2 /* IKDefaultGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E616638B3DAF97420DBA69974D546A /* IKDefaultGesture.swift */; };
+		A3AEC686953747BE51124D550D39647F /* IKSensorInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199A4EF4CB27BA777F798F16E332A5D7 /* IKSensorInterceptor.swift */; };
+		A4122A4F1499746870022020CD92B566 /* CUUUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AA36B8F62C86BC90379E4091216462 /* CUUUserManager.swift */; };
+		A508B62EE0621456E18B0E8103F97C00 /* InteractionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001CE113EF6D053F254D050240C7D4C9 /* InteractionKit.swift */; };
+		A77948335379CAAA3821A79446D19D94 /* Unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C130924F04AB5A04CA084A3D9AC621 /* Unchecked.png */; };
+		A94113723B5A048ECABA8A63951860C6 /* UIView+IKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A65445E87AF6786CB7C248D5B14ADE /* UIView+IKUtils.swift */; };
+		AA3E2D448E698E158FDB4BA7ACBD7F08 /* IKDefaultMotionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A8475FB460BFF1E7343CCF47856378 /* IKDefaultMotionFactory.swift */; };
+		AE2874CCD796BA649098C8AC5167A3B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		B0C3BA28C737DF82722DAF204A23DC6D /* FKActionCrumb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F423ECD4F0C9095144313D4A4E3B6A /* FKActionCrumb.swift */; };
+		B8134A0C4AA8575681A6EF5C59912E71 /* IKEventInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BC28163867B30AE269744F66F45ABB /* IKEventInterceptor.swift */; };
+		B96A5506AF374420FEB1AE14EE23C89E /* IKViewEventInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E7E29B4B25B4B77B7E5E0C0DF4A8A /* IKViewEventInterceptor.swift */; };
+		C2DDF45ED0A76E215C16DC52CA070D88 /* IKAppEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B77712F5C31517506537847A103A0BC /* IKAppEventType.swift */; };
+		C47409A1FA13087B809EDD0001EEA982 /* IKViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94F26BBE0B6AE21608232E1DF6EB3DF /* IKViewControllers.swift */; };
+		C48A26C6FD3AE3594BFEF804DE22B5CB /* IKAppEventInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22F68141DB4F07E95B748326B274C5 /* IKAppEventInterceptor.swift */; };
+		C8C9395E345E6FD92EA93C82752A1817 /* IKAppEventType.temp_caseinsensitive_rename.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C181DE0D0C34B5C695B0613924CB41E /* IKAppEventType.temp_caseinsensitive_rename.swift */; };
+		CA3487B6C4576E1D424BFE35194AC506 /* IKDefaultDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9317D34F70A5424267F57C1334975 /* IKDefaultDevice.swift */; };
+		CACC2004B7B9EA4AABBFAAC170598596 /* IKMotionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD737CA04FC2AFEF72806D9B88653915 /* IKMotionType.swift */; };
+		CC22F6A1A3F123F5A7553B0DEC525410 /* Unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B78A8870BF095F380CD64B7DFADBE0 /* Unchecked@2x.png */; };
+		CD09E70EF43CAF4241454762279508FD /* CUUStartOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54A95AE5C42F7B4082AEA4EFB9DB009 /* CUUStartOptionView.swift */; };
+		CD76E643AE0763C9F54748B0F066BF91 /* IKStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD8458F9C62B771EA5448931A88E39 /* IKStorage.swift */; };
+		D076435D80A1502733CBA103FF77FF0B /* IKSensorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B494EBFC3EBFD9A47B3FBCB3899AB7FD /* IKSensorFactory.swift */; };
+		D2AEE1B5B195CBECD3303D6E551A133C /* IKTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BB37BD78A9E1CFBA407F2F7F564784 /* IKTouch.swift */; };
+		D5DAD0FA7BD294EEE01C7BE6B32ABE29 /* IKDeviceInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718DBC624E382F1C5210D2744E656E32 /* IKDeviceInterceptor.swift */; };
+		DD7334F8B0068B200ED958BE0908DB4F /* IKDefaultSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD73632288BBE1C889F5EDF016B09DD /* IKDefaultSensor.swift */; };
+		E2A2DC1108F53905D1474A4201696C97 /* CUU-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D12048AF151CB6781D172E38F7BCBD8 /* CUU-dummy.m */; };
+		E2F94DB3316766D78B4DDED3575F70F5 /* FeatureKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB589581AC3020AF46EA68945953B19 /* FeatureKit.swift */; };
+		E3BE609157A528897426E0003B14936D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		E41E44B62EA085526D8A1045F764DD5F /* CUUCharacteristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4866E2B2331D93A7C0FCCE4FF21638F /* CUUCharacteristics.swift */; };
+		E64EC3489486FB73DFEA86E39C2A8A5E /* IKAppEventFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D66B921E4DEA4A974D0F0D932F2E1 /* IKAppEventFactory.swift */; };
+		EC125CF48BFA557EB08ABD25393AE716 /* IKEventFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98021FF13108929E3AACCEC1E19E4F77 /* IKEventFactory.swift */; };
+		EC89927530E3AEC0AE0B3ACFA0ADED75 /* Pods-CUU_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CC13E0BDC29715308F903ECE31C5233A /* Pods-CUU_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F3D3E94662CE1A52F905298EA66C2FF9 /* IKViewEventFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A2029AC92290C26749D8BA501FB685 /* IKViewEventFactory.swift */; };
+		F907C07439AAE2EFA4951840F8E30A8F /* IKConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3005F907EC98921DD944B65F002A6EAE /* IKConfiguration.swift */; };
+		FCFC22F4D01EAB11A11FCD7CF076E8E9 /* IKMotionInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0D8D5BB8E07E32634EAADAE50B081E /* IKMotionInterceptor.swift */; };
+		FFA5F35231ABBB90159731FB9691C981 /* UIViewController+EventTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296EE02C581C2E6341867C8B84E4662 /* UIViewController+EventTracking.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4216AA66307DE04ABDE780EE4A7B2811 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5047D11647BD1A308C5109AA2A052EF5;
+			remoteInfo = CUU;
+		};
+		88833CDD7643D02F800D7EA633A58281 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B760C08764CDDED05895C35A9B8CA1B7;
+			remoteInfo = "CUU-CUU";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		001CE113EF6D053F254D050240C7D4C9 /* InteractionKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InteractionKit.swift; sourceTree = "<group>"; };
+		05023315442F9913E1263818A1C8A82E /* IKTouchInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKTouchInterceptor.swift; sourceTree = "<group>"; };
+		0E358EA79C459B98C91487B225C8BD02 /* IKTouchFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKTouchFactory.swift; sourceTree = "<group>"; };
+		0EA6A409AE448AC3276C818A8F4937AB /* CUUStartViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUStartViewController.swift; sourceTree = "<group>"; };
+		10121A5F1DE4AA5B40D32D9EDC9100EB /* Pods_CUU_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CUU_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		147D66B921E4DEA4A974D0F0D932F2E1 /* IKAppEventFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKAppEventFactory.swift; sourceTree = "<group>"; };
+		15A2029AC92290C26749D8BA501FB685 /* IKViewEventFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKViewEventFactory.swift; sourceTree = "<group>"; };
+		15B1209911F06DBC2A509759E68304DF /* IKDefaultEventFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultEventFactory.swift; sourceTree = "<group>"; };
+		16FE35450E0FAC53A16D2C8E021FEBC7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		183FAE3E03A9FEDAABF93251B1101B08 /* IKDefaultMotion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultMotion.swift; sourceTree = "<group>"; };
+		185E7E29B4B25B4B77B7E5E0C0DF4A8A /* IKViewEventInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKViewEventInterceptor.swift; sourceTree = "<group>"; };
+		1872690D1672C4FF46DD7C814BFD77FA /* Checked@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Checked@3x.png"; path = "CUU/Assets/Checked@3x.png"; sourceTree = "<group>"; };
+		195B129BE31387DFB1AF972522EA7532 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1976D98ED6B55B62DD19EF51E58463A2 /* IKSensor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKSensor.swift; sourceTree = "<group>"; };
+		199A4EF4CB27BA777F798F16E332A5D7 /* IKSensorInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKSensorInterceptor.swift; sourceTree = "<group>"; };
+		1A4F2D18CD6359DB2245AE0B14BBED54 /* UISwipeGestureRecognizerDirection+IKUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UISwipeGestureRecognizerDirection+IKUtils.swift"; sourceTree = "<group>"; };
+		1C2631B7C713544659D191170CBC907F /* IKGestureFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKGestureFactory.swift; sourceTree = "<group>"; };
+		1C592C9DB5F71CFF23F34414B050C78F /* Pods-CUU_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CUU_Example-resources.sh"; sourceTree = "<group>"; };
+		1D0D8D5BB8E07E32634EAADAE50B081E /* IKMotionInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKMotionInterceptor.swift; sourceTree = "<group>"; };
+		1E99966FC803CE0244F87B668B45EB62 /* Pods-CUU_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CUU_Example.release.xcconfig"; sourceTree = "<group>"; };
+		1FF9317D34F70A5424267F57C1334975 /* IKDefaultDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultDevice.swift; sourceTree = "<group>"; };
+		20F33ECA3E5C06C1343DB430F4BB3BDF /* Pods-CUU_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CUU_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		213C6F5CC1CC25D2974C2A68B44C994C /* IKInterceptionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKInterceptionDelegate.swift; sourceTree = "<group>"; };
+		29C130924F04AB5A04CA084A3D9AC621 /* Unchecked.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Unchecked.png; path = CUU/Assets/Unchecked.png; sourceTree = "<group>"; };
+		2B592D1EAE797FCDF54FA1B6DD3C3836 /* CUUViewControllers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUViewControllers.swift; sourceTree = "<group>"; };
+		3005F907EC98921DD944B65F002A6EAE /* IKConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKConfiguration.swift; sourceTree = "<group>"; };
+		3134A98D16FBCE7F01EE4089B3F132BD /* CUUUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUUtils.swift; sourceTree = "<group>"; };
+		347C2FE3DB5E5CB09952CC28E08FBFE5 /* IKGesture.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKGesture.swift; sourceTree = "<group>"; };
+		39E616638B3DAF97420DBA69974D546A /* IKDefaultGesture.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultGesture.swift; sourceTree = "<group>"; };
+		3CF4F38AC43857759768482C1D0F71AF /* CUU-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CUU-umbrella.h"; sourceTree = "<group>"; };
+		45F423ECD4F0C9095144313D4A4E3B6A /* FKActionCrumb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FKActionCrumb.swift; sourceTree = "<group>"; };
+		4C181DE0D0C34B5C695B0613924CB41E /* IKAppEventType.temp_caseinsensitive_rename.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKAppEventType.temp_caseinsensitive_rename.swift; sourceTree = "<group>"; };
+		4D12048AF151CB6781D172E38F7BCBD8 /* CUU-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CUU-dummy.m"; sourceTree = "<group>"; };
+		5B77712F5C31517506537847A103A0BC /* IKAppEventType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKAppEventType.swift; sourceTree = "<group>"; };
+		5BB589581AC3020AF46EA68945953B19 /* FeatureKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FeatureKit.swift; sourceTree = "<group>"; };
+		5E3BA36830D30F450C7B6A7C52CCF2F9 /* IKTouchType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKTouchType.swift; sourceTree = "<group>"; };
+		5E86C497BEB276760FAD7A1025C8F655 /* CUUConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUConfiguration.swift; sourceTree = "<group>"; };
+		5F30396626ED43EE8BF934C65E1E105F /* Pods-CUU_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CUU_Tests-resources.sh"; sourceTree = "<group>"; };
+		60BB37BD78A9E1CFBA407F2F7F564784 /* IKTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKTouch.swift; sourceTree = "<group>"; };
+		65AA36B8F62C86BC90379E4091216462 /* CUUUserManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUUserManager.swift; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6CBD8458F9C62B771EA5448931A88E39 /* IKStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKStorage.swift; sourceTree = "<group>"; };
+		718DBC624E382F1C5210D2744E656E32 /* IKDeviceInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDeviceInterceptor.swift; sourceTree = "<group>"; };
+		7192B9DF401E259849122467EDACB3B3 /* Checked.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = Checked.png; path = CUU/Assets/Checked.png; sourceTree = "<group>"; };
+		74EDD1471F5891245DB25C122A3571DD /* Pods-CUU_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CUU_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		7A563681FCECFFD4C9A546FD56E60537 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		80A8475FB460BFF1E7343CCF47856378 /* IKDefaultMotionFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultMotionFactory.swift; sourceTree = "<group>"; };
+		816297C9CE5822DB359AA63B646BB2B2 /* IKDefaultViewEventFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultViewEventFactory.swift; sourceTree = "<group>"; };
+		818EB9647D886BE3AAF2D4E478AF0ADF /* Pods-CUU_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CUU_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		83A193D7AFF0D095D060B9BC725F017B /* CUUConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUConstants.swift; sourceTree = "<group>"; };
+		83D403DF43A04B4BF42EA2AB7D8DA154 /* IKDefaultInterceptorConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultInterceptorConfiguration.swift; sourceTree = "<group>"; };
+		83FEE6056C9506D99CB76D68C19EA2BF /* CUU.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CUU.modulemap; sourceTree = "<group>"; };
+		856339980C515F2FC227A8A69135964F /* IKDataObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDataObject.swift; sourceTree = "<group>"; };
+		87CB6447BDF42C78AA5F3D5FADDD16DE /* IKViewEventType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKViewEventType.swift; sourceTree = "<group>"; };
+		8A32FFDB4CA5ADC285B2D30B6A1F8B0A /* IKDefaultAppEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultAppEvent.swift; sourceTree = "<group>"; };
+		8C22F68141DB4F07E95B748326B274C5 /* IKAppEventInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKAppEventInterceptor.swift; sourceTree = "<group>"; };
+		8C3E903E23A623787AE6A8EEF3BABA2B /* IKDefaultTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultTouch.swift; sourceTree = "<group>"; };
+		8E6CBE6250A88D0BD9FC54FC7AF4FBB2 /* Pods-CUU_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CUU_Tests.modulemap"; sourceTree = "<group>"; };
+		8E7D491867AFC99CD184FCC46381C1AD /* IKGestureType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKGestureType.swift; sourceTree = "<group>"; };
+		8F41D0D6210B59940013E1B8 /* IKInteraction+CoreDataProperties copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IKInteraction+CoreDataProperties copy.swift"; sourceTree = "<group>"; };
+		8F41D0D7210B59950013E1B8 /* IKInteraction+CoreDataClass copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IKInteraction+CoreDataClass copy.swift"; sourceTree = "<group>"; };
+		8F41D0DE210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKGestureCharacteristics+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8F41D0DF210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKGestureCharacteristics+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8F41D0E0210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKAppEventCharacteristics+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8F41D0E1210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKAppEventCharacteristics+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8F41D0E2210B5B0A0013E1B8 /* IKSensorCharacteristics+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKSensorCharacteristics+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8F41D0E3210B5B0A0013E1B8 /* IKSensorCharacteristics+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKSensorCharacteristics+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8F41D0E4210B5B0A0013E1B8 /* IKTouchCharacteristics+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKTouchCharacteristics+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8F41D0E5210B5B0A0013E1B8 /* IKTouchCharacteristics+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKTouchCharacteristics+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8F41D0E6210B5B0A0013E1B8 /* IKViewEventCharacteristics+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKViewEventCharacteristics+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8F41D0E7210B5B0A0013E1B8 /* IKViewEventCharacteristics+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKViewEventCharacteristics+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8F41D0E8210B5B0A0013E1B8 /* IKDeviceCharacteristics+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKDeviceCharacteristics+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8F41D0E9210B5B0A0013E1B8 /* IKDeviceCharacteristics+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKDeviceCharacteristics+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8F41D0EA210B5B0A0013E1B8 /* IKEventCharacteristics+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKEventCharacteristics+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8F41D0EB210B5B0A0013E1B8 /* IKEventCharacteristics+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKEventCharacteristics+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8F41D0EC210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKMotionCharacteristics+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8F41D0ED210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKMotionCharacteristics+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8F41D0FE210B693A0013E1B8 /* IKCharacteristics+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKCharacteristics+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8F41D0FF210B693A0013E1B8 /* IKCharacteristics+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKCharacteristics+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8FBBA76A21066861003777D8 /* IKData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IKData.xcdatamodel; sourceTree = "<group>"; };
+		8FBBA76C21078985003777D8 /* IKCoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKCoreDataStorage.swift; sourceTree = "<group>"; };
+		8FE09703D91F630D58373A3526823C23 /* IKDefaultGestureFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultGestureFactory.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9556A541AED36B0BABB3D493CD5AB4EC /* CUUSessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUSessionManager.swift; sourceTree = "<group>"; };
+		96696263C8C0D90A9216E9EE08C893FC /* IKMotionFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKMotionFactory.swift; sourceTree = "<group>"; };
+		98021FF13108929E3AACCEC1E19E4F77 /* IKEventFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKEventFactory.swift; sourceTree = "<group>"; };
+		9AA2737BE4D9ED5A90DE82BF22DAEDFD /* IKDefaultConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultConfiguration.swift; sourceTree = "<group>"; };
+		9C7871BAB47797C71FCAFBE0CE8249C8 /* IKAppEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKAppEvent.swift; sourceTree = "<group>"; };
+		9FECC0F7C2B435E69DF7263D69A79CFD /* Pods-CUU_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CUU_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A1EACB72C12A07F919D08F8113E0FAB1 /* IKEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKEvent.swift; sourceTree = "<group>"; };
+		A39F851BFBB285377CABECB71436C933 /* CUU.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CUU.xcconfig; sourceTree = "<group>"; };
+		A510B2122EB5EEFDCECB2A3FB3FBBEF0 /* Pods-CUU_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CUU_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A66748E93ADBC67360951F3F774E9477 /* Unchecked@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Unchecked@3x.png"; path = "CUU/Assets/Unchecked@3x.png"; sourceTree = "<group>"; };
+		A6B3149125CE83B2AB141120CBB90151 /* IKDefaultSensorFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultSensorFactory.swift; sourceTree = "<group>"; };
+		A6F64BF785E10D2E295D0A776F14513D /* CUU.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CUU.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		A93B7EBFF725C21EBF9536D50CDA4E4B /* ResourceBundle-CUU-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-CUU-Info.plist"; sourceTree = "<group>"; };
+		AC231E312EE874B033F0EC41A092764F /* IKViewEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKViewEvent.swift; sourceTree = "<group>"; };
+		AD737CA04FC2AFEF72806D9B88653915 /* IKMotionType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKMotionType.swift; sourceTree = "<group>"; };
+		AFD73632288BBE1C889F5EDF016B09DD /* IKDefaultSensor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultSensor.swift; sourceTree = "<group>"; };
+		B238F7085737421527723098905DDA58 /* IKInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKInterceptor.swift; sourceTree = "<group>"; };
+		B2572C7B3C07F5231077BB52F377A1D0 /* Pods-CUU_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CUU_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		B2F094CDBB250E7A6D2F0A3F91D726E5 /* UIViewController+IKUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+IKUtils.swift"; sourceTree = "<group>"; };
+		B494EBFC3EBFD9A47B3FBCB3899AB7FD /* IKSensorFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKSensorFactory.swift; sourceTree = "<group>"; };
+		B9D25095D001659D86C8C5DCA8FC773B /* IKCoreMotionShakeDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKCoreMotionShakeDelegate.swift; sourceTree = "<group>"; };
+		BAA78201D3632E7B5E23131C574DC2AF /* CUU-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CUU-prefix.pch"; sourceTree = "<group>"; };
+		BC0323C497D9E9056C056C334DC8344F /* IKAppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKAppDelegate.swift; sourceTree = "<group>"; };
+		BE60FB547B3BE3E447333E5CEA418C7B /* IKDefaultViewEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultViewEvent.swift; sourceTree = "<group>"; };
+		BF1573C3B7FA8E22FE27834EEADE4B0F /* IKDefaultTouchFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultTouchFactory.swift; sourceTree = "<group>"; };
+		C226B6985829C3069E6346810852233A /* Checked@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Checked@2x.png"; path = "CUU/Assets/Checked@2x.png"; sourceTree = "<group>"; };
+		C42DC50B8A29900964E94029A418214D /* IKMultiDirectionSwipeGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKMultiDirectionSwipeGestureRecognizer.swift; sourceTree = "<group>"; };
+		C5A61560E28E3E806902D8EE362929C3 /* CUU.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CUU.swift; path = CUU/Classes/CUU.swift; sourceTree = "<group>"; };
+		C6028C951455C4A415D27CE35F7BCD78 /* CUUStartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUStartView.swift; sourceTree = "<group>"; };
+		C60C61B89F109532C241353B7AC01E03 /* Pods-CUU_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CUU_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		CAB194999D143A8EEE7C8F9D329C453F /* IKDefaultDeviceFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultDeviceFactory.swift; sourceTree = "<group>"; };
+		CAD6FF0FAF32B2F92500DFB18D545FB1 /* Pods-CUU_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CUU_Tests-dummy.m"; sourceTree = "<group>"; };
+		CBBD378CD305795C394E19D9B1A032D1 /* Pods-CUU_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CUU_Example.modulemap"; sourceTree = "<group>"; };
+		CC13E0BDC29715308F903ECE31C5233A /* Pods-CUU_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CUU_Example-umbrella.h"; sourceTree = "<group>"; };
+		CD1EAB0D2EFEA76FBD86D5D57083B15D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CF970FD7701875BFD5E45C09D6018516 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2B78A8870BF095F380CD64B7DFADBE0 /* Unchecked@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "Unchecked@2x.png"; path = "CUU/Assets/Unchecked@2x.png"; sourceTree = "<group>"; };
+		D31E1AA048F692B624D4E80695FB46FF /* CUU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CUU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BC28163867B30AE269744F66F45ABB /* IKEventInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKEventInterceptor.swift; sourceTree = "<group>"; };
+		D94F26BBE0B6AE21608232E1DF6EB3DF /* IKViewControllers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKViewControllers.swift; sourceTree = "<group>"; };
+		D9C4DD5FC69A0CACB6E28006A6A99EEE /* IKDeviceFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDeviceFactory.swift; sourceTree = "<group>"; };
+		DAD0A5513129D4488DE967FD000AE95C /* Pods-CUU_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CUU_Example-dummy.m"; sourceTree = "<group>"; };
+		DB04618876B216069F4C3E5BCDD945DF /* CUU.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = CUU.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E02B33F91E0FD02FFD82BA05BC449676 /* IKGestureInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKGestureInterceptor.swift; sourceTree = "<group>"; };
+		E296EE02C581C2E6341867C8B84E4662 /* UIViewController+EventTracking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+EventTracking.swift"; sourceTree = "<group>"; };
+		E3D11E7C02C5EC6AE799D54004A6E9CE /* IKSensorType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKSensorType.swift; sourceTree = "<group>"; };
+		E513F6290CD36DAA457A81090DB99577 /* Pods-CUU_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CUU_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		E54A95AE5C42F7B4082AEA4EFB9DB009 /* CUUStartOptionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUStartOptionView.swift; sourceTree = "<group>"; };
+		E9B79CA5668A2A7D1F8B1E15680D9889 /* IKDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDevice.swift; sourceTree = "<group>"; };
+		E9E1435C26C842614738B0331BD1E765 /* IKMotion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKMotion.swift; sourceTree = "<group>"; };
+		EA7A068C4FA4B9656C08957F04BBC4D7 /* Pods-CUU_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CUU_Example-frameworks.sh"; sourceTree = "<group>"; };
+		EC285ACE3A31FBFE71D5B621A937C182 /* Pods-CUU_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CUU_Tests-umbrella.h"; sourceTree = "<group>"; };
+		ED3E031A0D6C73E549F779033B784367 /* IKDefaultAppEventFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultAppEventFactory.swift; sourceTree = "<group>"; };
+		EF01099AA8B2D7A7936C3C108A14205B /* IKDefaultEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultEvent.swift; sourceTree = "<group>"; };
+		EF1313FCF8FF8A3400F82DA5646A33E6 /* CUUCrumb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUCrumb.swift; sourceTree = "<group>"; };
+		F4866E2B2331D93A7C0FCCE4FF21638F /* CUUCharacteristics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUCharacteristics.swift; sourceTree = "<group>"; };
+		F71F3FAEB2C9C13523110F2D3FBC1A88 /* IKCoreMotionShakeDetector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKCoreMotionShakeDetector.swift; sourceTree = "<group>"; };
+		F8A65445E87AF6786CB7C248D5B14ADE /* UIView+IKUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+IKUtils.swift"; sourceTree = "<group>"; };
+		FDB6DC0E0BBAB1BDEA55B7E6F2E27295 /* Pods_CUU_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CUU_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B85C702E0BDD5E2A27AC8113E81E6FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				506E7CFBF795741C108BB9FE255568F5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26B01B1B283378E6C886CBC12DF1407D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F6A2112A4B8DBDBC0C3C38CB8BEE0E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE2874CCD796BA649098C8AC5167A3B7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCAB328346972D79D60E17A88715ADB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3BE609157A528897426E0003B14936D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03693D780B7E12973B9C5C42E68FC5E0 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36B29946870A061DE6865EF38F4E2466 /* CUU */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		22C9EA5A072C646F6031EE131E81D790 /* IKDevice */ = {
+			isa = PBXGroup;
+			children = (
+				1FF9317D34F70A5424267F57C1334975 /* IKDefaultDevice.swift */,
+				CAB194999D143A8EEE7C8F9D329C453F /* IKDefaultDeviceFactory.swift */,
+				E9B79CA5668A2A7D1F8B1E15680D9889 /* IKDevice.swift */,
+				D9C4DD5FC69A0CACB6E28006A6A99EEE /* IKDeviceFactory.swift */,
+				718DBC624E382F1C5210D2744E656E32 /* IKDeviceInterceptor.swift */,
+			);
+			path = IKDevice;
+			sourceTree = "<group>";
+		};
+		36B29946870A061DE6865EF38F4E2466 /* CUU */ = {
+			isa = PBXGroup;
+			children = (
+				C5A61560E28E3E806902D8EE362929C3 /* CUU.swift */,
+				3D76DDFE58611B131505082549454C6E /* CUUCore */,
+				7303AAEF4E6C7D82C6E5E139EB3F0B89 /* FeatureKit */,
+				C2DF82E46A92AA45B13497B2E3DA7CD5 /* InteractionKit */,
+				3FEFD9FA1BBDFEE1E45942358B89353B /* Pod */,
+				7F7D3DBA28678A3BD32BF9FA757987C9 /* Resources */,
+				4421E53885304156A65727BC0FAEC90D /* Support Files */,
+			);
+			name = CUU;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		3D76DDFE58611B131505082549454C6E /* CUUCore */ = {
+			isa = PBXGroup;
+			children = (
+				F4866E2B2331D93A7C0FCCE4FF21638F /* CUUCharacteristics.swift */,
+				83A193D7AFF0D095D060B9BC725F017B /* CUUConstants.swift */,
+				EF1313FCF8FF8A3400F82DA5646A33E6 /* CUUCrumb.swift */,
+				9556A541AED36B0BABB3D493CD5AB4EC /* CUUSessionManager.swift */,
+				E54A95AE5C42F7B4082AEA4EFB9DB009 /* CUUStartOptionView.swift */,
+				C6028C951455C4A415D27CE35F7BCD78 /* CUUStartView.swift */,
+				0EA6A409AE448AC3276C818A8F4937AB /* CUUStartViewController.swift */,
+				65AA36B8F62C86BC90379E4091216462 /* CUUUserManager.swift */,
+				3134A98D16FBCE7F01EE4089B3F132BD /* CUUUtils.swift */,
+				2B592D1EAE797FCDF54FA1B6DD3C3836 /* CUUViewControllers.swift */,
+			);
+			name = CUUCore;
+			path = CUU/Classes/CUUCore;
+			sourceTree = "<group>";
+		};
+		3DFBBEA89B73A2BA33AC6C8A0A7664D6 /* IKAppEvent */ = {
+			isa = PBXGroup;
+			children = (
+				9C7871BAB47797C71FCAFBE0CE8249C8 /* IKAppEvent.swift */,
+				147D66B921E4DEA4A974D0F0D932F2E1 /* IKAppEventFactory.swift */,
+				8C22F68141DB4F07E95B748326B274C5 /* IKAppEventInterceptor.swift */,
+				5B77712F5C31517506537847A103A0BC /* IKAppEventType.swift */,
+				4C181DE0D0C34B5C695B0613924CB41E /* IKAppEventType.temp_caseinsensitive_rename.swift */,
+				8A32FFDB4CA5ADC285B2D30B6A1F8B0A /* IKDefaultAppEvent.swift */,
+				ED3E031A0D6C73E549F779033B784367 /* IKDefaultAppEventFactory.swift */,
+			);
+			path = IKAppEvent;
+			sourceTree = "<group>";
+		};
+		3FEFD9FA1BBDFEE1E45942358B89353B /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				DB04618876B216069F4C3E5BCDD945DF /* CUU.podspec */,
+				7A563681FCECFFD4C9A546FD56E60537 /* LICENSE */,
+				CD1EAB0D2EFEA76FBD86D5D57083B15D /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		4421E53885304156A65727BC0FAEC90D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				83FEE6056C9506D99CB76D68C19EA2BF /* CUU.modulemap */,
+				A39F851BFBB285377CABECB71436C933 /* CUU.xcconfig */,
+				4D12048AF151CB6781D172E38F7BCBD8 /* CUU-dummy.m */,
+				BAA78201D3632E7B5E23131C574DC2AF /* CUU-prefix.pch */,
+				3CF4F38AC43857759768482C1D0F71AF /* CUU-umbrella.h */,
+				CF970FD7701875BFD5E45C09D6018516 /* Info.plist */,
+				A93B7EBFF725C21EBF9536D50CDA4E4B /* ResourceBundle-CUU-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/CUU";
+			sourceTree = "<group>";
+		};
+		7303AAEF4E6C7D82C6E5E139EB3F0B89 /* FeatureKit */ = {
+			isa = PBXGroup;
+			children = (
+				5BB589581AC3020AF46EA68945953B19 /* FeatureKit.swift */,
+				45F423ECD4F0C9095144313D4A4E3B6A /* FKActionCrumb.swift */,
+			);
+			name = FeatureKit;
+			path = CUU/Classes/FeatureKit;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				03693D780B7E12973B9C5C42E68FC5E0 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				DADF2F87A18C0999033D88B389BF794F /* Products */,
+				E6F16507C08805AE7EA4176F56090679 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7F7D3DBA28678A3BD32BF9FA757987C9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7192B9DF401E259849122467EDACB3B3 /* Checked.png */,
+				C226B6985829C3069E6346810852233A /* Checked@2x.png */,
+				1872690D1672C4FF46DD7C814BFD77FA /* Checked@3x.png */,
+				29C130924F04AB5A04CA084A3D9AC621 /* Unchecked.png */,
+				D2B78A8870BF095F380CD64B7DFADBE0 /* Unchecked@2x.png */,
+				A66748E93ADBC67360951F3F774E9477 /* Unchecked@3x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		841F8CFD51816A1085AAE374F8943158 /* IKTouch */ = {
+			isa = PBXGroup;
+			children = (
+				8C3E903E23A623787AE6A8EEF3BABA2B /* IKDefaultTouch.swift */,
+				BF1573C3B7FA8E22FE27834EEADE4B0F /* IKDefaultTouchFactory.swift */,
+				60BB37BD78A9E1CFBA407F2F7F564784 /* IKTouch.swift */,
+				0E358EA79C459B98C91487B225C8BD02 /* IKTouchFactory.swift */,
+				05023315442F9913E1263818A1C8A82E /* IKTouchInterceptor.swift */,
+				5E3BA36830D30F450C7B6A7C52CCF2F9 /* IKTouchType.swift */,
+			);
+			path = IKTouch;
+			sourceTree = "<group>";
+		};
+		8F41D0D5210B57B70013E1B8 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				8F41D0FE210B693A0013E1B8 /* IKCharacteristics+CoreDataClass.swift */,
+				8F41D0FF210B693A0013E1B8 /* IKCharacteristics+CoreDataProperties.swift */,
+				8F41D0DE210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataClass.swift */,
+				8F41D0DF210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataProperties.swift */,
+				8F41D0E0210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataClass.swift */,
+				8F41D0E1210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataProperties.swift */,
+				8F41D0E2210B5B0A0013E1B8 /* IKSensorCharacteristics+CoreDataClass.swift */,
+				8F41D0E3210B5B0A0013E1B8 /* IKSensorCharacteristics+CoreDataProperties.swift */,
+				8F41D0E4210B5B0A0013E1B8 /* IKTouchCharacteristics+CoreDataClass.swift */,
+				8F41D0E5210B5B0A0013E1B8 /* IKTouchCharacteristics+CoreDataProperties.swift */,
+				8F41D0E6210B5B0A0013E1B8 /* IKViewEventCharacteristics+CoreDataClass.swift */,
+				8F41D0E7210B5B0A0013E1B8 /* IKViewEventCharacteristics+CoreDataProperties.swift */,
+				8F41D0E8210B5B0A0013E1B8 /* IKDeviceCharacteristics+CoreDataClass.swift */,
+				8F41D0E9210B5B0A0013E1B8 /* IKDeviceCharacteristics+CoreDataProperties.swift */,
+				8F41D0EA210B5B0A0013E1B8 /* IKEventCharacteristics+CoreDataClass.swift */,
+				8F41D0EB210B5B0A0013E1B8 /* IKEventCharacteristics+CoreDataProperties.swift */,
+				8F41D0EC210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataClass.swift */,
+				8F41D0ED210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataProperties.swift */,
+				8F41D0D6210B59940013E1B8 /* IKInteraction+CoreDataProperties copy.swift */,
+				8F41D0D7210B59950013E1B8 /* IKInteraction+CoreDataClass copy.swift */,
+				8FBBA76921066861003777D8 /* IKData.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		8FCD9D29988292AF930B0E48F5E0E902 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				1A4F2D18CD6359DB2245AE0B14BBED54 /* UISwipeGestureRecognizerDirection+IKUtils.swift */,
+				F8A65445E87AF6786CB7C248D5B14ADE /* UIView+IKUtils.swift */,
+				B2F094CDBB250E7A6D2F0A3F91D726E5 /* UIViewController+IKUtils.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		9E7D6F3745C532F61744A7913193B6D2 /* IKEvent */ = {
+			isa = PBXGroup;
+			children = (
+				EF01099AA8B2D7A7936C3C108A14205B /* IKDefaultEvent.swift */,
+				15B1209911F06DBC2A509759E68304DF /* IKDefaultEventFactory.swift */,
+				A1EACB72C12A07F919D08F8113E0FAB1 /* IKEvent.swift */,
+				98021FF13108929E3AACCEC1E19E4F77 /* IKEventFactory.swift */,
+				D7BC28163867B30AE269744F66F45ABB /* IKEventInterceptor.swift */,
+			);
+			path = IKEvent;
+			sourceTree = "<group>";
+		};
+		A673443E353D3A8E3D3FD3ACB5979BC5 /* IKGesture */ = {
+			isa = PBXGroup;
+			children = (
+				39E616638B3DAF97420DBA69974D546A /* IKDefaultGesture.swift */,
+				8FE09703D91F630D58373A3526823C23 /* IKDefaultGestureFactory.swift */,
+				347C2FE3DB5E5CB09952CC28E08FBFE5 /* IKGesture.swift */,
+				1C2631B7C713544659D191170CBC907F /* IKGestureFactory.swift */,
+				E02B33F91E0FD02FFD82BA05BC449676 /* IKGestureInterceptor.swift */,
+				8E7D491867AFC99CD184FCC46381C1AD /* IKGestureType.swift */,
+				C42DC50B8A29900964E94029A418214D /* IKMultiDirectionSwipeGestureRecognizer.swift */,
+			);
+			path = IKGesture;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2DF82E46A92AA45B13497B2E3DA7CD5 /* InteractionKit */ = {
+			isa = PBXGroup;
+			children = (
+				5E86C497BEB276760FAD7A1025C8F655 /* CUUConfiguration.swift */,
+				001CE113EF6D053F254D050240C7D4C9 /* InteractionKit.swift */,
+				D4C97D65572B337D90B20C6D1C91223F /* Core */,
+				8FCD9D29988292AF930B0E48F5E0E902 /* Helper */,
+				3DFBBEA89B73A2BA33AC6C8A0A7664D6 /* IKAppEvent */,
+				22C9EA5A072C646F6031EE131E81D790 /* IKDevice */,
+				9E7D6F3745C532F61744A7913193B6D2 /* IKEvent */,
+				A673443E353D3A8E3D3FD3ACB5979BC5 /* IKGesture */,
+				FF204D484C2F8730A007C83C83393076 /* IKMotion */,
+				F3F9AD4F12586E3F840A07293B9FE16B /* IKSensor */,
+				841F8CFD51816A1085AAE374F8943158 /* IKTouch */,
+				E15A3919B941C9D7322CB535D6100DBC /* IKViewEvent */,
+				D1A9B640A1AB751D05B5F7CA8234C5CB /* Utils */,
+			);
+			name = InteractionKit;
+			path = CUU/Classes/InteractionKit;
+			sourceTree = "<group>";
+		};
+		C4FB97966F0B967E35B139F0EB34309B /* Pods-CUU_Example */ = {
+			isa = PBXGroup;
+			children = (
+				195B129BE31387DFB1AF972522EA7532 /* Info.plist */,
+				CBBD378CD305795C394E19D9B1A032D1 /* Pods-CUU_Example.modulemap */,
+				818EB9647D886BE3AAF2D4E478AF0ADF /* Pods-CUU_Example-acknowledgements.markdown */,
+				B2572C7B3C07F5231077BB52F377A1D0 /* Pods-CUU_Example-acknowledgements.plist */,
+				DAD0A5513129D4488DE967FD000AE95C /* Pods-CUU_Example-dummy.m */,
+				EA7A068C4FA4B9656C08957F04BBC4D7 /* Pods-CUU_Example-frameworks.sh */,
+				1C592C9DB5F71CFF23F34414B050C78F /* Pods-CUU_Example-resources.sh */,
+				CC13E0BDC29715308F903ECE31C5233A /* Pods-CUU_Example-umbrella.h */,
+				74EDD1471F5891245DB25C122A3571DD /* Pods-CUU_Example.debug.xcconfig */,
+				1E99966FC803CE0244F87B668B45EB62 /* Pods-CUU_Example.release.xcconfig */,
+			);
+			name = "Pods-CUU_Example";
+			path = "Target Support Files/Pods-CUU_Example";
+			sourceTree = "<group>";
+		};
+		D1A9B640A1AB751D05B5F7CA8234C5CB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BC0323C497D9E9056C056C334DC8344F /* IKAppDelegate.swift */,
+				9AA2737BE4D9ED5A90DE82BF22DAEDFD /* IKDefaultConfiguration.swift */,
+				83D403DF43A04B4BF42EA2AB7D8DA154 /* IKDefaultInterceptorConfiguration.swift */,
+				8FBBA76C21078985003777D8 /* IKCoreDataStorage.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D4C97D65572B337D90B20C6D1C91223F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3005F907EC98921DD944B65F002A6EAE /* IKConfiguration.swift */,
+				8F41D0D5210B57B70013E1B8 /* Core Data */,
+				856339980C515F2FC227A8A69135964F /* IKDataObject.swift */,
+				213C6F5CC1CC25D2974C2A68B44C994C /* IKInterceptionDelegate.swift */,
+				B238F7085737421527723098905DDA58 /* IKInterceptor.swift */,
+				6CBD8458F9C62B771EA5448931A88E39 /* IKStorage.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D72624B673F6A0C05EDCC55D869CDDFF /* Pods-CUU_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				16FE35450E0FAC53A16D2C8E021FEBC7 /* Info.plist */,
+				8E6CBE6250A88D0BD9FC54FC7AF4FBB2 /* Pods-CUU_Tests.modulemap */,
+				20F33ECA3E5C06C1343DB430F4BB3BDF /* Pods-CUU_Tests-acknowledgements.markdown */,
+				9FECC0F7C2B435E69DF7263D69A79CFD /* Pods-CUU_Tests-acknowledgements.plist */,
+				CAD6FF0FAF32B2F92500DFB18D545FB1 /* Pods-CUU_Tests-dummy.m */,
+				C60C61B89F109532C241353B7AC01E03 /* Pods-CUU_Tests-frameworks.sh */,
+				5F30396626ED43EE8BF934C65E1E105F /* Pods-CUU_Tests-resources.sh */,
+				EC285ACE3A31FBFE71D5B621A937C182 /* Pods-CUU_Tests-umbrella.h */,
+				E513F6290CD36DAA457A81090DB99577 /* Pods-CUU_Tests.debug.xcconfig */,
+				A510B2122EB5EEFDCECB2A3FB3FBBEF0 /* Pods-CUU_Tests.release.xcconfig */,
+			);
+			name = "Pods-CUU_Tests";
+			path = "Target Support Files/Pods-CUU_Tests";
+			sourceTree = "<group>";
+		};
+		DADF2F87A18C0999033D88B389BF794F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6F64BF785E10D2E295D0A776F14513D /* CUU.bundle */,
+				D31E1AA048F692B624D4E80695FB46FF /* CUU.framework */,
+				FDB6DC0E0BBAB1BDEA55B7E6F2E27295 /* Pods_CUU_Example.framework */,
+				10121A5F1DE4AA5B40D32D9EDC9100EB /* Pods_CUU_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E15A3919B941C9D7322CB535D6100DBC /* IKViewEvent */ = {
+			isa = PBXGroup;
+			children = (
+				BE60FB547B3BE3E447333E5CEA418C7B /* IKDefaultViewEvent.swift */,
+				816297C9CE5822DB359AA63B646BB2B2 /* IKDefaultViewEventFactory.swift */,
+				D94F26BBE0B6AE21608232E1DF6EB3DF /* IKViewControllers.swift */,
+				AC231E312EE874B033F0EC41A092764F /* IKViewEvent.swift */,
+				15A2029AC92290C26749D8BA501FB685 /* IKViewEventFactory.swift */,
+				185E7E29B4B25B4B77B7E5E0C0DF4A8A /* IKViewEventInterceptor.swift */,
+				87CB6447BDF42C78AA5F3D5FADDD16DE /* IKViewEventType.swift */,
+				E296EE02C581C2E6341867C8B84E4662 /* UIViewController+EventTracking.swift */,
+			);
+			path = IKViewEvent;
+			sourceTree = "<group>";
+		};
+		E6F16507C08805AE7EA4176F56090679 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4FB97966F0B967E35B139F0EB34309B /* Pods-CUU_Example */,
+				D72624B673F6A0C05EDCC55D869CDDFF /* Pods-CUU_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		F3F9AD4F12586E3F840A07293B9FE16B /* IKSensor */ = {
+			isa = PBXGroup;
+			children = (
+				AFD73632288BBE1C889F5EDF016B09DD /* IKDefaultSensor.swift */,
+				A6B3149125CE83B2AB141120CBB90151 /* IKDefaultSensorFactory.swift */,
+				1976D98ED6B55B62DD19EF51E58463A2 /* IKSensor.swift */,
+				B494EBFC3EBFD9A47B3FBCB3899AB7FD /* IKSensorFactory.swift */,
+				199A4EF4CB27BA777F798F16E332A5D7 /* IKSensorInterceptor.swift */,
+				E3D11E7C02C5EC6AE799D54004A6E9CE /* IKSensorType.swift */,
+			);
+			path = IKSensor;
+			sourceTree = "<group>";
+		};
+		FF204D484C2F8730A007C83C83393076 /* IKMotion */ = {
+			isa = PBXGroup;
+			children = (
+				B9D25095D001659D86C8C5DCA8FC773B /* IKCoreMotionShakeDelegate.swift */,
+				F71F3FAEB2C9C13523110F2D3FBC1A88 /* IKCoreMotionShakeDetector.swift */,
+				183FAE3E03A9FEDAABF93251B1101B08 /* IKDefaultMotion.swift */,
+				80A8475FB460BFF1E7343CCF47856378 /* IKDefaultMotionFactory.swift */,
+				E9E1435C26C842614738B0331BD1E765 /* IKMotion.swift */,
+				96696263C8C0D90A9216E9EE08C893FC /* IKMotionFactory.swift */,
+				1D0D8D5BB8E07E32634EAADAE50B081E /* IKMotionInterceptor.swift */,
+				AD737CA04FC2AFEF72806D9B88653915 /* IKMotionType.swift */,
+			);
+			path = IKMotion;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		57C8BC3AC5A02F5C6B9A442E3CA656C0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E3EA16A0FC11971B6D4D25E93584ABD /* CUU-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EBA329E1BBC0B1BE02FB5B7782432F8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC89927530E3AEC0AE0B3ACFA0ADED75 /* Pods-CUU_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B53C9BBD3212030DE47F84B92E10A343 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2029A7A5E812E18855F6398362DA5F /* Pods-CUU_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1C1A39272DA7F66BBE7F6C1ED77D27C7 /* Pods-CUU_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C69578314AD8413079F0FDD7712ADF1 /* Build configuration list for PBXNativeTarget "Pods-CUU_Tests" */;
+			buildPhases = (
+				30411C68A8C23C4999CA99A42A6EE439 /* Sources */,
+				1B85C702E0BDD5E2A27AC8113E81E6FB /* Frameworks */,
+				B53C9BBD3212030DE47F84B92E10A343 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CUU_Tests";
+			productName = "Pods-CUU_Tests";
+			productReference = 10121A5F1DE4AA5B40D32D9EDC9100EB /* Pods_CUU_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5047D11647BD1A308C5109AA2A052EF5 /* CUU */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7185E209F8AD4340C8283608A6E7F199 /* Build configuration list for PBXNativeTarget "CUU" */;
+			buildPhases = (
+				193C2A2EE7E7EB26E2F91742CB839773 /* Sources */,
+				7F6A2112A4B8DBDBC0C3C38CB8BEE0E6 /* Frameworks */,
+				78C537C2C2401C19DE6DA42F75004465 /* Resources */,
+				57C8BC3AC5A02F5C6B9A442E3CA656C0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6F0BDB9CF68AE7CD3709C678B5954595 /* PBXTargetDependency */,
+			);
+			name = CUU;
+			productName = CUU;
+			productReference = D31E1AA048F692B624D4E80695FB46FF /* CUU.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9C40B598AED41A02A6CD7DBB479F7A59 /* Pods-CUU_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA3880F3C14F5575634E9C9B12D169D6 /* Build configuration list for PBXNativeTarget "Pods-CUU_Example" */;
+			buildPhases = (
+				9C1038255CF874C6060A2F271F3DDA6E /* Sources */,
+				BCAB328346972D79D60E17A88715ADB1 /* Frameworks */,
+				5EBA329E1BBC0B1BE02FB5B7782432F8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C43A194F7E9695AA62C78D9837935AC /* PBXTargetDependency */,
+			);
+			name = "Pods-CUU_Example";
+			productName = "Pods-CUU_Example";
+			productReference = FDB6DC0E0BBAB1BDEA55B7E6F2E27295 /* Pods_CUU_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B760C08764CDDED05895C35A9B8CA1B7 /* CUU-CUU */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51A59CF5AFED67622E311A2FED5F506F /* Build configuration list for PBXNativeTarget "CUU-CUU" */;
+			buildPhases = (
+				CBD259454BA028F9275BEC78A74859CE /* Sources */,
+				26B01B1B283378E6C886CBC12DF1407D /* Frameworks */,
+				9AE4D16756493F6DA2D99EBB08D99D2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CUU-CUU";
+			productName = "CUU-CUU";
+			productReference = A6F64BF785E10D2E295D0A776F14513D /* CUU.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = DADF2F87A18C0999033D88B389BF794F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5047D11647BD1A308C5109AA2A052EF5 /* CUU */,
+				B760C08764CDDED05895C35A9B8CA1B7 /* CUU-CUU */,
+				9C40B598AED41A02A6CD7DBB479F7A59 /* Pods-CUU_Example */,
+				1C1A39272DA7F66BBE7F6C1ED77D27C7 /* Pods-CUU_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78C537C2C2401C19DE6DA42F75004465 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C25F8F6713CF801714B02D9023A854F /* CUU.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AE4D16756493F6DA2D99EBB08D99D2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F4B6A468D86CF70DEBCA028C6FDB63F /* Checked.png in Resources */,
+				180D9EA58E2BFE36714996BF9D1758A4 /* Checked@2x.png in Resources */,
+				7E5610E54B8564A88238743C9145E8DD /* Checked@3x.png in Resources */,
+				A77948335379CAAA3821A79446D19D94 /* Unchecked.png in Resources */,
+				CC22F6A1A3F123F5A7553B0DEC525410 /* Unchecked@2x.png in Resources */,
+				51E9EBCAA5487D2D71640319354CD749 /* Unchecked@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		193C2A2EE7E7EB26E2F91742CB839773 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2A2DC1108F53905D1474A4201696C97 /* CUU-dummy.m in Sources */,
+				68EAB4E60073F705582F03B2658777B7 /* CUU.swift in Sources */,
+				8FBBA76D21078985003777D8 /* IKCoreDataStorage.swift in Sources */,
+				E41E44B62EA085526D8A1045F764DD5F /* CUUCharacteristics.swift in Sources */,
+				6F99D049A8B63580B569905FC3810194 /* CUUConfiguration.swift in Sources */,
+				91723459A727329EB76FC78E41D78C43 /* CUUConstants.swift in Sources */,
+				5F7BDCB5842C07D8F467EAB597226A9B /* CUUCrumb.swift in Sources */,
+				8F41D0F6210B5B0A0013E1B8 /* IKViewEventCharacteristics+CoreDataClass.swift in Sources */,
+				02E54E1755915E750773BFA35FBEAE1E /* CUUSessionManager.swift in Sources */,
+				CD09E70EF43CAF4241454762279508FD /* CUUStartOptionView.swift in Sources */,
+				8F41D0FC210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataClass.swift in Sources */,
+				26ABF42711EC501036ADF73685714CC8 /* CUUStartView.swift in Sources */,
+				8F41D100210B693A0013E1B8 /* IKCharacteristics+CoreDataClass.swift in Sources */,
+				72B19EDDC1B7D7A168E2B1589D693D7B /* CUUStartViewController.swift in Sources */,
+				A4122A4F1499746870022020CD92B566 /* CUUUserManager.swift in Sources */,
+				0B675C44ABB44D8AD51D6AEC1FD6538D /* CUUUtils.swift in Sources */,
+				19F8FF2955DC0E3516661F0C2F4F902C /* CUUViewControllers.swift in Sources */,
+				E2F94DB3316766D78B4DDED3575F70F5 /* FeatureKit.swift in Sources */,
+				B0C3BA28C737DF82722DAF204A23DC6D /* FKActionCrumb.swift in Sources */,
+				7D01ED35ADAA637E84D507869F90F175 /* IKAppDelegate.swift in Sources */,
+				8F41D0FD210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataProperties.swift in Sources */,
+				256F88DB449EFC9E2ACD7B540E6A351E /* IKAppEvent.swift in Sources */,
+				E64EC3489486FB73DFEA86E39C2A8A5E /* IKAppEventFactory.swift in Sources */,
+				C48A26C6FD3AE3594BFEF804DE22B5CB /* IKAppEventInterceptor.swift in Sources */,
+				C2DDF45ED0A76E215C16DC52CA070D88 /* IKAppEventType.swift in Sources */,
+				8F41D0F5210B5B0A0013E1B8 /* IKTouchCharacteristics+CoreDataProperties.swift in Sources */,
+				C8C9395E345E6FD92EA93C82752A1817 /* IKAppEventType.temp_caseinsensitive_rename.swift in Sources */,
+				F907C07439AAE2EFA4951840F8E30A8F /* IKConfiguration.swift in Sources */,
+				1FC10C24E924F16A95A5C5A70EEB1790 /* IKCoreMotionShakeDelegate.swift in Sources */,
+				92385859AF0FE9807D6676CBCDB7C6DB /* IKCoreMotionShakeDetector.swift in Sources */,
+				8BA7C998504F8F7D0744BD9A98E01270 /* IKDataObject.swift in Sources */,
+				7E66F2DD0D8728EE6962CF6C7848B889 /* IKDefaultAppEvent.swift in Sources */,
+				7FB4C943B7280CDC3B5B90A3DDA641D3 /* IKDefaultAppEventFactory.swift in Sources */,
+				7584157A828D59DA1C00E646625A5D49 /* IKDefaultConfiguration.swift in Sources */,
+				CA3487B6C4576E1D424BFE35194AC506 /* IKDefaultDevice.swift in Sources */,
+				565D2D3AF3FD10C2B8ADDBB2D770713C /* IKDefaultDeviceFactory.swift in Sources */,
+				196CDBD468D806ACBCF7C212025A9975 /* IKDefaultEvent.swift in Sources */,
+				8F41D0D9210B59950013E1B8 /* IKInteraction+CoreDataClass copy.swift in Sources */,
+				776BF9C90F8CC1E9CE2ED04A62CA2FBD /* IKDefaultEventFactory.swift in Sources */,
+				9FF8DB5B15742BD282BB1C43FE17B3A2 /* IKDefaultGesture.swift in Sources */,
+				007E292555C11DE1B35CA5609EA5A3FA /* IKDefaultGestureFactory.swift in Sources */,
+				281CD60A384ADC7CCF7A16535B9CAE29 /* IKDefaultInterceptorConfiguration.swift in Sources */,
+				9EDEA68608920F2C67A3146EF913F2DF /* IKDefaultMotion.swift in Sources */,
+				AA3E2D448E698E158FDB4BA7ACBD7F08 /* IKDefaultMotionFactory.swift in Sources */,
+				DD7334F8B0068B200ED958BE0908DB4F /* IKDefaultSensor.swift in Sources */,
+				51240F15943D7F4688C7CD1E50198FA1 /* IKDefaultSensorFactory.swift in Sources */,
+				4C16BA2DA944C1EE1361E8C324CD694A /* IKDefaultTouch.swift in Sources */,
+				680862CDE4F45799286C91AB945B8E30 /* IKDefaultTouchFactory.swift in Sources */,
+				9092EA58025FDBF3CE5498EA512AF0B6 /* IKDefaultViewEvent.swift in Sources */,
+				6624AB8FF6C63C38A8B50C3252D51391 /* IKDefaultViewEventFactory.swift in Sources */,
+				799827C4BA15D791C4E1DDED878978DC /* IKDevice.swift in Sources */,
+				371830600D9F6E677AE41055AADE6B4C /* IKDeviceFactory.swift in Sources */,
+				D5DAD0FA7BD294EEE01C7BE6B32ABE29 /* IKDeviceInterceptor.swift in Sources */,
+				8A22FFFAF2D22714EC249952423AA515 /* IKEvent.swift in Sources */,
+				EC125CF48BFA557EB08ABD25393AE716 /* IKEventFactory.swift in Sources */,
+				8F41D0F8210B5B0A0013E1B8 /* IKDeviceCharacteristics+CoreDataClass.swift in Sources */,
+				8F41D0D8210B59950013E1B8 /* IKInteraction+CoreDataProperties copy.swift in Sources */,
+				8F41D0FB210B5B0A0013E1B8 /* IKEventCharacteristics+CoreDataProperties.swift in Sources */,
+				8F41D0EE210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataClass.swift in Sources */,
+				B8134A0C4AA8575681A6EF5C59912E71 /* IKEventInterceptor.swift in Sources */,
+				4D095E68A8F6904CFDB670A7BEC36F2B /* IKGesture.swift in Sources */,
+				8F41D0F9210B5B0A0013E1B8 /* IKDeviceCharacteristics+CoreDataProperties.swift in Sources */,
+				026FF0B035D44D8F64167241742F73FF /* IKGestureFactory.swift in Sources */,
+				82B1605A43C7F5F4216938561426C868 /* IKGestureInterceptor.swift in Sources */,
+				75D64FD240295565A7E595B118DB653F /* IKGestureType.swift in Sources */,
+				543CF60630A8E006E2F9FBAB96BC05F8 /* IKInterceptionDelegate.swift in Sources */,
+				8F41D0EF210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataProperties.swift in Sources */,
+				3262194C5E83AE3444F32F96F940C6D6 /* IKInterceptor.swift in Sources */,
+				56BBB72655DEAF0D3E244D79C7526ECE /* IKMotion.swift in Sources */,
+				8FBBA76B21066861003777D8 /* IKData.xcdatamodeld in Sources */,
+				8F41D0F0210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataClass.swift in Sources */,
+				8F41D0F4210B5B0A0013E1B8 /* IKTouchCharacteristics+CoreDataClass.swift in Sources */,
+				8F41D0F3210B5B0A0013E1B8 /* IKSensorCharacteristics+CoreDataProperties.swift in Sources */,
+				844902DE6FDEEC79F4B77B1EA87A9322 /* IKMotionFactory.swift in Sources */,
+				FCFC22F4D01EAB11A11FCD7CF076E8E9 /* IKMotionInterceptor.swift in Sources */,
+				CACC2004B7B9EA4AABBFAAC170598596 /* IKMotionType.swift in Sources */,
+				08882AE8B71A9FC17EA72F4B5A911E55 /* IKMultiDirectionSwipeGestureRecognizer.swift in Sources */,
+				82B8033E1F840A356C9401C62F8DAC7E /* IKSensor.swift in Sources */,
+				D076435D80A1502733CBA103FF77FF0B /* IKSensorFactory.swift in Sources */,
+				A3AEC686953747BE51124D550D39647F /* IKSensorInterceptor.swift in Sources */,
+				8F41D0F1210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataProperties.swift in Sources */,
+				8F41D0F7210B5B0A0013E1B8 /* IKViewEventCharacteristics+CoreDataProperties.swift in Sources */,
+				104E304EB02A016A9C793F8EB6843C6C /* IKSensorType.swift in Sources */,
+				CD76E643AE0763C9F54748B0F066BF91 /* IKStorage.swift in Sources */,
+				D2AEE1B5B195CBECD3303D6E551A133C /* IKTouch.swift in Sources */,
+				3CBE3B406BFB460E25B4673239D3D5AB /* IKTouchFactory.swift in Sources */,
+				8F41D101210B693A0013E1B8 /* IKCharacteristics+CoreDataProperties.swift in Sources */,
+				630E4A8265BEB0BC8312830EC3B34FF8 /* IKTouchInterceptor.swift in Sources */,
+				220E91E447BDD541E7F2263BC881D995 /* IKTouchType.swift in Sources */,
+				C47409A1FA13087B809EDD0001EEA982 /* IKViewControllers.swift in Sources */,
+				00AF633E1EDB36958118D3B05E6C59EA /* IKViewEvent.swift in Sources */,
+				F3D3E94662CE1A52F905298EA66C2FF9 /* IKViewEventFactory.swift in Sources */,
+				B96A5506AF374420FEB1AE14EE23C89E /* IKViewEventInterceptor.swift in Sources */,
+				22149C6D4BC2EE97358773944AD92A84 /* IKViewEventType.swift in Sources */,
+				8F41D0F2210B5B0A0013E1B8 /* IKSensorCharacteristics+CoreDataClass.swift in Sources */,
+				8F41D0FA210B5B0A0013E1B8 /* IKEventCharacteristics+CoreDataClass.swift in Sources */,
+				A508B62EE0621456E18B0E8103F97C00 /* InteractionKit.swift in Sources */,
+				8460E2705C9494DE915D1A669FD24015 /* UISwipeGestureRecognizerDirection+IKUtils.swift in Sources */,
+				A94113723B5A048ECABA8A63951860C6 /* UIView+IKUtils.swift in Sources */,
+				FFA5F35231ABBB90159731FB9691C981 /* UIViewController+EventTracking.swift in Sources */,
+				1AC5107E9FE6231F13DDDE380E5CA856 /* UIViewController+IKUtils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30411C68A8C23C4999CA99A42A6EE439 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9031100D650BC1F9F75EE0F187C3D0FF /* Pods-CUU_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C1038255CF874C6060A2F271F3DDA6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				795C3261C6053F6E0D615137C5977227 /* Pods-CUU_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBD259454BA028F9275BEC78A74859CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C43A194F7E9695AA62C78D9837935AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CUU;
+			target = 5047D11647BD1A308C5109AA2A052EF5 /* CUU */;
+			targetProxy = 4216AA66307DE04ABDE780EE4A7B2811 /* PBXContainerItemProxy */;
+		};
+		6F0BDB9CF68AE7CD3709C678B5954595 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CUU-CUU";
+			target = B760C08764CDDED05895C35A9B8CA1B7 /* CUU-CUU */;
+			targetProxy = 88833CDD7643D02F800D7EA633A58281 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0A8EA68A7C614C8953E5CFD481266291 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A39F851BFBB285377CABECB71436C933 /* CUU.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CUU/CUU-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CUU/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CUU/CUU.modulemap";
+				PRODUCT_NAME = CUU;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0AAAFF931E25576AB4526774C7C2DEAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A39F851BFBB285377CABECB71436C933 /* CUU.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CUU";
+				INFOPLIST_FILE = "Target Support Files/CUU/ResourceBundle-CUU-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = CUU;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		1F9230F4483B2CBD9F88EB93B3E4AFE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A39F851BFBB285377CABECB71436C933 /* CUU.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/CUU";
+				INFOPLIST_FILE = "Target Support Files/CUU/ResourceBundle-CUU-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = CUU;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		49B5A78DBE571998053070754D3695E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		6464F319E239C0D8453187FFE5E5B03A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E99966FC803CE0244F87B668B45EB62 /* Pods-CUU_Example.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CUU_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CUU_Example/Pods-CUU_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CUU_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A08641DCB055791AD1E4F933723516D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E513F6290CD36DAA457A81090DB99577 /* Pods-CUU_Tests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CUU_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CUU_Tests/Pods-CUU_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CUU_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A6671D9BC38B887895B1CD92DA3BF636 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A39F851BFBB285377CABECB71436C933 /* CUU.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CUU/CUU-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CUU/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CUU/CUU.modulemap";
+				PRODUCT_NAME = CUU;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BE6768A39818E66C8298AF00DF6004F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A510B2122EB5EEFDCECB2A3FB3FBBEF0 /* Pods-CUU_Tests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CUU_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CUU_Tests/Pods-CUU_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CUU_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D31C4292CD5A3CB737A09798ACB5B9A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74EDD1471F5891245DB25C122A3571DD /* Pods-CUU_Example.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CUU_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CUU_Example/Pods-CUU_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CUU_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DD369323FD85CB26347C0D75C75D837F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD369323FD85CB26347C0D75C75D837F /* Debug */,
+				49B5A78DBE571998053070754D3695E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C69578314AD8413079F0FDD7712ADF1 /* Build configuration list for PBXNativeTarget "Pods-CUU_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A08641DCB055791AD1E4F933723516D0 /* Debug */,
+				BE6768A39818E66C8298AF00DF6004F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51A59CF5AFED67622E311A2FED5F506F /* Build configuration list for PBXNativeTarget "CUU-CUU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AAAFF931E25576AB4526774C7C2DEAF /* Debug */,
+				1F9230F4483B2CBD9F88EB93B3E4AFE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7185E209F8AD4340C8283608A6E7F199 /* Build configuration list for PBXNativeTarget "CUU" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A8EA68A7C614C8953E5CFD481266291 /* Debug */,
+				A6671D9BC38B887895B1CD92DA3BF636 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA3880F3C14F5575634E9C9B12D169D6 /* Build configuration list for PBXNativeTarget "Pods-CUU_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D31C4292CD5A3CB737A09798ACB5B9A0 /* Debug */,
+				6464F319E239C0D8453187FFE5E5B03A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8FBBA76921066861003777D8 /* IKData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8FBBA76A21066861003777D8 /* IKData.xcdatamodel */,
+			);
+			currentVersion = 8FBBA76A21066861003777D8 /* IKData.xcdatamodel */;
+			path = IKData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

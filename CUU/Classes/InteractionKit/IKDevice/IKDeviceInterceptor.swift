@@ -16,8 +16,9 @@ public class IKDeviceInterceptor: IKInterceptor {
         // emit just one event on start
         
         let device = deviceFactory.device()
-        let crumb = deviceFactory.crumb(from: device)
-        interceptionDelegate.interceptor(self, captured: device, crumb: crumb)
+        let characteristics = deviceFactory.characteristics(from: device)
+        let crumb = deviceFactory.crumb(with: characteristics, title: device.title)
+        interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
         
     }
     

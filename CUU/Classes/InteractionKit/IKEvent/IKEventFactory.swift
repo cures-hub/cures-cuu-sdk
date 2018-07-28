@@ -22,8 +22,18 @@ extension IKEventFactory {
         return event
     }
     
-    func crumb(from: IKEvent) -> IKEventCrumb {
-        return IKEventCrumb(name: "IKEvent :: " + from.title, event: from)
+    func characteristics(from: IKEvent) -> IKEventCharacteristics {
+        let config = InteractionKit.shared.configuration
+        let context = config!.storage.persistentContainer.viewContext
+        return IKEventCharacteristics(context: context, event: from)
     }
     
+    func crumb(with characteristics: IKEventCharacteristics, title: String) -> IKInteraction {
+        let config = InteractionKit.shared.configuration
+        let context = config!.storage.persistentContainer.viewContext
+        
+        return IKInteraction(context: context,
+                             name: "IKEvent :: " + title,
+                             characteristics: characteristics)
+    }
 }

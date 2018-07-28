@@ -40,8 +40,9 @@ public class IKEventInterceptor: IKInterceptor {
     private func log(title: String, parameter: [String:String]? = nil ) {
         if isActive {
             let event = eventFactory.event(title: title, parameter: parameter)
-            let crumb = eventFactory.crumb(from: event)
-            interceptionDelegate.interceptor(self, captured: event, crumb: crumb)
+            let characteristics = eventFactory.characteristics(from: event)
+            let crumb = eventFactory.crumb(with: characteristics, title: event.title)
+            interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
         }
     }
     

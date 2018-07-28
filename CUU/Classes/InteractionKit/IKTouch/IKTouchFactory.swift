@@ -30,8 +30,19 @@ extension IKTouchFactory {
         return touch
     }
     
-    func crumb(from: IKTouch) -> IKTouchCrumb {
-        return IKTouchCrumb(name: "IKTouch :: " + from.title, touch: from)
+    func characteristics(from: IKTouch) -> IKTouchCharacteristics {
+        let config = InteractionKit.shared.configuration
+        let context = config!.storage.persistentContainer.viewContext
+        return IKTouchCharacteristics(context: context, touch: from)
+    }
+    
+    func crumb(with characteristics: IKTouchCharacteristics, title: String) -> IKInteraction {
+        let config = InteractionKit.shared.configuration
+        let context = config!.storage.persistentContainer.viewContext
+        
+        return IKInteraction(context: context,
+                             name: "IKTouch :: " + title,
+                             characteristics: characteristics)
     }
 }
 

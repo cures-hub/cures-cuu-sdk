@@ -1,40 +1,27 @@
 //
-//  IKInteraction.swift
-//  CUU
+//  IKInteraction+CoreDataProperties.swift
+//  
 //
-//  Created by Lara Marie Reimer on 07.07.18.
+//  Created by Lara Marie Reimer on 27.07.18.
+//
 //
 
 import Foundation
+import CoreData
 
-/**
- *  Protocol for IKInteractions.
- **/
-public protocol IKInteraction : Codable {
-    /**
-     *   The name of the interaction.
-     **/
-    var name: String { get }
-    
-    /**
-     *   The timestamp when the interaction is created.
-     **/
-    var timestamp: Date { get }
-    
-    /**
-     *   The current session ID.
-     **/
-    var sessionId: String { get }
-    
-    /**
-     *   The current user ID.
-     **/
-    var userId: String { get }
-    
-    /**
-     *   Custom parameters that can be added to the crumb.
-     **/
-    var characteristics: CUUCharacteristics? { get }
+
+extension IKInteraction {
+
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<IKInteraction> {
+        return NSFetchRequest<IKInteraction>(entityName: "IKInteraction")
+    }
+
+    @NSManaged public var userId: String
+    @NSManaged public var timestamp: Date
+    @NSManaged public var sessionId: String
+    @NSManaged public var name: String
+    @NSManaged public var characteristics: String
+
 }
 
 extension IKInteraction {
@@ -81,3 +68,4 @@ extension IKInteraction {
         task.resume()
     }
 }
+

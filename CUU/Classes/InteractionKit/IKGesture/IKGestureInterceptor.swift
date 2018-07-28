@@ -91,44 +91,51 @@ extension IKGestureInterceptor {
 
     @objc func tapGestureRecognized(_ sender: UITapGestureRecognizer) {
         let gesture = gestureFactory.gesture(from: sender)
-        let crumb = gestureFactory.crumb(from: gesture)
-        interceptionDelegate.interceptor(self, captured: gesture, crumb: crumb)
+        let characteristics = gestureFactory.characteristics(from: gesture)
+        let crumb = gestureFactory.crumb(with: characteristics, title: gesture.title)
+        interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
     }
     
     @objc func pinchGestureRecognized(_ sender: UIPinchGestureRecognizer) {
         let gesture = gestureFactory.gesture(from: sender)
-        let crumb = gestureFactory.crumb(from: gesture)
-        interceptionDelegate.interceptor(self, captured: gesture, crumb: crumb)
+        let characteristics = gestureFactory.characteristics(from: gesture)
+        let crumb = gestureFactory.crumb(with: characteristics, title: gesture.title)
+        interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
     }
     
     @objc func rotationGestureRecognized(_ sender: UIRotationGestureRecognizer) {
         let gesture = gestureFactory.gesture(from: sender)
-        let crumb = gestureFactory.crumb(from: gesture)
-        interceptionDelegate.interceptor(self, captured: gesture, crumb: crumb)
+        let characteristics = gestureFactory.characteristics(from: gesture)
+        let crumb = gestureFactory.crumb(with: characteristics, title: gesture.title)
+        interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
     }
     
     @objc func swipeGestureRecognized(_ sender: UISwipeGestureRecognizer) {
         let gesture = gestureFactory.gesture(from: sender)
-        let crumb = gestureFactory.crumb(from: gesture)
-        interceptionDelegate.interceptor(self, captured: gesture, crumb: crumb)
+        let characteristics = gestureFactory.characteristics(from: gesture)
+        let crumb = gestureFactory.crumb(with: characteristics, title: gesture.title)
+        interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
     }
     
     @objc func panGestureRecognized(_ sender: UIPanGestureRecognizer) {
         let gesture = gestureFactory.gesture(from: sender)
-        let crumb = gestureFactory.crumb(from: gesture)
-        interceptionDelegate.interceptor(self, captured: gesture, crumb: crumb)
+        let characteristics = gestureFactory.characteristics(from: gesture)
+        let crumb = gestureFactory.crumb(with: characteristics, title: gesture.title)
+        interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
     }
     
     @objc func screenPanGestureRecognized(_ sender: UIScreenEdgePanGestureRecognizer) {
         let gesture = gestureFactory.gesture(from: sender)
-        let crumb = gestureFactory.crumb(from: gesture)
-        interceptionDelegate.interceptor(self, captured: gesture, crumb: crumb)
+        let characteristics = gestureFactory.characteristics(from: gesture)
+        let crumb = gestureFactory.crumb(with: characteristics, title: gesture.title)
+        interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
     }
     
     @objc func longPressRecognized(_ sender: UIScreenEdgePanGestureRecognizer) {
         let gesture = gestureFactory.gesture(from: sender)
-        let crumb = gestureFactory.crumb(from: gesture)
-        interceptionDelegate.interceptor(self, captured: gesture, crumb: crumb)
+        let characteristics = gestureFactory.characteristics(from: gesture)
+        let crumb = gestureFactory.crumb(with: characteristics, title: gesture.title)
+        interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
     }
     
 }

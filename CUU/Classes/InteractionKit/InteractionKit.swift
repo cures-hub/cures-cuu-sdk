@@ -60,14 +60,14 @@ public class InteractionKit {
         isActive = false
     }
     
-    public func fetch<T: IKDataObject>(_ type: T.Type, predicate: NSPredicate?, completion: (Array<IKDataObject>)->Void) {
+    public func fetch<T: IKCharacteristics>(_ type: T.Type, predicate: NSPredicate?, completion: (Array<IKCharacteristics>)->Void) {
         
-        /*if let storage = configuration?.storage {
+        if let storage = configuration?.storage {
             storage.fetch(type, predicate: predicate, completion: completion)
         } else{
             completion([])
         }
-        */
+        
         print("Something fetched")
     }
     
@@ -75,8 +75,8 @@ public class InteractionKit {
 
 extension InteractionKit: IKInterceptionDelegate {
     
-    public func interceptor(_ interceptor: IKInterceptor, captured dataObject: IKDataObject, crumb: IKCrumb)  {
-        //configuration?.storage.commit(dataObject, completion: nil)
+    public func interceptor(_ interceptor: IKInterceptor, captured dataObject: IKCharacteristics, crumb: IKInteraction)  {
+        configuration?.storage.commit(dataObject, completion: nil)
         
         // Send the interaction data to the CUU system.
         crumb.send()

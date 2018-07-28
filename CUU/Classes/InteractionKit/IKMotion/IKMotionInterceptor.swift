@@ -40,8 +40,9 @@ extension IKMotionInterceptor: IKCoreMotionShakeDelegate {
     
     public func report(motion: UIEventSubtype, of type: IKMotionType) {
         if let motionObject = motionFactory.motion(motion, type: type) {
-            let crumb = motionFactory.crumb(from: motionObject)
-            interceptionDelegate.interceptor(self, captured: motionObject, crumb: crumb)
+            let characteristics = motionFactory.characteristics(from: motionObject)
+            let crumb = motionFactory.crumb(with: characteristics, title: motionObject.title)
+            interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
         }
     }
 }

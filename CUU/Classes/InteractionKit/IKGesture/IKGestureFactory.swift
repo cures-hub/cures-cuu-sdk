@@ -107,8 +107,19 @@ extension IKGestureFactory {
         return gesture
     }
     
-    func crumb(from: IKGesture) -> IKGestureCrumb {
-        return IKGestureCrumb(name: "IKGesture :: " + from.title, gesture: from)
+    func characteristics(from: IKGesture) -> IKGestureCharacteristics {
+        let config = InteractionKit.shared.configuration
+        let context = config!.storage.persistentContainer.viewContext
+        return IKGestureCharacteristics(context: context, gesture: from)
+    }
+    
+    func crumb(with characteristics: IKGestureCharacteristics, title: String) -> IKInteraction {
+        let config = InteractionKit.shared.configuration
+        let context = config!.storage.persistentContainer.viewContext
+        
+        return IKInteraction(context: context,
+                             name: "IKGesture :: " + title,
+                             characteristics: characteristics)
     }
 }
 

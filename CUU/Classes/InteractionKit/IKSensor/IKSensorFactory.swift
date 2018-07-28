@@ -36,7 +36,18 @@ extension IKSensorFactory {
         return sensor
     }
     
-    func crumb(from: IKSensor) -> IKSensorCrumb {
-        return IKSensorCrumb(name: "IKSensor :: " + from.title, sensor: from)
+    func characteristics(from: IKSensor) -> IKSensorCharacteristics {
+        let config = InteractionKit.shared.configuration
+        let context = config!.storage.persistentContainer.viewContext
+        return IKSensorCharacteristics(context: context, sensor: from)
+    }
+    
+    func crumb(with characteristics: IKSensorCharacteristics, title: String) -> IKInteraction {
+        let config = InteractionKit.shared.configuration
+        let context = config!.storage.persistentContainer.viewContext
+        
+        return IKInteraction(context: context,
+                             name: "IKSensor :: " + title,
+                             characteristics: characteristics)
     }
 }
