@@ -13,6 +13,10 @@ public class CUUConfiguration {
     public var interactionKitConfiguration: IKConfiguration {
         return IKDefaultConfiguration(forUser: CUUUserManager.sharedManager.userId)
     }
+
+    public var personaKitConfiguration: IKConfiguration {
+        return PKDefaultConfiguration()
+    }
     
 }
 

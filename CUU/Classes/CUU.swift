@@ -12,6 +12,10 @@ public class CUU {
     public static var iKit: InteractionKit {
         return InteractionKit.shared
     }
+
+    static var personaKit: PersonaKit {
+        return PersonaKit.shared
+    }
     
     // - MARK: Methods
     /**
@@ -53,6 +57,11 @@ public class CUU {
             
             iKit.start()
         }
+
+        if options.contains(.Personas) {
+            personaKit.configure(with: configuration.personaKitConfiguration)
+            PersonaKit.shared.start()
+        }
     }
     
     /**
@@ -61,5 +70,6 @@ public class CUU {
     public static func stop() {
         FeatureKit.stop()
         iKit.stop()
+        PersonaKit.shared.stop()
     }
 }

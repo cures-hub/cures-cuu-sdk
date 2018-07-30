@@ -11,6 +11,7 @@ import UIKit
 enum CUUStartOption: Int {
     case Features = 0
     case Interactions
+    case Personas
 }
 
 protocol CUUStartViewDelegate : class {
@@ -25,7 +26,7 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
     
     weak var delegate : CUUStartViewDelegate?
     
-    var selectedOptions: [CUUStartOption] = [.Features, .Interactions]
+    var selectedOptions: [CUUStartOption] = [.Features, .Interactions, .Personas]
     
     // MARK: Initialization
     
@@ -44,6 +45,7 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
         
         self.kitStackView.addArrangedSubview(self.featureKitView)
         self.kitStackView.addArrangedSubview(self.interactionKitView)
+        self.kitStackView.addArrangedSubview(self.personaKitView)
         
         self.featureKitView.delegate = self
         self.interactionKitView.delegate = self
@@ -162,7 +164,15 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
     var interactionKitView : CUUStartOptionView = {
         let view = CUUStartOptionView(frame: .zero, option: .Interactions)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.titleLabel.text = "InteractionKit"
+        view.titleLabel.text = "Foo Bar"
+        view.contentLabel.text = "Information on application usage and device specifications."
+        return view
+    }()
+
+    var personaKitView : CUUStartOptionView = {
+        let view = CUUStartOptionView(frame: .zero, option: .Personas)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.titleLabel.text = "PersonaKit"
         view.contentLabel.text = "Information on application usage and device specifications."
         return view
     }()
