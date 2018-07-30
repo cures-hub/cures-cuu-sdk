@@ -13,14 +13,14 @@ import Foundation
 class IKAppEventCharacteristics: CUUCharacteristics {
     
     // MARK: - Properties
-    let interactionType: String = "IKAppEvent"
+    let interactionType: String
     
-    let type : String
+    let type: String = "IKAppEvent"
     
     // MARK: - Lifecycle
     
     init(appEvent: IKAppEvent) {
-        self.type = appEvent.type
+        self.interactionType = appEvent.title
         
         super.init()
     }
