@@ -59,8 +59,6 @@
 		8460E2705C9494DE915D1A669FD24015 /* UISwipeGestureRecognizerDirection+IKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F2D18CD6359DB2245AE0B14BBED54 /* UISwipeGestureRecognizerDirection+IKUtils.swift */; };
 		8A22FFFAF2D22714EC249952423AA515 /* IKEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EACB72C12A07F919D08F8113E0FAB1 /* IKEvent.swift */; };
 		8BA7C998504F8F7D0744BD9A98E01270 /* IKDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856339980C515F2FC227A8A69135964F /* IKDataObject.swift */; };
-		8F41D0D8210B59950013E1B8 /* IKInteraction+CoreDataProperties copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0D6210B59940013E1B8 /* IKInteraction+CoreDataProperties copy.swift */; };
-		8F41D0D9210B59950013E1B8 /* IKInteraction+CoreDataClass copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0D7210B59950013E1B8 /* IKInteraction+CoreDataClass copy.swift */; };
 		8F41D0EE210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0DE210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataClass.swift */; };
 		8F41D0EF210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0DF210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataProperties.swift */; };
 		8F41D0F0210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0E0210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataClass.swift */; };
@@ -81,6 +79,8 @@
 		8F41D101210B693A0013E1B8 /* IKCharacteristics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41D0FF210B693A0013E1B8 /* IKCharacteristics+CoreDataProperties.swift */; };
 		8FBBA76B21066861003777D8 /* IKData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBA76921066861003777D8 /* IKData.xcdatamodeld */; };
 		8FBBA76D21078985003777D8 /* IKCoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBA76C21078985003777D8 /* IKCoreDataStorage.swift */; };
+		8FDEC78021170E05009AF516 /* IKInteraction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC77E21170E05009AF516 /* IKInteraction+CoreDataProperties.swift */; };
+		8FDEC78121170E05009AF516 /* IKInteraction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC77F21170E05009AF516 /* IKInteraction+CoreDataClass.swift */; };
 		9031100D650BC1F9F75EE0F187C3D0FF /* Pods-CUU_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD6FF0FAF32B2F92500DFB18D545FB1 /* Pods-CUU_Tests-dummy.m */; };
 		9092EA58025FDBF3CE5498EA512AF0B6 /* IKDefaultViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE60FB547B3BE3E447333E5CEA418C7B /* IKDefaultViewEvent.swift */; };
 		91723459A727329EB76FC78E41D78C43 /* CUUConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A193D7AFF0D095D060B9BC725F017B /* CUUConstants.swift */; };
@@ -202,8 +202,6 @@
 		8C3E903E23A623787AE6A8EEF3BABA2B /* IKDefaultTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultTouch.swift; sourceTree = "<group>"; };
 		8E6CBE6250A88D0BD9FC54FC7AF4FBB2 /* Pods-CUU_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CUU_Tests.modulemap"; sourceTree = "<group>"; };
 		8E7D491867AFC99CD184FCC46381C1AD /* IKGestureType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKGestureType.swift; sourceTree = "<group>"; };
-		8F41D0D6210B59940013E1B8 /* IKInteraction+CoreDataProperties copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IKInteraction+CoreDataProperties copy.swift"; sourceTree = "<group>"; };
-		8F41D0D7210B59950013E1B8 /* IKInteraction+CoreDataClass copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IKInteraction+CoreDataClass copy.swift"; sourceTree = "<group>"; };
 		8F41D0DE210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKGestureCharacteristics+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8F41D0DF210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKGestureCharacteristics+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8F41D0E0210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKAppEventCharacteristics+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -224,6 +222,8 @@
 		8F41D0FF210B693A0013E1B8 /* IKCharacteristics+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IKCharacteristics+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8FBBA76A21066861003777D8 /* IKData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IKData.xcdatamodel; sourceTree = "<group>"; };
 		8FBBA76C21078985003777D8 /* IKCoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKCoreDataStorage.swift; sourceTree = "<group>"; };
+		8FDEC77E21170E05009AF516 /* IKInteraction+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IKInteraction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8FDEC77F21170E05009AF516 /* IKInteraction+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IKInteraction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8FE09703D91F630D58373A3526823C23 /* IKDefaultGestureFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultGestureFactory.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9556A541AED36B0BABB3D493CD5AB4EC /* CUUSessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUSessionManager.swift; sourceTree = "<group>"; };
@@ -461,9 +461,11 @@
 			path = IKTouch;
 			sourceTree = "<group>";
 		};
-		8F41D0D5210B57B70013E1B8 /* Core Data */ = {
+		8F41D0D5210B57B70013E1B8 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				8FDEC77F21170E05009AF516 /* IKInteraction+CoreDataClass.swift */,
+				8FDEC77E21170E05009AF516 /* IKInteraction+CoreDataProperties.swift */,
 				8F41D0FE210B693A0013E1B8 /* IKCharacteristics+CoreDataClass.swift */,
 				8F41D0FF210B693A0013E1B8 /* IKCharacteristics+CoreDataProperties.swift */,
 				8F41D0DE210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataClass.swift */,
@@ -482,11 +484,9 @@
 				8F41D0EB210B5B0A0013E1B8 /* IKEventCharacteristics+CoreDataProperties.swift */,
 				8F41D0EC210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataClass.swift */,
 				8F41D0ED210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataProperties.swift */,
-				8F41D0D6210B59940013E1B8 /* IKInteraction+CoreDataProperties copy.swift */,
-				8F41D0D7210B59950013E1B8 /* IKInteraction+CoreDataClass copy.swift */,
 				8FBBA76921066861003777D8 /* IKData.xcdatamodeld */,
 			);
-			path = "Core Data";
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		8FCD9D29988292AF930B0E48F5E0E902 /* Helper */ = {
@@ -595,7 +595,7 @@
 			isa = PBXGroup;
 			children = (
 				3005F907EC98921DD944B65F002A6EAE /* IKConfiguration.swift */,
-				8F41D0D5210B57B70013E1B8 /* Core Data */,
+				8F41D0D5210B57B70013E1B8 /* CoreData */,
 				856339980C515F2FC227A8A69135964F /* IKDataObject.swift */,
 				213C6F5CC1CC25D2974C2A68B44C994C /* IKInterceptionDelegate.swift */,
 				B238F7085737421527723098905DDA58 /* IKInterceptor.swift */,
@@ -860,6 +860,7 @@
 				72B19EDDC1B7D7A168E2B1589D693D7B /* CUUStartViewController.swift in Sources */,
 				A4122A4F1499746870022020CD92B566 /* CUUUserManager.swift in Sources */,
 				0B675C44ABB44D8AD51D6AEC1FD6538D /* CUUUtils.swift in Sources */,
+				8FDEC78021170E05009AF516 /* IKInteraction+CoreDataProperties.swift in Sources */,
 				19F8FF2955DC0E3516661F0C2F4F902C /* CUUViewControllers.swift in Sources */,
 				E2F94DB3316766D78B4DDED3575F70F5 /* FeatureKit.swift in Sources */,
 				B0C3BA28C737DF82722DAF204A23DC6D /* FKActionCrumb.swift in Sources */,
@@ -881,7 +882,6 @@
 				CA3487B6C4576E1D424BFE35194AC506 /* IKDefaultDevice.swift in Sources */,
 				565D2D3AF3FD10C2B8ADDBB2D770713C /* IKDefaultDeviceFactory.swift in Sources */,
 				196CDBD468D806ACBCF7C212025A9975 /* IKDefaultEvent.swift in Sources */,
-				8F41D0D9210B59950013E1B8 /* IKInteraction+CoreDataClass copy.swift in Sources */,
 				776BF9C90F8CC1E9CE2ED04A62CA2FBD /* IKDefaultEventFactory.swift in Sources */,
 				9FF8DB5B15742BD282BB1C43FE17B3A2 /* IKDefaultGesture.swift in Sources */,
 				007E292555C11DE1B35CA5609EA5A3FA /* IKDefaultGestureFactory.swift in Sources */,
@@ -900,7 +900,7 @@
 				8A22FFFAF2D22714EC249952423AA515 /* IKEvent.swift in Sources */,
 				EC125CF48BFA557EB08ABD25393AE716 /* IKEventFactory.swift in Sources */,
 				8F41D0F8210B5B0A0013E1B8 /* IKDeviceCharacteristics+CoreDataClass.swift in Sources */,
-				8F41D0D8210B59950013E1B8 /* IKInteraction+CoreDataProperties copy.swift in Sources */,
+				8FDEC78121170E05009AF516 /* IKInteraction+CoreDataClass.swift in Sources */,
 				8F41D0FB210B5B0A0013E1B8 /* IKEventCharacteristics+CoreDataProperties.swift in Sources */,
 				8F41D0EE210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataClass.swift in Sources */,
 				B8134A0C4AA8575681A6EF5C59912E71 /* IKEventInterceptor.swift in Sources */,

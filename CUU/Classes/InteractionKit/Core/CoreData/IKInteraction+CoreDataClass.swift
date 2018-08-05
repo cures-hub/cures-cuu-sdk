@@ -1,6 +1,6 @@
 //
 //  IKInteraction+CoreDataClass.swift
-//  
+//
 //
 //  Created by Lara Marie Reimer on 27.07.18.
 //
@@ -11,7 +11,7 @@ import CoreData
 
 @objc(IKInteraction)
 public class IKInteraction: NSManagedObject, Encodable {
-
+    
     init(context: NSManagedObjectContext, name: String, characteristics: IKCharacteristics) {
         let entity = NSEntityDescription.entity(forEntityName: "IKInteraction", in: context)
         super.init(entity: entity!, insertInto: context)

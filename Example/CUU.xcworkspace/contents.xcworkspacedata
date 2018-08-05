@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../CUU/Classes/InteractionKit/Core/Core Data/IKInteraction+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../CUU/Classes/InteractionKit/Core/Core Data/IKInteraction+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:CUU.xcodeproj">
    </FileRef>
    <FileRef
