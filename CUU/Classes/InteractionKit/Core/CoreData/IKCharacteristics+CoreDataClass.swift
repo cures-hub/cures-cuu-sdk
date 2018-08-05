@@ -12,6 +12,16 @@ import CoreData
 @objc(IKCharacteristics)
 public class IKCharacteristics: NSManagedObject, Codable {
     
+    // MARK: - Serialization
+    
+    private enum CodingKeys: String, CodingKey {
+        case title
+        case startDate
+        case endDate
+        case session
+        case user
+    }
+    
     // MARK: - Decodable
     
     required convenience public init(from decoder: Decoder) throws {
@@ -22,10 +32,23 @@ public class IKCharacteristics: NSManagedObject, Codable {
         }
         
         self.init(entity: entity, insertInto: managedObjectContext)
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.startDate = try container.decode(Date.self, forKey: .startDate)
+        self.endDate = try container.decode(Date.self, forKey: .endDate)
+        self.session = try container.decode(String.self, forKey: .session)
+        self.user = try container.decode(String.self, forKey: .user)
     }
     
     // MARK : - Encodable
     
     public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(title, forKey: .title)
+        try container.encode(startDate, forKey: .startDate)
+        try container.encode(endDate, forKey: .endDate)
+        try container.encode(session, forKey: .session)
+        try container.encode(user, forKey: .user)
     }
 }

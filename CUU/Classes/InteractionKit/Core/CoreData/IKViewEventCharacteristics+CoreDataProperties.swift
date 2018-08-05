@@ -12,10 +12,6 @@ import CoreData
 
 extension IKViewEventCharacteristics {
 
-    @nonobjc public class func createFetchRequest() -> NSFetchRequest<IKViewEventCharacteristics> {
-        return NSFetchRequest<IKViewEventCharacteristics>(entityName: "IKViewEventCharacteristics")
-    }
-
     @NSManaged public var globalViewOriginX: Double
     @NSManaged public var globalViewOriginY: Double
     @NSManaged public var subviewCount: Int16

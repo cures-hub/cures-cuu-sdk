@@ -12,10 +12,6 @@ import CoreData
 
 extension IKSensorCharacteristics {
 
-    @nonobjc public class func createFetchRequest() -> NSFetchRequest<IKSensorCharacteristics> {
-        return NSFetchRequest<IKSensorCharacteristics>(entityName: "IKSensorCharacteristics")
-    }
-
     @NSManaged public var type: String
     @NSManaged public var x: Double
     @NSManaged public var y: Double

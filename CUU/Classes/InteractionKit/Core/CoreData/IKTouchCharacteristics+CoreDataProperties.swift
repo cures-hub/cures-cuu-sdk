@@ -12,10 +12,6 @@ import CoreData
 
 extension IKTouchCharacteristics {
 
-    @nonobjc public class func createFetchRequest() -> NSFetchRequest<IKTouchCharacteristics> {
-        return NSFetchRequest<IKTouchCharacteristics>(entityName: "IKTouchCharacteristics")
-    }
-
     @NSManaged public var force: Double
     @NSManaged public var locationX: Double
     @NSManaged public var locationY: Double

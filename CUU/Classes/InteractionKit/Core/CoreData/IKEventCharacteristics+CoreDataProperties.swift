@@ -12,10 +12,6 @@ import CoreData
 
 extension IKEventCharacteristics {
 
-    @nonobjc public class func createFetchRequest() -> NSFetchRequest<IKEventCharacteristics> {
-        return NSFetchRequest<IKEventCharacteristics>(entityName: "IKEventCharacteristics")
-    }
-
     @NSManaged public var parameter: String
     @NSManaged public var type: String
 

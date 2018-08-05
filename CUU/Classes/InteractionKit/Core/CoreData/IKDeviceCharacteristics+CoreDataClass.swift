@@ -19,9 +19,11 @@ public class IKDeviceCharacteristics: IKCharacteristics {
         
         self.init(entity: entity, insertInto: context)
         
+        self.title = device.title
         self.startDate = device.startDate
         self.endDate = device.endDate
-        self.title = device.title
+        self.session = device._session
+        self.user = device._user
         self.commonDeviceName = device.commonDeviceName
         self.deviceName = device.deviceName
         self.deviceModel = device.deviceModel
@@ -38,9 +40,11 @@ public class IKDeviceCharacteristics: IKCharacteristics {
     // MARK: - Serialization
     
     private enum CodingKeys: String, CodingKey {
+        case title
         case startDate
         case endDate
-        case title
+        case session
+        case user
         case commonDeviceName
         case deviceName
         case deviceModel
@@ -66,9 +70,11 @@ public class IKDeviceCharacteristics: IKCharacteristics {
         self.init(entity: entity, insertInto: managedObjectContext)
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.title = try container.decode(String.self, forKey: .title)
         self.startDate = try container.decode(Date.self, forKey: .startDate)
         self.endDate = try container.decode(Date.self, forKey: .endDate)
-        self.title = try container.decode(String.self, forKey: .title)
+        self.session = try container.decode(String.self, forKey: .session)
+        self.user = try container.decode(String.self, forKey: .user)
         self.commonDeviceName = try container.decode(String.self, forKey: .commonDeviceName)
         self.deviceName = try container.decode(String.self, forKey: .deviceName)
         self.deviceModel = try container.decode(String.self, forKey: .deviceModel)
@@ -86,9 +92,11 @@ public class IKDeviceCharacteristics: IKCharacteristics {
     
     public override func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(title, forKey: .title)
         try container.encode(startDate, forKey: .startDate)
         try container.encode(endDate, forKey: .endDate)
-        try container.encode(title, forKey: .title)
+        try container.encode(session, forKey: .session)
+        try container.encode(user, forKey: .user)
         try container.encode(commonDeviceName, forKey: .commonDeviceName)
         try container.encode(deviceName, forKey: .deviceName)
         try container.encode(deviceModel, forKey: .deviceModel)

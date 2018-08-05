@@ -31,18 +31,7 @@ class IKCoreDataStorage: IKStorage {
         let container = NSPersistentContainer(name: "IKData", managedObjectModel: mom)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                print("Error initializing container")
             }
         })
         return container
@@ -55,23 +44,26 @@ class IKCoreDataStorage: IKStorage {
             do {
                 try context.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                print("Error saving data")
             }
         }
     }
     
     func fetch<T>(_ type: T.Type, predicate: NSPredicate?, completion: (Array<IKCharacteristics>) -> Void) where T : IKCharacteristics {
         var results : [IKCharacteristics] = []
+        let request = NSFetchRequest<IKCharacteristics>(entityName: String(describing: type))
+        if let predicate = predicate {
+            request.predicate = predicate
+        }
+        
         do {
-            results = try type.createFetchRequest().execute()
+            results = try persistentContainer.viewContext.fetch(request)
         } catch _ {
             print("Error fetching results")
         }
         
+        print(results)
+        
         completion(results)
     }
-
 }

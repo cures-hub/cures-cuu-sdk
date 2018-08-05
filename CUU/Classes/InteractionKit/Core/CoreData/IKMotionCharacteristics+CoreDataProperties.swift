@@ -12,10 +12,6 @@ import CoreData
 
 extension IKMotionCharacteristics {
 
-    @nonobjc public class func createFetchRequest() -> NSFetchRequest<IKMotionCharacteristics> {
-        return NSFetchRequest<IKMotionCharacteristics>(entityName: "IKMotionCharacteristics")
-    }
-
     @NSManaged public var type: String
 
 }

@@ -11,6 +11,7 @@ import UIKit
 enum CUUStartOption: Int {
     case Features = 0
     case Interactions
+    case Behavior
 }
 
 protocol CUUStartViewDelegate : class {
@@ -25,7 +26,7 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
     
     weak var delegate : CUUStartViewDelegate?
     
-    var selectedOptions: [CUUStartOption] = [.Features, .Interactions]
+    var selectedOptions: [CUUStartOption] = [.Features, .Interactions, .Behavior]
     
     // MARK: Initialization
     
@@ -44,9 +45,11 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
         
         self.kitStackView.addArrangedSubview(self.featureKitView)
         self.kitStackView.addArrangedSubview(self.interactionKitView)
+        self.kitStackView.addArrangedSubview(self.behaviorKitView)
         
         self.featureKitView.delegate = self
         self.interactionKitView.delegate = self
+        self.behaviorKitView.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -164,6 +167,14 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.titleLabel.text = "InteractionKit"
         view.contentLabel.text = "Information on application usage and device specifications."
+        return view
+    }()
+    
+    var behaviorKitView : CUUStartOptionView = {
+        let view = CUUStartOptionView(frame: .zero, option: .Behavior)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.titleLabel.text = "BehaviorKit"
+        view.contentLabel.text = "Information on analyzed user behavior. Allows to draw conclusions on user gender, age and application usage skill level."
         return view
     }()
     

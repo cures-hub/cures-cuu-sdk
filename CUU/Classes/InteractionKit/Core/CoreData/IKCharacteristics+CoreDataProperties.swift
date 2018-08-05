@@ -12,7 +12,9 @@ import CoreData
 
 extension IKCharacteristics {
 
-    @nonobjc public class func createFetchRequest() -> NSFetchRequest<IKCharacteristics> {
-        return NSFetchRequest<IKCharacteristics>(entityName: "IKCharacteristics")
-    }
+    @NSManaged public var title: String
+    @NSManaged public var session: String
+    @NSManaged public var startDate: Date
+    @NSManaged public var endDate: Date
+    @NSManaged public var user: String
 }

@@ -13,6 +13,13 @@ public class CUU {
         return InteractionKit.shared
     }
     
+    /**
+     * The shared BehaviorKit instance.
+     */
+    public static var bKit: BehaviorKit {
+        return BehaviorKit.shared
+    }
+    
     // - MARK: Methods
     /**
      * Sets the active CUUConfiguration.
@@ -53,6 +60,12 @@ public class CUU {
             
             iKit.start()
         }
+        
+        if options.contains(.Behavior) {
+            bKit.configure(with: configuration.behaviorKitConfiguration)
+            
+            bKit.start()
+        }
     }
     
     /**
@@ -61,5 +74,6 @@ public class CUU {
     public static func stop() {
         FeatureKit.stop()
         iKit.stop()
+        bKit.stop()
     }
 }

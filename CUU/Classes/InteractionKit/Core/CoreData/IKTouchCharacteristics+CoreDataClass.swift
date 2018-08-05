@@ -19,6 +19,11 @@ public class IKTouchCharacteristics: IKCharacteristics {
         
         self.init(entity: entity, insertInto: context)
         
+        self.title = touch.title
+        self.startDate = touch.startDate
+        self.endDate = touch.endDate
+        self.session = touch._session
+        self.user = touch._user
         self.type = touch.type
         self.tapCount = Int16(touch.tapCount)
         self.force = touch.force
@@ -31,6 +36,11 @@ public class IKTouchCharacteristics: IKCharacteristics {
     // MARK: - Serialization
     
     private enum CodingKeys: String, CodingKey {
+        case title
+        case startDate
+        case endDate
+        case session
+        case user
         case type
         case tapCount
         case force
@@ -52,6 +62,11 @@ public class IKTouchCharacteristics: IKCharacteristics {
         self.init(entity: entity, insertInto: managedObjectContext)
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.startDate = try container.decode(Date.self, forKey: .startDate)
+        self.endDate = try container.decode(Date.self, forKey: .endDate)
+        self.session = try container.decode(String.self, forKey: .session)
+        self.user = try container.decode(String.self, forKey: .user)
         self.type = try container.decode(String.self, forKey: .type)
         self.tapCount = try container.decode(Int16.self, forKey: .tapCount)
         self.force = try container.decode(Double.self, forKey: .force)
@@ -65,6 +80,11 @@ public class IKTouchCharacteristics: IKCharacteristics {
     
     public override func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(title, forKey: .title)
+        try container.encode(startDate, forKey: .startDate)
+        try container.encode(endDate, forKey: .endDate)
+        try container.encode(session, forKey: .session)
+        try container.encode(user, forKey: .user)
         try container.encode(type, forKey: .type)
         try container.encode(tapCount, forKey: .tapCount)
         try container.encode(force, forKey: .force)

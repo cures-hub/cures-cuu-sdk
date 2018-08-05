@@ -14,5 +14,11 @@ public class CUUConfiguration {
         return IKDefaultConfiguration(forUser: CUUUserManager.sharedManager.userId)
     }
     
+    /**
+     * The configuration for BehaviorKit.
+     */
+    var behaviorKitConfiguration: BKConfiguration {
+        return BKDefaultConfiguration(forUser: CUUUserManager.sharedManager.userId)
+    }
 }
 

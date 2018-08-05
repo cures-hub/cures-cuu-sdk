@@ -12,10 +12,6 @@ import CoreData
 
 extension IKGestureCharacteristics {
 
-    @nonobjc public class func createFetchRequest() -> NSFetchRequest<IKGestureCharacteristics> {
-        return NSFetchRequest<IKGestureCharacteristics>(entityName: "IKGestureCharacteristics")
-    }
-
     @NSManaged public var direction: String
     @NSManaged public var locationX: Double
     @NSManaged public var locationY: Double

@@ -81,6 +81,53 @@
 		8FBBA76D21078985003777D8 /* IKCoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBA76C21078985003777D8 /* IKCoreDataStorage.swift */; };
 		8FDEC78021170E05009AF516 /* IKInteraction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC77E21170E05009AF516 /* IKInteraction+CoreDataProperties.swift */; };
 		8FDEC78121170E05009AF516 /* IKInteraction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC77F21170E05009AF516 /* IKInteraction+CoreDataClass.swift */; };
+		8FDEC7BC21171137009AF516 /* BKPredictionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC78421171136009AF516 /* BKPredictionDelegate.swift */; };
+		8FDEC7BD21171137009AF516 /* BKContextFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC78521171136009AF516 /* BKContextFactory.swift */; };
+		8FDEC7BE21171137009AF516 /* BKSituationPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC78621171136009AF516 /* BKSituationPredictor.swift */; };
+		8FDEC7BF21171137009AF516 /* BKStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC78721171136009AF516 /* BKStorage.swift */; };
+		8FDEC7C021171137009AF516 /* BKPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC78821171136009AF516 /* BKPredictor.swift */; };
+		8FDEC7C121171137009AF516 /* BKConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC78921171136009AF516 /* BKConfiguration.swift */; };
+		8FDEC7C221171137009AF516 /* BKSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC78B21171136009AF516 /* BKSubscriber.swift */; };
+		8FDEC7C321171137009AF516 /* BKSubscriptionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC78C21171136009AF516 /* BKSubscriptionStrategy.swift */; };
+		8FDEC7C421171137009AF516 /* BKPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC78D21171136009AF516 /* BKPublisher.swift */; };
+		8FDEC7C521171137009AF516 /* BehaviorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC78E21171136009AF516 /* BehaviorKit.swift */; };
+		8FDEC7C621171137009AF516 /* BKDefaultSituation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC79021171136009AF516 /* BKDefaultSituation.swift */; };
+		8FDEC7C721171137009AF516 /* BKTemplateSituation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC79121171136009AF516 /* BKTemplateSituation.swift */; };
+		8FDEC7C821171137009AF516 /* BKGenderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC79321171136009AF516 /* BKGenderFactory.swift */; };
+		8FDEC7C921171137009AF516 /* BKGenderContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC79421171136009AF516 /* BKGenderContext.swift */; };
+		8FDEC7CA21171137009AF516 /* GenderContext.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC79521171136009AF516 /* GenderContext.mlmodel */; };
+		8FDEC7CB21171137009AF516 /* BKGenderFeatureGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC79621171136009AF516 /* BKGenderFeatureGenerator.swift */; };
+		8FDEC7CC21171137009AF516 /* UXInconsistencyContext.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC79821171136009AF516 /* UXInconsistencyContext.mlmodel */; };
+		8FDEC7CD21171137009AF516 /* BKUXInconsistencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC79921171136009AF516 /* BKUXInconsistencyFactory.swift */; };
+		8FDEC7CE21171137009AF516 /* BKUXInconsistencyContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC79A21171136009AF516 /* BKUXInconsistencyContext.swift */; };
+		8FDEC7CF21171137009AF516 /* BKUXInconsistencyFeatureGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC79B21171136009AF516 /* BKUXInconsistencyFeatureGenerator.swift */; };
+		8FDEC7D021171137009AF516 /* BKContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC79C21171136009AF516 /* BKContext.swift */; };
+		8FDEC7D121171137009AF516 /* BKAgeGroupContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC79E21171136009AF516 /* BKAgeGroupContext.swift */; };
+		8FDEC7D221171137009AF516 /* BKAgeGroupFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC79F21171136009AF516 /* BKAgeGroupFactory.swift */; };
+		8FDEC7D321171137009AF516 /* BKAgeGroupFeatureGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7A021171136009AF516 /* BKAgeGroupFeatureGenerator.swift */; };
+		8FDEC7D421171137009AF516 /* AgeGroupContext.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7A121171136009AF516 /* AgeGroupContext.mlmodel */; };
+		8FDEC7D521171137009AF516 /* BKMissingInteractionElementFeatureGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7A321171136009AF516 /* BKMissingInteractionElementFeatureGenerator.swift */; };
+		8FDEC7D621171137009AF516 /* MissingInteractionElementContext.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7A421171136009AF516 /* MissingInteractionElementContext.mlmodel */; };
+		8FDEC7D721171137009AF516 /* BKMissingInteractionElementContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7A521171136009AF516 /* BKMissingInteractionElementContext.swift */; };
+		8FDEC7D821171137009AF516 /* BKMissingInteractionElementFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7A621171136009AF516 /* BKMissingInteractionElementFactory.swift */; };
+		8FDEC7D921171137009AF516 /* BKSmartphoneExperienceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7A821171136009AF516 /* BKSmartphoneExperienceFactory.swift */; };
+		8FDEC7DA21171137009AF516 /* SmartphoneExperienceContext.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7A921171136009AF516 /* SmartphoneExperienceContext.mlmodel */; };
+		8FDEC7DB21171137009AF516 /* BKSmartphoneExperienceContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7AA21171136009AF516 /* BKSmartphoneExperienceContext.swift */; };
+		8FDEC7DC21171137009AF516 /* BKSmartphoneExperienceFeatureGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7AB21171136009AF516 /* BKSmartphoneExperienceFeatureGenerator.swift */; };
+		8FDEC7DD21171137009AF516 /* BKSituation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7AC21171136009AF516 /* BKSituation.swift */; };
+		8FDEC7DE21171137009AF516 /* BKOrientationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7AE21171136009AF516 /* BKOrientationFactory.swift */; };
+		8FDEC7DF21171137009AF516 /* OrientationContext.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7AF21171136009AF516 /* OrientationContext.mlmodel */; };
+		8FDEC7E021171137009AF516 /* BKOrientationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7B021171136009AF516 /* BKOrientationContext.swift */; };
+		8FDEC7E121171137009AF516 /* BKOrientationFeatureGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7B121171136009AF516 /* BKOrientationFeatureGenerator.swift */; };
+		8FDEC7E221171137009AF516 /* BKProductivenessFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7B321171136009AF516 /* BKProductivenessFactory.swift */; };
+		8FDEC7E321171137009AF516 /* ProdutivenessContext.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7B421171136009AF516 /* ProdutivenessContext.mlmodel */; };
+		8FDEC7E421171137009AF516 /* BKProdutivenessFeatureGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7B521171136009AF516 /* BKProdutivenessFeatureGenerator.swift */; };
+		8FDEC7E521171137009AF516 /* BKProdutivenessContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7B621171136009AF516 /* BKProdutivenessContext.swift */; };
+		8FDEC7E621171137009AF516 /* BKTemplateContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7B721171136009AF516 /* BKTemplateContext.swift */; };
+		8FDEC7E721171137009AF516 /* BKStatusBarWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7B921171136009AF516 /* BKStatusBarWindow.swift */; };
+		8FDEC7E821171137009AF516 /* SigmaDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7BB21171136009AF516 /* SigmaDistrib.swift */; };
+		8FDEC7EA211712C6009AF516 /* BKDefaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7E9211712C6009AF516 /* BKDefaultConfiguration.swift */; };
+		8FDEC7EC21171349009AF516 /* BKDefaultPredictorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDEC7EB21171349009AF516 /* BKDefaultPredictorConfiguration.swift */; };
 		9031100D650BC1F9F75EE0F187C3D0FF /* Pods-CUU_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD6FF0FAF32B2F92500DFB18D545FB1 /* Pods-CUU_Tests-dummy.m */; };
 		9092EA58025FDBF3CE5498EA512AF0B6 /* IKDefaultViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE60FB547B3BE3E447333E5CEA418C7B /* IKDefaultViewEvent.swift */; };
 		91723459A727329EB76FC78E41D78C43 /* CUUConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A193D7AFF0D095D060B9BC725F017B /* CUUConstants.swift */; };
@@ -102,7 +149,6 @@
 		C2DDF45ED0A76E215C16DC52CA070D88 /* IKAppEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B77712F5C31517506537847A103A0BC /* IKAppEventType.swift */; };
 		C47409A1FA13087B809EDD0001EEA982 /* IKViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94F26BBE0B6AE21608232E1DF6EB3DF /* IKViewControllers.swift */; };
 		C48A26C6FD3AE3594BFEF804DE22B5CB /* IKAppEventInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C22F68141DB4F07E95B748326B274C5 /* IKAppEventInterceptor.swift */; };
-		C8C9395E345E6FD92EA93C82752A1817 /* IKAppEventType.temp_caseinsensitive_rename.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C181DE0D0C34B5C695B0613924CB41E /* IKAppEventType.temp_caseinsensitive_rename.swift */; };
 		CA3487B6C4576E1D424BFE35194AC506 /* IKDefaultDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9317D34F70A5424267F57C1334975 /* IKDefaultDevice.swift */; };
 		CACC2004B7B9EA4AABBFAAC170598596 /* IKMotionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD737CA04FC2AFEF72806D9B88653915 /* IKMotionType.swift */; };
 		CC22F6A1A3F123F5A7553B0DEC525410 /* Unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2B78A8870BF095F380CD64B7DFADBE0 /* Unchecked@2x.png */; };
@@ -174,7 +220,6 @@
 		39E616638B3DAF97420DBA69974D546A /* IKDefaultGesture.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultGesture.swift; sourceTree = "<group>"; };
 		3CF4F38AC43857759768482C1D0F71AF /* CUU-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CUU-umbrella.h"; sourceTree = "<group>"; };
 		45F423ECD4F0C9095144313D4A4E3B6A /* FKActionCrumb.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FKActionCrumb.swift; sourceTree = "<group>"; };
-		4C181DE0D0C34B5C695B0613924CB41E /* IKAppEventType.temp_caseinsensitive_rename.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKAppEventType.temp_caseinsensitive_rename.swift; sourceTree = "<group>"; };
 		4D12048AF151CB6781D172E38F7BCBD8 /* CUU-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CUU-dummy.m"; sourceTree = "<group>"; };
 		5B77712F5C31517506537847A103A0BC /* IKAppEventType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKAppEventType.swift; sourceTree = "<group>"; };
 		5BB589581AC3020AF46EA68945953B19 /* FeatureKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FeatureKit.swift; sourceTree = "<group>"; };
@@ -224,6 +269,53 @@
 		8FBBA76C21078985003777D8 /* IKCoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKCoreDataStorage.swift; sourceTree = "<group>"; };
 		8FDEC77E21170E05009AF516 /* IKInteraction+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IKInteraction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8FDEC77F21170E05009AF516 /* IKInteraction+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IKInteraction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8FDEC78421171136009AF516 /* BKPredictionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKPredictionDelegate.swift; sourceTree = "<group>"; };
+		8FDEC78521171136009AF516 /* BKContextFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKContextFactory.swift; sourceTree = "<group>"; };
+		8FDEC78621171136009AF516 /* BKSituationPredictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKSituationPredictor.swift; sourceTree = "<group>"; };
+		8FDEC78721171136009AF516 /* BKStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKStorage.swift; sourceTree = "<group>"; };
+		8FDEC78821171136009AF516 /* BKPredictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKPredictor.swift; sourceTree = "<group>"; };
+		8FDEC78921171136009AF516 /* BKConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKConfiguration.swift; sourceTree = "<group>"; };
+		8FDEC78B21171136009AF516 /* BKSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKSubscriber.swift; sourceTree = "<group>"; };
+		8FDEC78C21171136009AF516 /* BKSubscriptionStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKSubscriptionStrategy.swift; sourceTree = "<group>"; };
+		8FDEC78D21171136009AF516 /* BKPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKPublisher.swift; sourceTree = "<group>"; };
+		8FDEC78E21171136009AF516 /* BehaviorKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BehaviorKit.swift; sourceTree = "<group>"; };
+		8FDEC79021171136009AF516 /* BKDefaultSituation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKDefaultSituation.swift; sourceTree = "<group>"; };
+		8FDEC79121171136009AF516 /* BKTemplateSituation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKTemplateSituation.swift; sourceTree = "<group>"; };
+		8FDEC79321171136009AF516 /* BKGenderFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKGenderFactory.swift; sourceTree = "<group>"; };
+		8FDEC79421171136009AF516 /* BKGenderContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKGenderContext.swift; sourceTree = "<group>"; };
+		8FDEC79521171136009AF516 /* GenderContext.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = GenderContext.mlmodel; sourceTree = "<group>"; };
+		8FDEC79621171136009AF516 /* BKGenderFeatureGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKGenderFeatureGenerator.swift; sourceTree = "<group>"; };
+		8FDEC79821171136009AF516 /* UXInconsistencyContext.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = UXInconsistencyContext.mlmodel; sourceTree = "<group>"; };
+		8FDEC79921171136009AF516 /* BKUXInconsistencyFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKUXInconsistencyFactory.swift; sourceTree = "<group>"; };
+		8FDEC79A21171136009AF516 /* BKUXInconsistencyContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKUXInconsistencyContext.swift; sourceTree = "<group>"; };
+		8FDEC79B21171136009AF516 /* BKUXInconsistencyFeatureGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKUXInconsistencyFeatureGenerator.swift; sourceTree = "<group>"; };
+		8FDEC79C21171136009AF516 /* BKContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKContext.swift; sourceTree = "<group>"; };
+		8FDEC79E21171136009AF516 /* BKAgeGroupContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKAgeGroupContext.swift; sourceTree = "<group>"; };
+		8FDEC79F21171136009AF516 /* BKAgeGroupFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKAgeGroupFactory.swift; sourceTree = "<group>"; };
+		8FDEC7A021171136009AF516 /* BKAgeGroupFeatureGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKAgeGroupFeatureGenerator.swift; sourceTree = "<group>"; };
+		8FDEC7A121171136009AF516 /* AgeGroupContext.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AgeGroupContext.mlmodel; sourceTree = "<group>"; };
+		8FDEC7A321171136009AF516 /* BKMissingInteractionElementFeatureGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKMissingInteractionElementFeatureGenerator.swift; sourceTree = "<group>"; };
+		8FDEC7A421171136009AF516 /* MissingInteractionElementContext.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MissingInteractionElementContext.mlmodel; sourceTree = "<group>"; };
+		8FDEC7A521171136009AF516 /* BKMissingInteractionElementContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKMissingInteractionElementContext.swift; sourceTree = "<group>"; };
+		8FDEC7A621171136009AF516 /* BKMissingInteractionElementFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKMissingInteractionElementFactory.swift; sourceTree = "<group>"; };
+		8FDEC7A821171136009AF516 /* BKSmartphoneExperienceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKSmartphoneExperienceFactory.swift; sourceTree = "<group>"; };
+		8FDEC7A921171136009AF516 /* SmartphoneExperienceContext.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SmartphoneExperienceContext.mlmodel; sourceTree = "<group>"; };
+		8FDEC7AA21171136009AF516 /* BKSmartphoneExperienceContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKSmartphoneExperienceContext.swift; sourceTree = "<group>"; };
+		8FDEC7AB21171136009AF516 /* BKSmartphoneExperienceFeatureGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKSmartphoneExperienceFeatureGenerator.swift; sourceTree = "<group>"; };
+		8FDEC7AC21171136009AF516 /* BKSituation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKSituation.swift; sourceTree = "<group>"; };
+		8FDEC7AE21171136009AF516 /* BKOrientationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKOrientationFactory.swift; sourceTree = "<group>"; };
+		8FDEC7AF21171136009AF516 /* OrientationContext.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = OrientationContext.mlmodel; sourceTree = "<group>"; };
+		8FDEC7B021171136009AF516 /* BKOrientationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKOrientationContext.swift; sourceTree = "<group>"; };
+		8FDEC7B121171136009AF516 /* BKOrientationFeatureGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKOrientationFeatureGenerator.swift; sourceTree = "<group>"; };
+		8FDEC7B321171136009AF516 /* BKProductivenessFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKProductivenessFactory.swift; sourceTree = "<group>"; };
+		8FDEC7B421171136009AF516 /* ProdutivenessContext.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ProdutivenessContext.mlmodel; sourceTree = "<group>"; };
+		8FDEC7B521171136009AF516 /* BKProdutivenessFeatureGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKProdutivenessFeatureGenerator.swift; sourceTree = "<group>"; };
+		8FDEC7B621171136009AF516 /* BKProdutivenessContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKProdutivenessContext.swift; sourceTree = "<group>"; };
+		8FDEC7B721171136009AF516 /* BKTemplateContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKTemplateContext.swift; sourceTree = "<group>"; };
+		8FDEC7B921171136009AF516 /* BKStatusBarWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BKStatusBarWindow.swift; sourceTree = "<group>"; };
+		8FDEC7BB21171136009AF516 /* SigmaDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigmaDistrib.swift; sourceTree = "<group>"; };
+		8FDEC7E9211712C6009AF516 /* BKDefaultConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKDefaultConfiguration.swift; sourceTree = "<group>"; };
+		8FDEC7EB21171349009AF516 /* BKDefaultPredictorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BKDefaultPredictorConfiguration.swift; sourceTree = "<group>"; };
 		8FE09703D91F630D58373A3526823C23 /* IKDefaultGestureFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultGestureFactory.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9556A541AED36B0BABB3D493CD5AB4EC /* CUUSessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUSessionManager.swift; sourceTree = "<group>"; };
@@ -346,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				C5A61560E28E3E806902D8EE362929C3 /* CUU.swift */,
+				8FDEC78221171136009AF516 /* BehaviorKit */,
 				3D76DDFE58611B131505082549454C6E /* CUUCore */,
 				7303AAEF4E6C7D82C6E5E139EB3F0B89 /* FeatureKit */,
 				C2DF82E46A92AA45B13497B2E3DA7CD5 /* InteractionKit */,
@@ -382,7 +475,6 @@
 				147D66B921E4DEA4A974D0F0D932F2E1 /* IKAppEventFactory.swift */,
 				8C22F68141DB4F07E95B748326B274C5 /* IKAppEventInterceptor.swift */,
 				5B77712F5C31517506537847A103A0BC /* IKAppEventType.swift */,
-				4C181DE0D0C34B5C695B0613924CB41E /* IKAppEventType.temp_caseinsensitive_rename.swift */,
 				8A32FFDB4CA5ADC285B2D30B6A1F8B0A /* IKDefaultAppEvent.swift */,
 				ED3E031A0D6C73E549F779033B784367 /* IKDefaultAppEventFactory.swift */,
 			);
@@ -495,6 +587,156 @@
 				1A4F2D18CD6359DB2245AE0B14BBED54 /* UISwipeGestureRecognizerDirection+IKUtils.swift */,
 				F8A65445E87AF6786CB7C248D5B14ADE /* UIView+IKUtils.swift */,
 				B2F094CDBB250E7A6D2F0A3F91D726E5 /* UIViewController+IKUtils.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		8FDEC78221171136009AF516 /* BehaviorKit */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEC78321171136009AF516 /* Core */,
+				8FDEC78E21171136009AF516 /* BehaviorKit.swift */,
+				8FDEC78F21171136009AF516 /* Models */,
+				8FDEC7B821171136009AF516 /* View */,
+				8FDEC7BA21171136009AF516 /* Helper */,
+			);
+			path = BehaviorKit;
+			sourceTree = "<group>";
+		};
+		8FDEC78321171136009AF516 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEC78421171136009AF516 /* BKPredictionDelegate.swift */,
+				8FDEC78521171136009AF516 /* BKContextFactory.swift */,
+				8FDEC78621171136009AF516 /* BKSituationPredictor.swift */,
+				8FDEC78721171136009AF516 /* BKStorage.swift */,
+				8FDEC78821171136009AF516 /* BKPredictor.swift */,
+				8FDEC78921171136009AF516 /* BKConfiguration.swift */,
+				8FDEC78A21171136009AF516 /* BKObserver */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8FDEC78A21171136009AF516 /* BKObserver */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEC78B21171136009AF516 /* BKSubscriber.swift */,
+				8FDEC78C21171136009AF516 /* BKSubscriptionStrategy.swift */,
+				8FDEC78D21171136009AF516 /* BKPublisher.swift */,
+			);
+			path = BKObserver;
+			sourceTree = "<group>";
+		};
+		8FDEC78F21171136009AF516 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEC79021171136009AF516 /* BKDefaultSituation.swift */,
+				8FDEC79121171136009AF516 /* BKTemplateSituation.swift */,
+				8FDEC79221171136009AF516 /* BKGenderPredictor */,
+				8FDEC79721171136009AF516 /* BKUXInconsistencyPredictor */,
+				8FDEC79C21171136009AF516 /* BKContext.swift */,
+				8FDEC79D21171136009AF516 /* BKAgeGroupPredictor */,
+				8FDEC7A221171136009AF516 /* BKMissingInteractionElementPredictor */,
+				8FDEC7A721171136009AF516 /* BKSmartphoneExperiencePredictor */,
+				8FDEC7AC21171136009AF516 /* BKSituation.swift */,
+				8FDEC7AD21171136009AF516 /* BKOrientationPredictor */,
+				8FDEC7B221171136009AF516 /* BKProductivenessPredictor */,
+				8FDEC7B721171136009AF516 /* BKTemplateContext.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8FDEC79221171136009AF516 /* BKGenderPredictor */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEC79321171136009AF516 /* BKGenderFactory.swift */,
+				8FDEC79421171136009AF516 /* BKGenderContext.swift */,
+				8FDEC79521171136009AF516 /* GenderContext.mlmodel */,
+				8FDEC79621171136009AF516 /* BKGenderFeatureGenerator.swift */,
+			);
+			path = BKGenderPredictor;
+			sourceTree = "<group>";
+		};
+		8FDEC79721171136009AF516 /* BKUXInconsistencyPredictor */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEC79821171136009AF516 /* UXInconsistencyContext.mlmodel */,
+				8FDEC79921171136009AF516 /* BKUXInconsistencyFactory.swift */,
+				8FDEC79A21171136009AF516 /* BKUXInconsistencyContext.swift */,
+				8FDEC79B21171136009AF516 /* BKUXInconsistencyFeatureGenerator.swift */,
+			);
+			path = BKUXInconsistencyPredictor;
+			sourceTree = "<group>";
+		};
+		8FDEC79D21171136009AF516 /* BKAgeGroupPredictor */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEC79E21171136009AF516 /* BKAgeGroupContext.swift */,
+				8FDEC79F21171136009AF516 /* BKAgeGroupFactory.swift */,
+				8FDEC7A021171136009AF516 /* BKAgeGroupFeatureGenerator.swift */,
+				8FDEC7A121171136009AF516 /* AgeGroupContext.mlmodel */,
+			);
+			path = BKAgeGroupPredictor;
+			sourceTree = "<group>";
+		};
+		8FDEC7A221171136009AF516 /* BKMissingInteractionElementPredictor */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEC7A321171136009AF516 /* BKMissingInteractionElementFeatureGenerator.swift */,
+				8FDEC7A421171136009AF516 /* MissingInteractionElementContext.mlmodel */,
+				8FDEC7A521171136009AF516 /* BKMissingInteractionElementContext.swift */,
+				8FDEC7A621171136009AF516 /* BKMissingInteractionElementFactory.swift */,
+			);
+			path = BKMissingInteractionElementPredictor;
+			sourceTree = "<group>";
+		};
+		8FDEC7A721171136009AF516 /* BKSmartphoneExperiencePredictor */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEC7A821171136009AF516 /* BKSmartphoneExperienceFactory.swift */,
+				8FDEC7A921171136009AF516 /* SmartphoneExperienceContext.mlmodel */,
+				8FDEC7AA21171136009AF516 /* BKSmartphoneExperienceContext.swift */,
+				8FDEC7AB21171136009AF516 /* BKSmartphoneExperienceFeatureGenerator.swift */,
+			);
+			path = BKSmartphoneExperiencePredictor;
+			sourceTree = "<group>";
+		};
+		8FDEC7AD21171136009AF516 /* BKOrientationPredictor */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEC7AE21171136009AF516 /* BKOrientationFactory.swift */,
+				8FDEC7AF21171136009AF516 /* OrientationContext.mlmodel */,
+				8FDEC7B021171136009AF516 /* BKOrientationContext.swift */,
+				8FDEC7B121171136009AF516 /* BKOrientationFeatureGenerator.swift */,
+			);
+			path = BKOrientationPredictor;
+			sourceTree = "<group>";
+		};
+		8FDEC7B221171136009AF516 /* BKProductivenessPredictor */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEC7B321171136009AF516 /* BKProductivenessFactory.swift */,
+				8FDEC7B421171136009AF516 /* ProdutivenessContext.mlmodel */,
+				8FDEC7B521171136009AF516 /* BKProdutivenessFeatureGenerator.swift */,
+				8FDEC7B621171136009AF516 /* BKProdutivenessContext.swift */,
+			);
+			path = BKProductivenessPredictor;
+			sourceTree = "<group>";
+		};
+		8FDEC7B821171136009AF516 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEC7B921171136009AF516 /* BKStatusBarWindow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8FDEC7BA21171136009AF516 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8FDEC7E9211712C6009AF516 /* BKDefaultConfiguration.swift */,
+				8FDEC7EB21171349009AF516 /* BKDefaultPredictorConfiguration.swift */,
+				8FDEC7BB21171136009AF516 /* SigmaDistrib.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -846,6 +1088,7 @@
 			files = (
 				E2A2DC1108F53905D1474A4201696C97 /* CUU-dummy.m in Sources */,
 				68EAB4E60073F705582F03B2658777B7 /* CUU.swift in Sources */,
+				8FDEC7BC21171137009AF516 /* BKPredictionDelegate.swift in Sources */,
 				8FBBA76D21078985003777D8 /* IKCoreDataStorage.swift in Sources */,
 				E41E44B62EA085526D8A1045F764DD5F /* CUUCharacteristics.swift in Sources */,
 				6F99D049A8B63580B569905FC3810194 /* CUUConfiguration.swift in Sources */,
@@ -855,11 +1098,13 @@
 				02E54E1755915E750773BFA35FBEAE1E /* CUUSessionManager.swift in Sources */,
 				CD09E70EF43CAF4241454762279508FD /* CUUStartOptionView.swift in Sources */,
 				8F41D0FC210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataClass.swift in Sources */,
+				8FDEC7BD21171137009AF516 /* BKContextFactory.swift in Sources */,
 				26ABF42711EC501036ADF73685714CC8 /* CUUStartView.swift in Sources */,
 				8F41D100210B693A0013E1B8 /* IKCharacteristics+CoreDataClass.swift in Sources */,
 				72B19EDDC1B7D7A168E2B1589D693D7B /* CUUStartViewController.swift in Sources */,
 				A4122A4F1499746870022020CD92B566 /* CUUUserManager.swift in Sources */,
 				0B675C44ABB44D8AD51D6AEC1FD6538D /* CUUUtils.swift in Sources */,
+				8FDEC7C321171137009AF516 /* BKSubscriptionStrategy.swift in Sources */,
 				8FDEC78021170E05009AF516 /* IKInteraction+CoreDataProperties.swift in Sources */,
 				19F8FF2955DC0E3516661F0C2F4F902C /* CUUViewControllers.swift in Sources */,
 				E2F94DB3316766D78B4DDED3575F70F5 /* FeatureKit.swift in Sources */,
@@ -868,17 +1113,24 @@
 				8F41D0FD210B5B0A0013E1B8 /* IKMotionCharacteristics+CoreDataProperties.swift in Sources */,
 				256F88DB449EFC9E2ACD7B540E6A351E /* IKAppEvent.swift in Sources */,
 				E64EC3489486FB73DFEA86E39C2A8A5E /* IKAppEventFactory.swift in Sources */,
+				8FDEC7EC21171349009AF516 /* BKDefaultPredictorConfiguration.swift in Sources */,
 				C48A26C6FD3AE3594BFEF804DE22B5CB /* IKAppEventInterceptor.swift in Sources */,
 				C2DDF45ED0A76E215C16DC52CA070D88 /* IKAppEventType.swift in Sources */,
 				8F41D0F5210B5B0A0013E1B8 /* IKTouchCharacteristics+CoreDataProperties.swift in Sources */,
-				C8C9395E345E6FD92EA93C82752A1817 /* IKAppEventType.temp_caseinsensitive_rename.swift in Sources */,
+				8FDEC7D721171137009AF516 /* BKMissingInteractionElementContext.swift in Sources */,
+				8FDEC7E121171137009AF516 /* BKOrientationFeatureGenerator.swift in Sources */,
 				F907C07439AAE2EFA4951840F8E30A8F /* IKConfiguration.swift in Sources */,
 				1FC10C24E924F16A95A5C5A70EEB1790 /* IKCoreMotionShakeDelegate.swift in Sources */,
+				8FDEC7CE21171137009AF516 /* BKUXInconsistencyContext.swift in Sources */,
 				92385859AF0FE9807D6676CBCDB7C6DB /* IKCoreMotionShakeDetector.swift in Sources */,
 				8BA7C998504F8F7D0744BD9A98E01270 /* IKDataObject.swift in Sources */,
 				7E66F2DD0D8728EE6962CF6C7848B889 /* IKDefaultAppEvent.swift in Sources */,
+				8FDEC7C821171137009AF516 /* BKGenderFactory.swift in Sources */,
+				8FDEC7DB21171137009AF516 /* BKSmartphoneExperienceContext.swift in Sources */,
 				7FB4C943B7280CDC3B5B90A3DDA641D3 /* IKDefaultAppEventFactory.swift in Sources */,
+				8FDEC7D121171137009AF516 /* BKAgeGroupContext.swift in Sources */,
 				7584157A828D59DA1C00E646625A5D49 /* IKDefaultConfiguration.swift in Sources */,
+				8FDEC7C521171137009AF516 /* BehaviorKit.swift in Sources */,
 				CA3487B6C4576E1D424BFE35194AC506 /* IKDefaultDevice.swift in Sources */,
 				565D2D3AF3FD10C2B8ADDBB2D770713C /* IKDefaultDeviceFactory.swift in Sources */,
 				196CDBD468D806ACBCF7C212025A9975 /* IKDefaultEvent.swift in Sources */,
@@ -890,52 +1142,88 @@
 				AA3E2D448E698E158FDB4BA7ACBD7F08 /* IKDefaultMotionFactory.swift in Sources */,
 				DD7334F8B0068B200ED958BE0908DB4F /* IKDefaultSensor.swift in Sources */,
 				51240F15943D7F4688C7CD1E50198FA1 /* IKDefaultSensorFactory.swift in Sources */,
+				8FDEC7BF21171137009AF516 /* BKStorage.swift in Sources */,
 				4C16BA2DA944C1EE1361E8C324CD694A /* IKDefaultTouch.swift in Sources */,
+				8FDEC7E021171137009AF516 /* BKOrientationContext.swift in Sources */,
 				680862CDE4F45799286C91AB945B8E30 /* IKDefaultTouchFactory.swift in Sources */,
+				8FDEC7D521171137009AF516 /* BKMissingInteractionElementFeatureGenerator.swift in Sources */,
 				9092EA58025FDBF3CE5498EA512AF0B6 /* IKDefaultViewEvent.swift in Sources */,
+				8FDEC7DD21171137009AF516 /* BKSituation.swift in Sources */,
+				8FDEC7EA211712C6009AF516 /* BKDefaultConfiguration.swift in Sources */,
+				8FDEC7E721171137009AF516 /* BKStatusBarWindow.swift in Sources */,
+				8FDEC7DC21171137009AF516 /* BKSmartphoneExperienceFeatureGenerator.swift in Sources */,
 				6624AB8FF6C63C38A8B50C3252D51391 /* IKDefaultViewEventFactory.swift in Sources */,
 				799827C4BA15D791C4E1DDED878978DC /* IKDevice.swift in Sources */,
+				8FDEC7DA21171137009AF516 /* SmartphoneExperienceContext.mlmodel in Sources */,
+				8FDEC7C121171137009AF516 /* BKConfiguration.swift in Sources */,
 				371830600D9F6E677AE41055AADE6B4C /* IKDeviceFactory.swift in Sources */,
 				D5DAD0FA7BD294EEE01C7BE6B32ABE29 /* IKDeviceInterceptor.swift in Sources */,
 				8A22FFFAF2D22714EC249952423AA515 /* IKEvent.swift in Sources */,
+				8FDEC7DF21171137009AF516 /* OrientationContext.mlmodel in Sources */,
 				EC125CF48BFA557EB08ABD25393AE716 /* IKEventFactory.swift in Sources */,
+				8FDEC7D421171137009AF516 /* AgeGroupContext.mlmodel in Sources */,
+				8FDEC7E821171137009AF516 /* SigmaDistrib.swift in Sources */,
 				8F41D0F8210B5B0A0013E1B8 /* IKDeviceCharacteristics+CoreDataClass.swift in Sources */,
+				8FDEC7C721171137009AF516 /* BKTemplateSituation.swift in Sources */,
+				8FDEC7C021171137009AF516 /* BKPredictor.swift in Sources */,
 				8FDEC78121170E05009AF516 /* IKInteraction+CoreDataClass.swift in Sources */,
 				8F41D0FB210B5B0A0013E1B8 /* IKEventCharacteristics+CoreDataProperties.swift in Sources */,
+				8FDEC7D221171137009AF516 /* BKAgeGroupFactory.swift in Sources */,
 				8F41D0EE210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataClass.swift in Sources */,
+				8FDEC7D621171137009AF516 /* MissingInteractionElementContext.mlmodel in Sources */,
 				B8134A0C4AA8575681A6EF5C59912E71 /* IKEventInterceptor.swift in Sources */,
+				8FDEC7D821171137009AF516 /* BKMissingInteractionElementFactory.swift in Sources */,
 				4D095E68A8F6904CFDB670A7BEC36F2B /* IKGesture.swift in Sources */,
 				8F41D0F9210B5B0A0013E1B8 /* IKDeviceCharacteristics+CoreDataProperties.swift in Sources */,
 				026FF0B035D44D8F64167241742F73FF /* IKGestureFactory.swift in Sources */,
+				8FDEC7E421171137009AF516 /* BKProdutivenessFeatureGenerator.swift in Sources */,
 				82B1605A43C7F5F4216938561426C868 /* IKGestureInterceptor.swift in Sources */,
+				8FDEC7E321171137009AF516 /* ProdutivenessContext.mlmodel in Sources */,
 				75D64FD240295565A7E595B118DB653F /* IKGestureType.swift in Sources */,
+				8FDEC7C221171137009AF516 /* BKSubscriber.swift in Sources */,
 				543CF60630A8E006E2F9FBAB96BC05F8 /* IKInterceptionDelegate.swift in Sources */,
+				8FDEC7CD21171137009AF516 /* BKUXInconsistencyFactory.swift in Sources */,
+				8FDEC7D021171137009AF516 /* BKContext.swift in Sources */,
 				8F41D0EF210B5B0A0013E1B8 /* IKGestureCharacteristics+CoreDataProperties.swift in Sources */,
 				3262194C5E83AE3444F32F96F940C6D6 /* IKInterceptor.swift in Sources */,
 				56BBB72655DEAF0D3E244D79C7526ECE /* IKMotion.swift in Sources */,
 				8FBBA76B21066861003777D8 /* IKData.xcdatamodeld in Sources */,
 				8F41D0F0210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataClass.swift in Sources */,
 				8F41D0F4210B5B0A0013E1B8 /* IKTouchCharacteristics+CoreDataClass.swift in Sources */,
+				8FDEC7D921171137009AF516 /* BKSmartphoneExperienceFactory.swift in Sources */,
 				8F41D0F3210B5B0A0013E1B8 /* IKSensorCharacteristics+CoreDataProperties.swift in Sources */,
 				844902DE6FDEEC79F4B77B1EA87A9322 /* IKMotionFactory.swift in Sources */,
+				8FDEC7CB21171137009AF516 /* BKGenderFeatureGenerator.swift in Sources */,
+				8FDEC7E221171137009AF516 /* BKProductivenessFactory.swift in Sources */,
 				FCFC22F4D01EAB11A11FCD7CF076E8E9 /* IKMotionInterceptor.swift in Sources */,
 				CACC2004B7B9EA4AABBFAAC170598596 /* IKMotionType.swift in Sources */,
+				8FDEC7CC21171137009AF516 /* UXInconsistencyContext.mlmodel in Sources */,
+				8FDEC7BE21171137009AF516 /* BKSituationPredictor.swift in Sources */,
+				8FDEC7C621171137009AF516 /* BKDefaultSituation.swift in Sources */,
 				08882AE8B71A9FC17EA72F4B5A911E55 /* IKMultiDirectionSwipeGestureRecognizer.swift in Sources */,
 				82B8033E1F840A356C9401C62F8DAC7E /* IKSensor.swift in Sources */,
 				D076435D80A1502733CBA103FF77FF0B /* IKSensorFactory.swift in Sources */,
+				8FDEC7CF21171137009AF516 /* BKUXInconsistencyFeatureGenerator.swift in Sources */,
+				8FDEC7CA21171137009AF516 /* GenderContext.mlmodel in Sources */,
 				A3AEC686953747BE51124D550D39647F /* IKSensorInterceptor.swift in Sources */,
 				8F41D0F1210B5B0A0013E1B8 /* IKAppEventCharacteristics+CoreDataProperties.swift in Sources */,
 				8F41D0F7210B5B0A0013E1B8 /* IKViewEventCharacteristics+CoreDataProperties.swift in Sources */,
+				8FDEC7E521171137009AF516 /* BKProdutivenessContext.swift in Sources */,
 				104E304EB02A016A9C793F8EB6843C6C /* IKSensorType.swift in Sources */,
 				CD76E643AE0763C9F54748B0F066BF91 /* IKStorage.swift in Sources */,
 				D2AEE1B5B195CBECD3303D6E551A133C /* IKTouch.swift in Sources */,
+				8FDEC7C421171137009AF516 /* BKPublisher.swift in Sources */,
+				8FDEC7C921171137009AF516 /* BKGenderContext.swift in Sources */,
 				3CBE3B406BFB460E25B4673239D3D5AB /* IKTouchFactory.swift in Sources */,
 				8F41D101210B693A0013E1B8 /* IKCharacteristics+CoreDataProperties.swift in Sources */,
+				8FDEC7D321171137009AF516 /* BKAgeGroupFeatureGenerator.swift in Sources */,
+				8FDEC7E621171137009AF516 /* BKTemplateContext.swift in Sources */,
 				630E4A8265BEB0BC8312830EC3B34FF8 /* IKTouchInterceptor.swift in Sources */,
 				220E91E447BDD541E7F2263BC881D995 /* IKTouchType.swift in Sources */,
 				C47409A1FA13087B809EDD0001EEA982 /* IKViewControllers.swift in Sources */,
 				00AF633E1EDB36958118D3B05E6C59EA /* IKViewEvent.swift in Sources */,
 				F3D3E94662CE1A52F905298EA66C2FF9 /* IKViewEventFactory.swift in Sources */,
+				8FDEC7DE21171137009AF516 /* BKOrientationFactory.swift in Sources */,
 				B96A5506AF374420FEB1AE14EE23C89E /* IKViewEventInterceptor.swift in Sources */,
 				22149C6D4BC2EE97358773944AD92A84 /* IKViewEventType.swift in Sources */,
 				8F41D0F2210B5B0A0013E1B8 /* IKSensorCharacteristics+CoreDataClass.swift in Sources */,

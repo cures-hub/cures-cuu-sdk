@@ -28,7 +28,7 @@ CUU is a project to help analyzing the usage of your app by providing functional
   s.source           = { :git => 'https://github.com/cures-hub/cures-cuu-sdk.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/ls1intum'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
 
   s.source_files = 'CUU/Classes/**/*.{swift,xcdatamodeld}'
   s.resources = 'CUU/Classes/InteractionKit/Core/CoreData/IKData.xcdatamodeld'

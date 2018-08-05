@@ -67,8 +67,6 @@ public class InteractionKit {
         } else{
             completion([])
         }
-        
-        print("Something fetched")
     }
     
 }
