@@ -22,6 +22,8 @@ struct PKSession: Codable {
     /// The end of the session.
     var end: Date?
 
+    var deviceType: String?
+
     private var touchDates: [Date] = []
     private var visitedScenes: [SceneVisit] = []
     private var timeOnScenes: [Double] = []

@@ -68,6 +68,8 @@ extension PersonaKit: IKInterceptionDelegate {
             handle(viewEventCrumb: crumb)
         } else if interceptor is IKTouchInterceptor, let crumb = crumb as? IKTouchCrumb {
             handle(touchCrumb: crumb)
+        } else if interceptor is IKDeviceInterceptor, let crumb = crumb as? IKDeviceCrumb {
+            handle(deviceCrumb: crumb)
         }
 
         debugPrint(interceptor)
@@ -136,12 +138,11 @@ extension PersonaKit {
 
         switch viewEventType {
         case .didAppear:
-            guard let session = store?.allObjects().first else { return }
-            var mutableSession = session
-            mutableSession.appendSceneVisit(visit: PKSession.SceneVisit(name: characteristics.viewControllerType, date: Date()))
+            guard var session = store?.allObjects().first else { return }
+            session.appendSceneVisit(visit: PKSession.SceneVisit(name: characteristics.viewControllerType, date: Date()))
 
             // Update Session
-            try! store?.save(mutableSession)
+            try! store?.save(session)
         case .didDisappear:
             return
         }
@@ -155,15 +156,26 @@ extension PersonaKit {
 
         switch touchType {
         case .touchEnded:
-            guard let session = store?.allObjects().first else { return }
-            var mutableSession = session
-            mutableSession.logTouch(crumb: crumb)
+            guard var session = store?.allObjects().first else { return }
+            session.logTouch(crumb: crumb)
 
             // Update Session
-            try! store?.save(mutableSession)
+            try! store?.save(session)
         default:
             return
         }
+    }
+
+    func handle(deviceCrumb crumb: IKDeviceCrumb) {
+        guard let characteristics = crumb.characteristics as? IKDeviceCharacteristics else {
+            return
+        }
+
+        guard var session = store?.allObjects().first else { return }
+        session.deviceType = characteristics.deviceName
+
+        // Update Session
+        try! store?.save(session)
     }
 
     @discardableResult
