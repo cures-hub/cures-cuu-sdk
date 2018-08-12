@@ -23,6 +23,7 @@ struct PKSession: Codable {
     var end: Date?
 
     var deviceType: String?
+    var iOSVersion: String?
 
     private var touchDates: [Date] = []
     private var visitedScenes: [SceneVisit] = []

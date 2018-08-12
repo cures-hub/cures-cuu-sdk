@@ -20,6 +20,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
     let numberOfTouches: Int
     let averageTimeBetweenTouches: Double?
     let deviceType: String?
+    let iOSVersion: String?
 
     // MARK: - Lifecycle
 
@@ -37,6 +38,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
         self.numberOfTouches = session.numberOfTouches
         self.averageTimeBetweenTouches = session.averageTimeBetweenTouches
         self.deviceType = session.deviceType
+        self.iOSVersion = session.iOSVersion
 
         super.init()
     }
@@ -57,6 +59,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
         case numberOfTouches
         case averageTimeBetweenTouches
         case deviceType
+        case iOSVersion
     }
 
     override public func encode(to encoder: Encoder) throws {
@@ -70,6 +73,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
         try container.encode(numberOfTouches, forKey: .numberOfTouches)
         try container.encodeIfPresent(averageTimeBetweenTouches, forKey: .averageTimeBetweenTouches)
         try container.encodeIfPresent(deviceType, forKey: .deviceType)
+        try container.encodeIfPresent(iOSVersion, forKey: .iOSVersion)
 
         try super.encode(to: encoder)
     }

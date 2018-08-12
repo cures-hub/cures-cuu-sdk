@@ -173,6 +173,7 @@ extension PersonaKit {
 
         guard var session = store?.allObjects().first else { return }
         session.deviceType = characteristics.deviceName
+        session.iOSVersion = characteristics.systemVersion
 
         // Update Session
         try! store?.save(session)
