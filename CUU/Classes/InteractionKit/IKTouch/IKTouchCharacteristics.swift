@@ -17,6 +17,7 @@ class IKTouchCharacteristics: CUUCharacteristics {
     let interactionType: String = "IKTouch"
     
     let type: String
+    let title: String
     
     let tapCount: Int
     
@@ -31,6 +32,7 @@ class IKTouchCharacteristics: CUUCharacteristics {
     
     init(touch: IKTouch) {
         self.type = touch.type
+        self.title = touch.title
         self.tapCount = touch.tapCount
         self.force = touch.force
         self.locationX = touch.locationX
@@ -50,6 +52,7 @@ class IKTouchCharacteristics: CUUCharacteristics {
     private enum CodingKeys: String, CodingKey {
         case interactionType
         case type
+        case title
         case tapCount
         case force
         case locationX
@@ -62,6 +65,7 @@ class IKTouchCharacteristics: CUUCharacteristics {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(interactionType, forKey: .interactionType)
         try container.encode(type, forKey: .type)
+        try container.encode(title, forKey: .title)
         try container.encode(tapCount, forKey: .tapCount)
         try container.encode(force, forKey: .force)
         try container.encode(locationX, forKey: .locationX)

@@ -1,5 +1,5 @@
 public class IKDefaultTouch: IKTouch {
-    
+
     public var _session: String = ""
     public var _user: String = ""
     public var startDate: Date = Date()
@@ -14,6 +14,10 @@ public class IKDefaultTouch: IKTouch {
     public var previousLocationX: Double = 0.0
     public var previousLocationY: Double = 0.0
     public var parameter: [String:String] =  [:]
+
+    public var touchedElementTraits: String = ""
+    public var touchedElementLabel: String = ""
+    public var touchedElementValue: String = ""
     
 }
 

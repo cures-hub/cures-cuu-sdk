@@ -36,7 +36,11 @@ public protocol IKTouch: IKDataObject {
     /**
      *   The location y value of previous location of the touch.
      **/
-    var previousLocationY: Double { set get }    
+    var previousLocationY: Double { set get }
+
+    var touchedElementTraits: String { set get }
+    var touchedElementLabel: String { set get }
+    var touchedElementValue: String { set get }
 }
 
 extension IKTouch {

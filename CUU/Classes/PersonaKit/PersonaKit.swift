@@ -66,6 +66,8 @@ extension PersonaKit: IKInterceptionDelegate {
             handle(appEventCrumb: crumb)
         } else if interceptor is IKViewEventInterceptor, let crumb = crumb as? IKViewEventCrumb {
             handle(viewEventCrumb: crumb)
+        } else if interceptor is IKTouchInterceptor, let crumb = crumb as? IKTouchCrumb {
+            handle(touchCrumb: crumb)
         }
 
         debugPrint(interceptor)
@@ -141,6 +143,25 @@ extension PersonaKit {
             // Update Session
             try! store?.save(mutableSession)
         case .didDisappear:
+            return
+        }
+    }
+
+    func handle(touchCrumb crumb: IKTouchCrumb) {
+        guard let characteristics = crumb.characteristics as? IKTouchCharacteristics,
+            let touchType = IKTouchType(rawValue: characteristics.title) else {
+                return
+        }
+
+        switch touchType {
+        case .touchEnded:
+            guard let session = store?.allObjects().first else { return }
+            var mutableSession = session
+            mutableSession.numberOfTouches += 1
+
+            // Update Session
+            try! store?.save(mutableSession)
+        default:
             return
         }
     }

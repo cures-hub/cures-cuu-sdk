@@ -17,6 +17,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
     let durationInSeconds: Double
     let mostVisitedScene: String?
     let averageTimeOnScene: Double?
+    let numberOfTouches: Int
 
     // MARK: - Lifecycle
 
@@ -31,6 +32,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
         self.durationInSeconds = end.timeIntervalSinceReferenceDate - start.timeIntervalSinceReferenceDate
         self.mostVisitedScene = session.mostVisitedScene
         self.averageTimeOnScene = session.averageTimeOnScene
+        self.numberOfTouches = session.numberOfTouches
 
         super.init()
     }
@@ -48,6 +50,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
         case durationInSeconds
         case mostVisitedScene
         case averageTimeOnScene
+        case numberOfTouches
     }
 
     override public func encode(to encoder: Encoder) throws {
@@ -58,6 +61,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
         try container.encode(durationInSeconds, forKey: .durationInSeconds)
         try container.encodeIfPresent(mostVisitedScene, forKey: .mostVisitedScene)
         try container.encodeIfPresent(averageTimeOnScene, forKey: .averageTimeOnScene)
+        try container.encode(numberOfTouches, forKey: .numberOfTouches)
 
         try super.encode(to: encoder)
     }
