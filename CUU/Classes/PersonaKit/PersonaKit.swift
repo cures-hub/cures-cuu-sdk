@@ -157,7 +157,7 @@ extension PersonaKit {
         case .touchEnded:
             guard let session = store?.allObjects().first else { return }
             var mutableSession = session
-            mutableSession.numberOfTouches += 1
+            mutableSession.logTouch(crumb: crumb)
 
             // Update Session
             try! store?.save(mutableSession)

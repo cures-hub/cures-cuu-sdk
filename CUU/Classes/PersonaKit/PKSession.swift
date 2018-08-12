@@ -22,8 +22,7 @@ struct PKSession: Codable {
     /// The end of the session.
     var end: Date?
 
-    var numberOfTouches: Int = 0
-
+    private var touchDates: [Date] = []
     private var visitedScenes: [SceneVisit] = []
     private var timeOnScenes: [Double] = []
 
@@ -43,6 +42,10 @@ struct PKSession: Codable {
         let timeDifference = visit.date.timeIntervalSinceReferenceDate - lastScene.date.timeIntervalSinceReferenceDate
         print("Time on scene '\(lastScene.name)': \(timeDifference) seconds.")
         timeOnScenes.append(timeDifference)
+    }
+
+    mutating func logTouch(crumb: IKTouchCrumb) {
+        touchDates.append(crumb.timestamp)
     }
 }
 
@@ -68,6 +71,21 @@ extension PKSession {
     var averageTimeOnScene: Double? {
         guard !timeOnScenes.isEmpty else { return nil }
         return timeOnScenes.average
+    }
+
+    var numberOfTouches: Int {
+        return touchDates.count
+    }
+
+    var averageTimeBetweenTouches: Double? {
+        guard touchDates.count >= 2 else { return nil }
+        let timeBetweenTouches = zip(touchDates, Array(touchDates.dropFirst())).map { (lhs, rhs) -> Double? in
+            let difference = rhs.timeIntervalSinceReferenceDate - lhs.timeIntervalSinceReferenceDate
+            // We don't want to include touches that happen after one minute, since it probably is a new touch stream
+            guard difference < 60 else { return nil }
+            return difference
+        }.compactMap { $0 }
+        return timeBetweenTouches.average
     }
 }
 
