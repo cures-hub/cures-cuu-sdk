@@ -14,6 +14,7 @@ class IKViewEventCharacteristics: CUUCharacteristics {
     let interactionType: String = "IKViewEvent"
     
     let type: String
+    let title: String
     let viewControllerTitle: String
     let viewControllerType: String
     let viewControllerInstance: String
@@ -31,6 +32,7 @@ class IKViewEventCharacteristics: CUUCharacteristics {
     
     init(viewEvent: IKViewEvent) {
         self.type = viewEvent.type
+        self.title = viewEvent.title
         self.viewControllerTitle = viewEvent.viewControllerTitle
         self.viewControllerType = viewEvent.viewControllerType
         self.viewControllerInstance = viewEvent.viewControllerInstance
@@ -54,6 +56,7 @@ class IKViewEventCharacteristics: CUUCharacteristics {
     private enum CodingKeys: String, CodingKey {
         case interactionType
         case type
+        case title
         case viewControllerTitle
         case viewControllerType
         case viewControllerInstance
@@ -70,6 +73,7 @@ class IKViewEventCharacteristics: CUUCharacteristics {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(interactionType, forKey: .interactionType)
         try container.encode(type, forKey: .type)
+        try container.encode(title, forKey: .title)
         try container.encode(viewControllerTitle, forKey: .viewControllerTitle)
         try container.encode(viewControllerType, forKey: .viewControllerType)
         try container.encode(viewControllerInstance, forKey: .viewControllerInstance)

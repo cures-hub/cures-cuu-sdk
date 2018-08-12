@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PersonaKit {
+public class PersonaKit {
 
     static public let shared = PersonaKit()
 
@@ -64,6 +64,8 @@ extension PersonaKit: IKInterceptionDelegate {
 
         if interceptor is IKAppEventInterceptor, let crumb = crumb as? IKAppEventCrumb {
             handle(appEventCrumb: crumb)
+        } else if interceptor is IKViewEventInterceptor, let crumb = crumb as? IKViewEventCrumb {
+            handle(viewEventCrumb: crumb)
         }
 
         debugPrint(interceptor)
@@ -94,7 +96,7 @@ extension PersonaKit {
             if let oldSession = allSessions.first, allSessions.count == 1 {
                 if oldSession.sessionId == crumb.sessionId {
                     // Old session continues --> deleting end date
-                    let updatedSession = updateSessionDate(oldSession: oldSession, date: nil)
+                    let updatedSession = updateSessionEndDate(oldSession: oldSession, endDate: nil)
                     print("⏱ Continue session: \(updatedSession)")
                     return
                 } else {
@@ -102,7 +104,7 @@ extension PersonaKit {
                     if mutableOldSession.end == nil {
                         // App was not properly terminated --> Session end is missing
                         // Setting the current date as end of last session
-                        mutableOldSession = PKSession(sessionId: mutableOldSession.sessionId, start: mutableOldSession.start, end: Date())
+                        mutableOldSession.end = Date()
                     }
                     let crumb = PKSessionCrumb(session: mutableOldSession)
                     crumb.send()
@@ -111,32 +113,51 @@ extension PersonaKit {
                 }
             }
 
-            let session = saveSession(from: crumb)
+            let session = saveNewSession(from: crumb)
             print("⏱ New session: \(session)")
         case .didResignActive:
             guard let session = store?.object(withId: crumb.sessionId) else {
                 preconditionFailure("⚠️: could not end session, because no session with sessionId  of '\(crumb.sessionId)' was found.")
             }
 
-            let endedSession = updateSessionDate(oldSession: session, date: Date())
+            let endedSession = updateSessionEndDate(oldSession: session, endDate: Date())
             print("⏱ End session: \(endedSession)")
         default: break
         }
     }
 
+    func handle(viewEventCrumb crumb: IKViewEventCrumb) {
+        guard let characteristics = crumb.characteristics as? IKViewEventCharacteristics,
+            let viewEventType = IKViewEventType(rawValue: characteristics.title) else {
+            return
+        }
+
+        switch viewEventType {
+        case .didAppear:
+            guard let session = store?.allObjects().first else { return }
+            var mutableSession = session
+            mutableSession.appendSceneVisit(visit: PKSession.SceneVisit(name: characteristics.viewControllerType, date: Date()))
+
+            // Update Session
+            try! store?.save(mutableSession)
+        case .didDisappear:
+            return
+        }
+    }
+
     @discardableResult
-    func saveSession(from crumb: IKAppEventCrumb) -> PKSession {
+    func saveNewSession(from crumb: IKAppEventCrumb) -> PKSession {
         let session = PKSession(sessionId: crumb.sessionId, start: Date())
         try! store?.save(session)
         return session
     }
 
     @discardableResult
-    func updateSessionDate(oldSession: PKSession, date: Date?) -> PKSession {
-        let updatedSession = PKSession(sessionId: oldSession.sessionId, start: oldSession.start, end: date)
-        store?.delete(withId: oldSession.sessionId)
-        try! store?.save(updatedSession)
-        return updatedSession
+    func updateSessionEndDate(oldSession: PKSession, endDate: Date?) -> PKSession {
+        var mutableSession = oldSession
+        mutableSession.end = endDate
+        try! store?.save(mutableSession)
+        return mutableSession
     }
 }
 

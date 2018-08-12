@@ -60,7 +60,8 @@ public class CUU {
 
         if options.contains(.Personas) {
             personaKit.configure(with: configuration.personaKitConfiguration)
-            PersonaKit.shared.start()
+            
+            personaKit.start()
         }
     }
     
