@@ -16,5 +16,6 @@ public class IKDefaultDevice: IKDevice {
     public var screenHeight: Double = 0.0
     public var screenNativeWidth: Double = 0.0
     public var screenNativeHeight: Double = 0.0
+    public var fontScale: Double = 0.0
 }
 

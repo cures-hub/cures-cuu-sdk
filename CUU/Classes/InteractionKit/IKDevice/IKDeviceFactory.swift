@@ -21,6 +21,9 @@ extension IKDeviceFactory {
         device.screenHeight = Double(UIScreen.main.bounds.height)
         device.screenNativeWidth = Double(UIScreen.main.nativeBounds.width)
         device.screenNativeHeight = Double(UIScreen.main.nativeBounds.height)
+        if #available(iOS 11.0, *) {
+            device.fontScale = Double(UIFontMetrics.default.scaledValue(for: 1))
+        }
         
         return device
     }

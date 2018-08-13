@@ -24,6 +24,7 @@ struct PKSession: Codable {
 
     var deviceType: String?
     var iOSVersion: String?
+    var fontScale: Double?
 
     private var touchDates: [Date] = []
     private var visitedScenes: [SceneVisit] = []

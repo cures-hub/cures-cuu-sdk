@@ -29,6 +29,7 @@ class IKDeviceCharacteristics: CUUCharacteristics {
     let screenHeight: Double
     let screenNativeWidth: Double
     let screenNativeHeight: Double
+    let fontScale: Double
     
     // MARK: - Lifecycle
     
@@ -47,6 +48,7 @@ class IKDeviceCharacteristics: CUUCharacteristics {
         self.screenHeight = device.screenHeight
         self.screenNativeWidth = device.screenNativeWidth
         self.screenNativeHeight = device.screenNativeHeight
+        self.fontScale = device.fontScale
         
         super.init()
     }
@@ -77,6 +79,7 @@ class IKDeviceCharacteristics: CUUCharacteristics {
         case screenHeight
         case screenNativeWidth
         case screenNativeHeight
+        case fontScale
     }
     
     override public func encode(to encoder: Encoder) throws {
@@ -95,6 +98,7 @@ class IKDeviceCharacteristics: CUUCharacteristics {
         try container.encode(screenHeight, forKey: .screenHeight)
         try container.encode(screenNativeWidth, forKey: .screenNativeWidth)
         try container.encode(screenNativeHeight, forKey: .screenNativeHeight)
+        try container.encode(fontScale, forKey: .fontScale)
         
         try super.encode(to: encoder)
     }

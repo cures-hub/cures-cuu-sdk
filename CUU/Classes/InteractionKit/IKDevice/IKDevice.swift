@@ -58,4 +58,6 @@ public protocol IKDevice: IKDataObject {
      **/
     var screenNativeHeight: Double { get set }
 
+    var fontScale: Double { get set }
+
 }
