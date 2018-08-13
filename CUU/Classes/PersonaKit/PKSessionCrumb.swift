@@ -15,6 +15,9 @@ struct PKSessionCrumb: Codable {
     /// The unique identifier of the session.
     let sessionId: String
 
+    /// The cuu identifier of the session.
+    let cuuSessionId: String
+
     /// The start of the session.
     let start: Date
 
@@ -22,16 +25,17 @@ struct PKSessionCrumb: Codable {
     let end: Date?
 
     /// Custom characteristics that can be added as additional payload.
-    var characteristics: PKSessionCharacteristics?
+    var characteristics: PKSessionCharacteristics
 
     // MARK: - Lifecycle
 
-    init(userId: String = CUUUserManager.sharedManager.userId, session: PKSession, statistics: PKStatistics) {
+    init(userId: String = CUUUserManager.sharedManager.userId, session: PKSession) {
         self.userId = userId
         self.sessionId = session.sessionId
+        self.cuuSessionId = session.cuuSessionId
         self.start = session.start
         self.end = session.end
-        self.characteristics = PKSessionCharacteristics(session: session, statistics: statistics)
+        self.characteristics = PKSessionCharacteristics(session: session)
     }
 }
 

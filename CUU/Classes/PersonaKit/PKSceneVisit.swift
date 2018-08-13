@@ -7,7 +7,23 @@
 
 import Foundation
 
-struct PKSceneVisit: Codable {
-    let name: String
-    let date: Date
+enum PKSceneVisit {
+    case didAppear(name: String, timestamp: Date)
+    case didDisappear(name: String, timestamp: Date)
+}
+
+extension PKSceneVisit {
+    var name: String {
+        switch self {
+        case .didAppear(let name, _), .didDisappear(let name, _):
+            return name
+        }
+    }
+
+    var timestamp: Date {
+        switch self {
+        case .didAppear(_, let timestamp), .didDisappear(_, let timestamp):
+            return timestamp
+        }
+    }
 }

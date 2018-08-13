@@ -7,45 +7,57 @@
 
 import Foundation
 
-struct PKSession: Codable {
+typealias Duration = TimeInterval
 
-    /// The unique identifier of the session.
+struct PKSession {
+
     let sessionId: String
-
-    /// The start of the session.
+    let cuuSessionId: String
     let start: Date
 
-    /// The end of the session.
     var end: Date?
-
     var deviceType: String?
     var iOSVersion: String?
     var fontScale: Double?
 
     private var touchDates: [Date] = []
-    private var visitedScenes: [PKSceneVisit] = []
-    private var timeOnScenes: [Double] = []
+    private var sceneVisits: [PKSceneVisit] = []
+    private var sceneStatistics: [String: [Duration]] = [:]
 
-    init(sessionId: String = CUUSessionManager.sharedManager.currentSession, start: Date, end: Date? = nil) {
+    init(sessionId: String = UUID().uuidString,
+         cuuSessionId: String = CUUSessionManager.sharedManager.currentSession,
+         start: Date = Date(),
+         end: Date? = nil) {
         self.sessionId = sessionId
+        self.cuuSessionId = cuuSessionId
         self.start = start
         self.end = end
     }
 
     mutating func appendSceneVisit(visit: PKSceneVisit) {
-        guard !visitedScenes.isEmpty, let lastScene = visitedScenes.last else {
-            // If empty, just append and return
-            visitedScenes.append(visit)
+        sceneVisits.append(visit)
+
+        switch visit {
+        case .didAppear:
             return
+        case .didDisappear(let name, let timestamp):
+            guard let lastAppearance = sceneVisits.last(where: { $0.name == name }) else { return }
+            let duration = timestamp.timeIntervalSinceReferenceDate - lastAppearance.timestamp.timeIntervalSinceReferenceDate
+            print("[ViewEvent] Time on '\(name)': \(duration) seconds")
+            updateStatisticsForScene(with: name, duration: duration)
         }
-        visitedScenes.append(visit)
-        let timeDifference = visit.date.timeIntervalSinceReferenceDate - lastScene.date.timeIntervalSinceReferenceDate
-        print("Time on scene '\(lastScene.name)': \(timeDifference) seconds.")
-        timeOnScenes.append(timeDifference)
     }
 
     mutating func logTouch(crumb: IKTouchCrumb) {
         touchDates.append(crumb.timestamp)
+    }
+
+    private mutating func updateStatisticsForScene(with name: String, duration: Duration) {
+        if !sceneStatistics.keys.contains(name) {
+            sceneStatistics[name] = []
+        }
+
+        sceneStatistics[name]?.append(duration)
     }
 }
 
@@ -63,14 +75,15 @@ extension PKSession {
     }
 
     var mostVisitedScene: String? {
-        guard !visitedScenes.isEmpty else { return nil }
-        let scenes = visitedScenes.map { $0.name }
-        return scenes.histogram.max(by: { $0.value < $1.value })?.key
+        guard !sceneStatistics.isEmpty else { return nil }
+        let scene = sceneStatistics.max { $0.value.count < $1.value.count }
+        return scene?.key
     }
 
-    var averageTimeOnScene: Double? {
-        guard !timeOnScenes.isEmpty else { return nil }
-        return timeOnScenes.average
+    var averageTimeOnMostVisitedScene: Double? {
+        guard let mostVisitedScene = mostVisitedScene,
+            let durations = sceneStatistics[mostVisitedScene] else { return nil }
+        return durations.average
     }
 
     var numberOfTouches: Int {

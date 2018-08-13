@@ -11,24 +11,17 @@ public class PersonaKit {
 
     static public let shared = PersonaKit()
 
-    private let sessionStore = UserDefaultsStore<PKSession>(uniqueIdentifier: "PKSession")
-    private let statisticsStore = UserDefaultsStore<PKStatistics>(uniqueIdentifier: "PKStatistics")
+    private var currentSession: PKSession?
     private(set) var isActive: Bool = false
     private(set) var configuration: IKConfiguration?
 
+    // DeviceInformation gets intercepted before session is active, caching values here
+    private var deviceType: String?
+    private var iOSVersion: String?
+    private var fontScale: Double?
+
     private init() {
-        if sessionStore?.allObjects().count == 0 {
-            let initialSession = PKSession(start: Date())
-            try! sessionStore?.save(initialSession)
-            print("⚠️ No session on init(). Inserting \(initialSession)")
-        }
-        if statisticsStore?.allObjects().count == 0 {
-            guard let initialStatistics = PKStatistics() else {
-                preconditionFailure("Could not initialize PKStatistics. Maybe the `identifierForVendor` is nil?")
-            }
-            try! statisticsStore?.save(initialStatistics)
-            print("⚠️ No statistics on init(). Inserting \(initialStatistics)")
-        }
+        self.currentSession = PKSession()
     }
 
     public func configure(with configuration: IKConfiguration) {
@@ -41,7 +34,6 @@ public class PersonaKit {
             start()
         }
     }
-
 
     public func start() {
         guard !isActive else { return }
@@ -80,9 +72,9 @@ extension PersonaKit: IKInterceptionDelegate {
             handle(deviceCrumb: crumb)
         }
 
-        debugPrint(interceptor)
-        debugPrint(dataObject)
-        debugPrint(crumb)
+//        debugPrint(interceptor)
+//        debugPrint(dataObject)
+//        debugPrint(crumb)
     }
 }
 
@@ -90,52 +82,28 @@ extension PersonaKit: IKInterceptionDelegate {
 
 extension PersonaKit {
     func handle(appEventCrumb crumb: IKAppEventCrumb) {
-        guard let eventType = IKAppEventType(from: crumb) else {
-            return
-        }
+        guard let eventType = IKAppEventType(from: crumb) else { return }
 
         switch eventType {
         case .didBecomeActive:
-            guard let allSessions = sessionStore?.allObjects() else {
-                preconditionFailure("Cannot retrieve objects from store. Should return array of 0 or more elements.")
-            }
-
-            if allSessions.count > 1 {
-                print("⚠️: There are too many sessions stored! Removing all old sessions.")
-                sessionStore?.deleteAll()
-            }
-
-            if let oldSession = allSessions.first, allSessions.count == 1 {
-                if oldSession.sessionId == crumb.sessionId {
-                    // Old session continues --> deleting end date
-                    let updatedSession = updateSessionEndDate(oldSession: oldSession, endDate: nil)
-                    print("⏱ Continue session: \(updatedSession)")
-                    return
-                } else {
-                    var mutableOldSession = oldSession
-                    if mutableOldSession.end == nil {
-                        // App was not properly terminated --> Session end is missing
-                        // Setting the current date as end of last session
-                        // TODO: Determine if this results in dirty data that states very long session durations
-                        mutableOldSession.end = Date()
-                    }
-                    let statistics = updateTotalUsageDuration(from: mutableOldSession)
-                    let crumb = PKSessionCrumb(session: mutableOldSession, statistics: statistics)
-                    crumb.send()
-                    print("📡 Uploading session: \(mutableOldSession)")
-                    sessionStore?.delete(withId: oldSession.sessionId)
-                }
-            }
-
-            let session = saveNewSession(from: crumb)
-            print("⏱ New session: \(session)")
+            // Overwrite currentSession.
+            // Should be nil anyway. If it is not nil, the app has not been closed gracefully,
+            // so the session end date would be wrong --> We discard the data
+            currentSession = PKSession(cuuSessionId: crumb.sessionId)
+            print("⏱ New session: \(currentSession!)")
         case .didResignActive:
-            guard let session = sessionStore?.object(withId: crumb.sessionId) else {
-                preconditionFailure("⚠️: could not end session, because no session with sessionId  of '\(crumb.sessionId)' was found.")
+            guard var session = currentSession else {
+                preconditionFailure("⚠️: could not end session, because no currentSession was found.")
             }
 
-            let endedSession = updateSessionEndDate(oldSession: session, endDate: Date())
-            print("⏱ End session: \(endedSession)")
+            session.end = Date()
+            session.deviceType = deviceType
+            session.iOSVersion = iOSVersion
+            session.fontScale = fontScale
+
+            let crumb = PKSessionCrumb(session: session)
+            crumb.send()
+            print("📡 End and upload session: \(crumb.characteristics)")
         default: break
         }
     }
@@ -148,12 +116,11 @@ extension PersonaKit {
 
         switch viewEventType {
         case .didAppear:
-            guard var session = sessionStore?.allObjects().first else { return }
-            session.appendSceneVisit(visit: PKSceneVisit(name: characteristics.viewControllerType, date: Date()))
-
-            // Update Session
-            try! sessionStore?.save(session)
+            currentSession?.appendSceneVisit(visit: .didAppear(name: characteristics.viewControllerType, timestamp: Date()))
+            print("[ViewEvent.didAppear] \(characteristics.viewControllerType)")
         case .didDisappear:
+            currentSession?.appendSceneVisit(visit: .didDisappear(name: characteristics.viewControllerType, timestamp: Date()))
+            print("[ViewEvent.didDisappear] \(characteristics.viewControllerType)")
             return
         }
     }
@@ -166,59 +133,18 @@ extension PersonaKit {
 
         switch touchType {
         case .touchEnded:
-            guard var session = sessionStore?.allObjects().first else { return }
-            session.logTouch(crumb: crumb)
-
-            // Update Session
-            try! sessionStore?.save(session)
+            currentSession?.logTouch(crumb: crumb)
         default:
             return
         }
     }
 
     func handle(deviceCrumb crumb: IKDeviceCrumb) {
-        guard let characteristics = crumb.characteristics as? IKDeviceCharacteristics else {
-            return
-        }
+        guard let characteristics = crumb.characteristics as? IKDeviceCharacteristics else { return }
 
-        guard var session = sessionStore?.allObjects().first else { return }
-        session.deviceType = characteristics.deviceName
-        session.iOSVersion = characteristics.systemVersion
-        session.fontScale = characteristics.fontScale
-
-        // Update Session
-        try! sessionStore?.save(session)
-    }
-
-    @discardableResult
-    func saveNewSession(from crumb: IKAppEventCrumb) -> PKSession {
-        let session = PKSession(sessionId: crumb.sessionId, start: Date())
-        try! sessionStore?.save(session)
-        return session
-    }
-
-    @discardableResult
-    func updateSessionEndDate(oldSession: PKSession, endDate: Date?) -> PKSession {
-        var mutableSession = oldSession
-        mutableSession.end = endDate
-        try! sessionStore?.save(mutableSession)
-        return mutableSession
-    }
-
-    @discardableResult
-    func updateTotalUsageDuration(from session: PKSession) -> PKStatistics {
-        guard var statistics = statisticsStore?.allObjects().first else {
-            preconditionFailure("There should always be a PKStatistics object in the store")
-        }
-        guard let duration = session.durationInSeconds else {
-            preconditionFailure("Cannot calculate session duration without session end")
-        }
-
-        statistics.totalUsageDuration += duration
-
-        // Update Session
-        try! statisticsStore?.save(statistics)
-        return statistics
+        deviceType = characteristics.deviceName
+        iOSVersion = characteristics.systemVersion
+        fontScale = characteristics.fontScale
     }
 }
 
