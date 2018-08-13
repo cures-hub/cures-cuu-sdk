@@ -8,10 +8,6 @@
 import Foundation
 
 struct PKSession: Codable {
-    struct SceneVisit: Codable {
-        let name: String
-        let date: Date
-    }
 
     /// The unique identifier of the session.
     let sessionId: String
@@ -27,7 +23,7 @@ struct PKSession: Codable {
     var fontScale: Double?
 
     private var touchDates: [Date] = []
-    private var visitedScenes: [SceneVisit] = []
+    private var visitedScenes: [PKSceneVisit] = []
     private var timeOnScenes: [Double] = []
 
     init(sessionId: String = CUUSessionManager.sharedManager.currentSession, start: Date, end: Date? = nil) {
@@ -36,7 +32,7 @@ struct PKSession: Codable {
         self.end = end
     }
 
-    mutating func appendSceneVisit(visit: SceneVisit) {
+    mutating func appendSceneVisit(visit: PKSceneVisit) {
         guard !visitedScenes.isEmpty, let lastScene = visitedScenes.last else {
             // If empty, just append and return
             visitedScenes.append(visit)

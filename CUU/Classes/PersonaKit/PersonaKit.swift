@@ -149,7 +149,7 @@ extension PersonaKit {
         switch viewEventType {
         case .didAppear:
             guard var session = sessionStore?.allObjects().first else { return }
-            session.appendSceneVisit(visit: PKSession.SceneVisit(name: characteristics.viewControllerType, date: Date()))
+            session.appendSceneVisit(visit: PKSceneVisit(name: characteristics.viewControllerType, date: Date()))
 
             // Update Session
             try! sessionStore?.save(session)
