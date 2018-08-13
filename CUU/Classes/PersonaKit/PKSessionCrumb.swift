@@ -26,12 +26,12 @@ struct PKSessionCrumb: Codable {
 
     // MARK: - Lifecycle
 
-    init(userId: String = CUUUserManager.sharedManager.userId, session: PKSession) {
+    init(userId: String = CUUUserManager.sharedManager.userId, session: PKSession, statistics: PKStatistics) {
         self.userId = userId
         self.sessionId = session.sessionId
         self.start = session.start
         self.end = session.end
-        self.characteristics = PKSessionCharacteristics(session: session)
+        self.characteristics = PKSessionCharacteristics(session: session, statistics: statistics)
     }
 }
 

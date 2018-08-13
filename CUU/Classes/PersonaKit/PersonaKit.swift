@@ -11,15 +11,23 @@ public class PersonaKit {
 
     static public let shared = PersonaKit()
 
-    private let store = UserDefaultsStore<PKSession>(uniqueIdentifier: "PKSession")
+    private let sessionStore = UserDefaultsStore<PKSession>(uniqueIdentifier: "PKSession")
+    private let statisticsStore = UserDefaultsStore<PKStatistics>(uniqueIdentifier: "PKStatistics")
     private(set) var isActive: Bool = false
     private(set) var configuration: IKConfiguration?
 
     private init() {
-        if store?.allObjects().count == 0 {
+        if sessionStore?.allObjects().count == 0 {
             let initialSession = PKSession(start: Date())
-            try! store?.save(initialSession)
+            try! sessionStore?.save(initialSession)
             print("⚠️ No session on init(). Inserting \(initialSession)")
+        }
+        if statisticsStore?.allObjects().count == 0 {
+            guard let initialStatistics = PKStatistics() else {
+                preconditionFailure("Could not initialize PKStatistics. Maybe the `identifierForVendor` is nil?")
+            }
+            try! statisticsStore?.save(initialStatistics)
+            print("⚠️ No statistics on init(). Inserting \(initialStatistics)")
         }
     }
 
@@ -88,13 +96,13 @@ extension PersonaKit {
 
         switch eventType {
         case .didBecomeActive:
-            guard let allSessions = store?.allObjects() else {
+            guard let allSessions = sessionStore?.allObjects() else {
                 preconditionFailure("Cannot retrieve objects from store. Should return array of 0 or more elements.")
             }
 
             if allSessions.count > 1 {
                 print("⚠️: There are too many sessions stored! Removing all old sessions.")
-                store?.deleteAll()
+                sessionStore?.deleteAll()
             }
 
             if let oldSession = allSessions.first, allSessions.count == 1 {
@@ -108,19 +116,21 @@ extension PersonaKit {
                     if mutableOldSession.end == nil {
                         // App was not properly terminated --> Session end is missing
                         // Setting the current date as end of last session
+                        // TODO: Determine if this results in dirty data that states very long session durations
                         mutableOldSession.end = Date()
                     }
-                    let crumb = PKSessionCrumb(session: mutableOldSession)
+                    let statistics = updateTotalUsageDuration(from: mutableOldSession)
+                    let crumb = PKSessionCrumb(session: mutableOldSession, statistics: statistics)
                     crumb.send()
                     print("📡 Uploading session: \(mutableOldSession)")
-                    store?.delete(withId: oldSession.sessionId)
+                    sessionStore?.delete(withId: oldSession.sessionId)
                 }
             }
 
             let session = saveNewSession(from: crumb)
             print("⏱ New session: \(session)")
         case .didResignActive:
-            guard let session = store?.object(withId: crumb.sessionId) else {
+            guard let session = sessionStore?.object(withId: crumb.sessionId) else {
                 preconditionFailure("⚠️: could not end session, because no session with sessionId  of '\(crumb.sessionId)' was found.")
             }
 
@@ -138,11 +148,11 @@ extension PersonaKit {
 
         switch viewEventType {
         case .didAppear:
-            guard var session = store?.allObjects().first else { return }
+            guard var session = sessionStore?.allObjects().first else { return }
             session.appendSceneVisit(visit: PKSession.SceneVisit(name: characteristics.viewControllerType, date: Date()))
 
             // Update Session
-            try! store?.save(session)
+            try! sessionStore?.save(session)
         case .didDisappear:
             return
         }
@@ -156,11 +166,11 @@ extension PersonaKit {
 
         switch touchType {
         case .touchEnded:
-            guard var session = store?.allObjects().first else { return }
+            guard var session = sessionStore?.allObjects().first else { return }
             session.logTouch(crumb: crumb)
 
             // Update Session
-            try! store?.save(session)
+            try! sessionStore?.save(session)
         default:
             return
         }
@@ -171,19 +181,19 @@ extension PersonaKit {
             return
         }
 
-        guard var session = store?.allObjects().first else { return }
+        guard var session = sessionStore?.allObjects().first else { return }
         session.deviceType = characteristics.deviceName
         session.iOSVersion = characteristics.systemVersion
         session.fontScale = characteristics.fontScale
 
         // Update Session
-        try! store?.save(session)
+        try! sessionStore?.save(session)
     }
 
     @discardableResult
     func saveNewSession(from crumb: IKAppEventCrumb) -> PKSession {
         let session = PKSession(sessionId: crumb.sessionId, start: Date())
-        try! store?.save(session)
+        try! sessionStore?.save(session)
         return session
     }
 
@@ -191,8 +201,24 @@ extension PersonaKit {
     func updateSessionEndDate(oldSession: PKSession, endDate: Date?) -> PKSession {
         var mutableSession = oldSession
         mutableSession.end = endDate
-        try! store?.save(mutableSession)
+        try! sessionStore?.save(mutableSession)
         return mutableSession
+    }
+
+    @discardableResult
+    func updateTotalUsageDuration(from session: PKSession) -> PKStatistics {
+        guard var statistics = statisticsStore?.allObjects().first else {
+            preconditionFailure("There should always be a PKStatistics object in the store")
+        }
+        guard let duration = session.durationInSeconds else {
+            preconditionFailure("Cannot calculate session duration without session end")
+        }
+
+        statistics.totalUsageDuration += duration
+
+        // Update Session
+        try! statisticsStore?.save(statistics)
+        return statistics
     }
 }
 
