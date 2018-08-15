@@ -11,6 +11,7 @@ public class PersonaKit {
 
     static public let shared = PersonaKit()
 
+    private let locationDetector = PKLocationDetector()
     private var currentSession: PKSession?
     private(set) var isActive: Bool = false
     private(set) var configuration: IKConfiguration?
@@ -100,6 +101,7 @@ extension PersonaKit {
             session.deviceType = deviceType
             session.iOSVersion = iOSVersion
             session.fontScale = fontScale
+            session.location = locationDetector.detectLocation()?.type.rawValue
 
             let crumb = PKSessionCrumb(session: session)
             crumb.send()

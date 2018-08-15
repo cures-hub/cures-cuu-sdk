@@ -19,6 +19,8 @@ struct PKSession {
     var deviceType: String?
     var iOSVersion: String?
     var fontScale: Double?
+    
+    var location: String?
 
     private var touchDates: [Date] = []
     private var sceneVisits: [PKSceneVisit] = []

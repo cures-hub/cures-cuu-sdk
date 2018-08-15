@@ -24,6 +24,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
     let deviceType: String?
     let iOSVersion: String?
     let fontScale: Double?
+    let location: String?
 
     // MARK: - Lifecycle
 
@@ -44,6 +45,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
         self.deviceType = session.deviceType
         self.iOSVersion = session.iOSVersion
         self.fontScale = session.fontScale
+        self.location = session.location
 
         super.init()
     }
@@ -67,6 +69,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
         case deviceType
         case iOSVersion
         case fontScale
+        case location
     }
 
     override public func encode(to encoder: Encoder) throws {
@@ -83,6 +86,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
         try container.encodeIfPresent(deviceType, forKey: .deviceType)
         try container.encodeIfPresent(iOSVersion, forKey: .iOSVersion)
         try container.encodeIfPresent(fontScale, forKey: .fontScale)
+        try container.encodeIfPresent(location, forKey: .location)
 
         try super.encode(to: encoder)
     }
