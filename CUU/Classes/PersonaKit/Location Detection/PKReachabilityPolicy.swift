@@ -29,11 +29,13 @@ class PKReachabilityPolicy: PKLocationDetectionPolicy {
         switch (locationType, reachability.connection) {
         case (.outdoor, .cellular):
             return 0.8
-        case (.home, .wifi), (.office, .wifi), (.transit, .cellular):
+        case (.home, .wifi):
+            return 0.7
+        case (.office, .wifi), (.transit, .cellular):
             return 0.6
-        case (.home, .cellular), (.home, .none), (.office, .cellular), (.office, .none), (.transit, .wifi), (.transit, .none):
+        case (.home, .cellular), (.office, .cellular), (.office, .none), (.transit, .wifi), (.transit, .none):
             return 0.2
-        case (.outdoor, .wifi), (.outdoor, .none):
+        case (.home, .none), (.outdoor, .wifi), (.outdoor, .none):
             return 0.1
         }
     }

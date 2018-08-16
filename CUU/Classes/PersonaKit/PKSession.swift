@@ -21,8 +21,10 @@ struct PKSession {
     var fontScale: Double?
     
     var location: String?
+    var traits: [PKTraitType] = []
 
     private var touchDates: [Date] = []
+    private var touchesPrecise: [Bool] = []
     private var sceneVisits: [PKSceneVisit] = []
     private var sceneStatistics: [String: [Duration]] = [:]
 
@@ -52,6 +54,9 @@ struct PKSession {
 
     mutating func logTouch(crumb: IKTouchCrumb) {
         touchDates.append(crumb.timestamp)
+        if let characteristics = crumb.characteristics as? IKTouchCharacteristics {
+            touchesPrecise.append(characteristics.touchIsPrecise)
+        }
     }
 
     private mutating func updateStatisticsForScene(with name: String, duration: Duration) {
@@ -101,6 +106,45 @@ extension PKSession {
             return difference
         }.compactMap { $0 }
         return timeBetweenTouches.average
+    }
+
+    var percentageOfPreciseTouches: Double {
+        guard let numberOfPreciseTouches = touchesPrecise.histogram[true] else {
+            return 0.0
+        }
+        return Double(numberOfPreciseTouches) / Double(touchesPrecise.count)
+    }
+
+    var isHasty: Bool {
+        guard let durationInSeconds = durationInSeconds, numberOfTouches > 3 else {
+            // Only evaluate "real", ended sessions that have at least 3 touches
+            return false
+        }
+
+        return durationInSeconds < 10
+    }
+
+    var isAdventurous: Bool {
+        guard sceneStatistics.count > 10 else {
+            return false
+        }
+        let averageDurations = sceneStatistics.mapValues({ $0.average }).values
+        let numberOfShortVisits = averageDurations.count(where: { $0 < 5 })
+
+        // TODO: examine if we want to use absolute number (> 10) or percentage of all visits
+        return numberOfShortVisits > 10
+    }
+
+    var isFearless: Bool {
+        let alertStatistics = sceneStatistics.filter { (key: String, value: [Duration]) -> Bool in
+            key.lowercased().contains("alert")
+        }
+        let averagedDuration = sceneStatistics.mapValues({ $0.average })
+
+        // Everything below 2 seconds is probably not read
+        let numberOfShortVisits = averagedDuration.count(where: { $0.value < 2 })
+
+        return alertStatistics.count == numberOfShortVisits
     }
 }
 

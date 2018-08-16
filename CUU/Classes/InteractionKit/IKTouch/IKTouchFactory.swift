@@ -31,6 +31,14 @@ extension IKTouchFactory {
         touch.touchedElementTraits = description(of: capturedTouch.view?.accessibilityTraits)
         touch.touchedElementLabel = capturedTouch.view?.accessibilityLabel ?? ""
         touch.touchedElementValue = capturedTouch.view?.accessibilityValue ?? ""
+
+        if let view = capturedTouch.view, type == .touchEnded {
+            let centerRect = CGRect(x: view.frame.width / 4,
+                                    y: view.frame.height / 4,
+                                    width: view.frame.width / 2,
+                                    height: view.frame.height / 2)
+            touch.touchIsPrecise = centerRect.contains(location)
+        }
         
         return touch
     }

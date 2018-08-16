@@ -102,6 +102,7 @@ extension PersonaKit {
             session.iOSVersion = iOSVersion
             session.fontScale = fontScale
             session.location = locationDetector.detectLocation()?.type.rawValue
+            session.traits = PKTraitDetector.detectTraits(for: session)
 
             let crumb = PKSessionCrumb(session: session)
             crumb.send()

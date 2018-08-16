@@ -18,3 +18,9 @@ public extension Collection where Element: BinaryFloatingPoint {
         return self.reduce(0, +) / Element(0.distance(to: self.count))
     }
 }
+
+public extension Collection {
+    public func count(where test: (Element) throws -> Bool) rethrows -> Int {
+        return try self.filter(test).count
+    }
+}

@@ -25,11 +25,12 @@ class PKSessionCharacteristics: CUUCharacteristics {
     let iOSVersion: String?
     let fontScale: Double?
     let location: String?
+    let traits: [PKTraitType]
 
     // MARK: - Lifecycle
 
     init(session: PKSession) {
-        guard let end = session.end else {
+        guard let end = session.end, let durationInSeconds = session.durationInSeconds else {
             preconditionFailure("Cannot create PKSessionCharacteristics from a session without an end.")
         }
 
@@ -37,7 +38,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
         self.cuuSessionId = session.cuuSessionId
         self.start = session.start
         self.end = end
-        self.durationInSeconds = end.timeIntervalSinceReferenceDate - start.timeIntervalSinceReferenceDate
+        self.durationInSeconds = durationInSeconds
         self.mostVisitedScene = session.mostVisitedScene
         self.averageTimeOnMostVisitedScene = session.averageTimeOnMostVisitedScene
         self.numberOfTouches = session.numberOfTouches
@@ -46,6 +47,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
         self.iOSVersion = session.iOSVersion
         self.fontScale = session.fontScale
         self.location = session.location
+        self.traits = session.traits
 
         super.init()
     }
@@ -70,6 +72,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
         case iOSVersion
         case fontScale
         case location
+        case traits
     }
 
     override public func encode(to encoder: Encoder) throws {
@@ -87,6 +90,7 @@ class PKSessionCharacteristics: CUUCharacteristics {
         try container.encodeIfPresent(iOSVersion, forKey: .iOSVersion)
         try container.encodeIfPresent(fontScale, forKey: .fontScale)
         try container.encodeIfPresent(location, forKey: .location)
+        try container.encode(traits, forKey: .traits)
 
         try super.encode(to: encoder)
     }

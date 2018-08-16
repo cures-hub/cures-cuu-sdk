@@ -41,6 +41,7 @@ public protocol IKTouch: IKDataObject {
     var touchedElementTraits: String { set get }
     var touchedElementLabel: String { set get }
     var touchedElementValue: String { set get }
+    var touchIsPrecise: Bool { get set }
 }
 
 extension IKTouch {

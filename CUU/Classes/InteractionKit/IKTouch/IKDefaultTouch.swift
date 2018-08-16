@@ -18,6 +18,7 @@ public class IKDefaultTouch: IKTouch {
     public var touchedElementTraits: String = ""
     public var touchedElementLabel: String = ""
     public var touchedElementValue: String = ""
+    public var touchIsPrecise: Bool = false
     
 }
 

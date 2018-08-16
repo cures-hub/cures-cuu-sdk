@@ -27,6 +27,8 @@ class IKTouchCharacteristics: CUUCharacteristics {
     let locationY: Double
     let previousLocationX: Double
     let previousLocationY: Double
+
+    let touchIsPrecise: Bool
     
     // MARK - Lifecycle
     
@@ -39,6 +41,8 @@ class IKTouchCharacteristics: CUUCharacteristics {
         self.locationY = touch.locationY
         self.previousLocationX = touch.previousLocationX
         self.previousLocationY = touch.previousLocationY
+
+        self.touchIsPrecise = touch.touchIsPrecise
         
         super.init()
     }
