@@ -62,8 +62,6 @@ class IKCoreDataStorage: IKStorage {
             print("Error fetching results")
         }
         
-        print(results)
-        
         completion(results)
     }
 }

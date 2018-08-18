@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol BKContext: CustomStringConvertible {
+public protocol BKContext: CustomStringConvertible, Encodable {
        
     var type: String { get }
     var timestamp: Date { get }

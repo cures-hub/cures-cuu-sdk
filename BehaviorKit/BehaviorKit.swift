@@ -81,6 +81,8 @@ extension BehaviorKit: BKPredictionDelegate {
 extension BehaviorKit: BKStorage {
     public func commit(_ object: BKSituation, completion: ((Bool, Error?) -> Void)?) {
         //configuration?.storage.commit(object, completion: completion)
-        print(object)
+        
+        let dataObject = BKTransferObject(situation: object)
+        dataObject.send()
     }
 }
