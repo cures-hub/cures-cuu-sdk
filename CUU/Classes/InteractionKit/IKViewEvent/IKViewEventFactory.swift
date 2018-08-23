@@ -14,7 +14,7 @@ extension IKViewEventFactory {
         viewEvent.title = type.description
         viewEvent.type = "IKViewEvent"
         
-        viewEvent.viewControllerTitle = viewController.title ?? ""
+        viewEvent.viewControllerTitle = viewController.title ?? viewController.accessibilityLabel ?? ""
         viewEvent.viewControllerType = viewController.typeName
         viewEvent.viewControllerInstance = viewController.instanceIdentifier
         viewEvent.viewWidth = Double(viewController.view.frame.width)

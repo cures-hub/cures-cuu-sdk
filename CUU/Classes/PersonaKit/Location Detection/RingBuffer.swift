@@ -35,10 +35,14 @@ public struct RingBuffer<T> {
 private extension Array {
     subscript (wrapped index: Int) -> Element {
         get {
-            return self[mod(index, count)]
+            let calculatedIndex = mod(index, count)
+            assert(calculatedIndex >= 0 && calculatedIndex < self.count, "Index out of bounds")
+            return self[calculatedIndex]
         }
         set {
-            self[mod(index, count)] = newValue
+            let calculatedIndex = mod(index, count)
+            assert(calculatedIndex >= 0 && calculatedIndex < self.count, "Index out of bounds")
+            self[calculatedIndex] = newValue
         }
     }
 }

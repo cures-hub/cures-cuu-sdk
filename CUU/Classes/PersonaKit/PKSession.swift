@@ -45,9 +45,15 @@ struct PKSession {
         case .didAppear:
             return
         case .didDisappear(let name, let timestamp):
-            guard let lastAppearance = sceneVisits.last(where: { $0.name == name }) else { return }
+            let appearances = sceneVisits.filter { visit in
+                if case .didAppear = visit {
+                    return true
+                } else {
+                    return false
+                }
+            }
+            guard let lastAppearance = appearances.last(where: { $0.name == name }) else { return }
             let duration = timestamp.timeIntervalSinceReferenceDate - lastAppearance.timestamp.timeIntervalSinceReferenceDate
-            print("[ViewEvent] Time on '\(name)': \(duration) seconds")
             updateStatisticsForScene(with: name, duration: duration)
         }
     }
@@ -125,14 +131,15 @@ extension PKSession {
     }
 
     var isAdventurous: Bool {
-        guard sceneStatistics.count > 10 else {
+        // TODO: Somehow calculate total number of ViewControllers and use it here
+        guard sceneStatistics.count > 5 else {
             return false
         }
         let averageDurations = sceneStatistics.mapValues({ $0.average }).values
         let numberOfShortVisits = averageDurations.count(where: { $0 < 5 })
 
-        // TODO: examine if we want to use absolute number (> 10) or percentage of all visits
-        return numberOfShortVisits > 10
+        // TODO: examine if we want to use absolute number (> 5) or percentage of all visits
+        return numberOfShortVisits > 5
     }
 
     var isFearless: Bool {

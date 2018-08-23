@@ -120,10 +120,8 @@ extension PersonaKit {
         switch viewEventType {
         case .didAppear:
             currentSession?.appendSceneVisit(visit: .didAppear(name: characteristics.viewControllerType, timestamp: Date()))
-            print("[ViewEvent.didAppear] \(characteristics.viewControllerType)")
         case .didDisappear:
             currentSession?.appendSceneVisit(visit: .didDisappear(name: characteristics.viewControllerType, timestamp: Date()))
-            print("[ViewEvent.didDisappear] \(characteristics.viewControllerType)")
             return
         }
     }

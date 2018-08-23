@@ -25,7 +25,7 @@ struct PKTraitDetector {
             result.append(.fearless)
         }
         if let averageTimeOnMostVisitedScene = session.averageTimeOnMostVisitedScene,
-            averageTimeOnMostVisitedScene > 30 {
+            averageTimeOnMostVisitedScene > 15 {
             result.append(.focused)
         }
         
