@@ -26,4 +26,22 @@ extension PKSceneVisit {
             return timestamp
         }
     }
+
+    var isDidAppear: Bool {
+        switch self {
+        case .didAppear:
+            return true
+        default:
+            return false
+        }
+    }
+
+    var isDidDisappear: Bool {
+        switch self {
+        case .didDisappear:
+            return true
+        default:
+            return false
+        }
+    }
 }

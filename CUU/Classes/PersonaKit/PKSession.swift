@@ -131,27 +131,52 @@ extension PKSession {
     }
 
     var isAdventurous: Bool {
-        // TODO: Somehow calculate total number of ViewControllers and use it here
-        guard sceneStatistics.count > 5 else {
+        let targetNumberOfVisits = 8
+        let timePeriod: Duration = 30
+        let appearances = sceneVisits.filter { $0.isDidAppear }
+        guard appearances.count > targetNumberOfVisits else {
             return false
         }
-        let averageDurations = sceneStatistics.mapValues({ $0.average }).values
-        let numberOfShortVisits = averageDurations.count(where: { $0 < 5 })
+
+        var slices: [ArraySlice<PKSceneVisit>] = []
+
+        for (offset, element) in appearances.enumerated() {
+            let currentSlice = appearances[offset..<appearances.count]
+            let sliceOfSlice = currentSlice.prefix(while: { $0.timestamp < element.timestamp.addingTimeInterval(timePeriod)})
+            if sliceOfSlice.count >= targetNumberOfVisits {
+                slices.append(sliceOfSlice)
+            }
+        }
+
+        // User visited \(targetNumberOfVisits) scenes in a time period of \(timePeriod) seconds anywhere during this session
+        return !slices.isEmpty
+    }
+
+    var isConfused: Bool {
+        let targetNumberOfVisits = 5
+        let targetDuration: Duration = 2
+
+        guard sceneStatistics.count > targetNumberOfVisits else {
+            return false
+        }
+        let allDurations = sceneStatistics.values.flatMap { $0 }
+        let numberOfShortVisits = allDurations.count(where: { $0 < targetDuration })
 
         // TODO: examine if we want to use absolute number (> 5) or percentage of all visits
-        return numberOfShortVisits > 5
+        return numberOfShortVisits > targetNumberOfVisits
     }
 
     var isFearless: Bool {
         let alertStatistics = sceneStatistics.filter { (key: String, value: [Duration]) -> Bool in
             key.lowercased().contains("alert")
         }
-        let averagedDuration = sceneStatistics.mapValues({ $0.average })
+        guard !alertStatistics.isEmpty else {
+            return false
+        }
+        let alertDurations = alertStatistics.values.flatMap { $0 }
+        let numberOfShortVisits = alertDurations.count(where: { $0 < 2 }) // Everything below 2 seconds is probably not read
 
-        // Everything below 2 seconds is probably not read
-        let numberOfShortVisits = averagedDuration.count(where: { $0.value < 2 })
-
-        return alertStatistics.count == numberOfShortVisits
+        return numberOfShortVisits > 0
     }
 }
 

@@ -10,26 +10,32 @@ import Foundation
 struct PKTraitDetector {
 
     static func detectTraits(for session: PKSession) -> [PKTraitType] {
-        var result: [PKTraitType] = []
+        var result: Set<PKTraitType> = []
 
         if session.percentageOfPreciseTouches > 0.6 {
-            result.append(.precise)
+            result.insert(.precise)
         }
         if session.isHasty {
-            result.append(.hasty)
+            result.insert(.hasty)
         }
         if session.isAdventurous {
-            result.append(.adventurous)
+            result.insert(.adventurous)
         }
         if session.isFearless {
-            result.append(.fearless)
+            result.insert(.fearless)
         }
         if let averageTimeOnMostVisitedScene = session.averageTimeOnMostVisitedScene,
             averageTimeOnMostVisitedScene > 15 {
-            result.append(.focused)
+            result.insert(.focused)
+        }
+        if !result.contains(.adventurous) && session.isConfused {
+            result.insert(.confused)
+        }
+        if let averageTimeBetweenTouches = session.averageTimeBetweenTouches, averageTimeBetweenTouches < 1 {
+            result.insert(.theFlash)
         }
         
-        return result
+        return Array(result)
     }
 
     
