@@ -30,11 +30,11 @@ CUU is a project to help analyzing the usage of your app by providing functional
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'CUU/Classes/**/*.{swift,xcdatamodeld}'
+  s.source_files = 'CUU/Classes/**/*.{swift,xcdatamodeld,mlmodel}'
   s.resources = 'CUU/Classes/InteractionKit/Core/CoreData/IKData.xcdatamodeld'
   s.swift_version = "4.0"
   
-  s.preserve_paths = 'CUU/Classes/InteractionKit/Core/CoreData/IKData.xcdatamodeld'
+  s.preserve_paths = 'CUU/Classes/InteractionKit/Core/CoreData/IKData.xcdatamodeld,CUU/Classes/BehaviorKit/Models/*/*.mlmodel'
   
   s.resource_bundles = {
   'CUU' => ['CUU/Assets/*']
