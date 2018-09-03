@@ -1,13 +1,11 @@
 class BKAgeGroupFeatureGenerator {
     
-    @available(iOS 11.0, *)
     func features(completion: (AgeGroupContextInput?)->Void ) {
         
         let lock = NSLock()
         var openTasks = 2
         
         let windowSize: TimeInterval = 60
-        let stepSize: TimeInterval = 5
         let predicate = NSPredicate(format: "startDate > %@", Date(timeIntervalSinceNow: -windowSize) as CVarArg)
         
         

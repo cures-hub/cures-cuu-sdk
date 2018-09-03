@@ -60,7 +60,7 @@ class IKCoreDataStorage: IKStorage {
             results = try persistentContainer.viewContext.fetch(request)
         } catch _ {
             print("Error fetching results")
-        }
+        }   
         
         completion(results)
     }

@@ -20,6 +20,6 @@ public struct BKDefaultConfiguration: BKConfiguration {
         } else {
             self.predictor = nil
         }
-        self.frequency = 2.0
+        self.frequency = 10.0
     }
 }

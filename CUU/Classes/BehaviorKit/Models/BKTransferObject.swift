@@ -44,8 +44,9 @@ extension BKTransferObject {
     private func sendToDatabase(projectId: String, commitHash: String, trackingToken: String) {
         // Construct the url.
         guard let baseUrl = CUUConstants.baseUrl else { return }
-        let urlString = baseUrl + "/v1/behaviorkit/projects/" + projectId + "/commits/" + commitHash + "/predicitions"
+        let urlString = baseUrl + "/v1/behaviorkit/projects/" + projectId + "/commits/" + commitHash + "/behavior"
         let url = URL(string: urlString)
+        
         
         // Create the url request.
         var urlRequest = URLRequest(url: url!)

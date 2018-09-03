@@ -2,8 +2,8 @@ public class BKSmartphoneExperienceContext: BKContext {
     
     public let type: String = "BKSmartphoneExperienceContext"
     
-    public var _session: String = ""
-    public var _user: String = ""
+    public var _session: String = CUUSessionManager.sharedManager.currentSession
+    public var _user: String = CUUUserManager.sharedManager.userId
     public var timestamp: Date = Date()
     public var state: String = ""
     public var classProbability: [String : Double] = [:]
