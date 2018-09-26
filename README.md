@@ -73,4 +73,8 @@ class ViewController: CUUViewController {
 
 ## License
 
-CUU is available under the MIT license. See the LICENSE file for more info.
+CUU is available under the MIT license. See the [LICENSE file](LICENSE) for more info.
+
+---
+
+<img src="https://avatars1.githubusercontent.com/u/29952940?s=200&v=4" width="50" />
