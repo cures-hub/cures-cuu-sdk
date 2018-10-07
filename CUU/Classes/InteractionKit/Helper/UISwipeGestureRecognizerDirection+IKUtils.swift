@@ -1,4 +1,4 @@
-extension UISwipeGestureRecognizerDirection: CustomStringConvertible {
+extension UISwipeGestureRecognizer.Direction: CustomStringConvertible {
     
     public var description: String {
         switch self {

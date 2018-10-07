@@ -4,7 +4,7 @@ import CoreML
 public class BKProductivenessFactory: BKContextFactory {
     
     private let model = ProdutivenessContext()
-    private let featureGenerator = BKProdutivenessFeatureGenerator()
+    private let featureGenerator = BKProductivenessFeatureGenerator()
     
     public init() {
         
@@ -18,8 +18,8 @@ public class BKProductivenessFactory: BKContextFactory {
         return try? model.prediction(input: input)
     }
     
-    private func transform(output: ProdutivenessContextOutput) -> BKProdutivenessContext? {
-        return BKProdutivenessContext.from(output)
+    private func transform(output: ProdutivenessContextOutput) -> BKProductivenessContext? {
+        return BKProductivenessContext.from(output)
     }
 }
 

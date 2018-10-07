@@ -53,9 +53,9 @@ class CUUStartOptionView: UIView {
             //position constraints
             let viewsDictionary = ["title": titleLabel, "content": contentLabel, "disable": disableButton] as [String : Any]
             
-            let centerTitleX = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[disable]-18-[title]-10-|", options: NSLayoutFormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
-            let centerContentX = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[disable]-18-[content]-10-|", options: NSLayoutFormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
-            let hConstraintsButton = NSLayoutConstraint.constraints(withVisualFormat: "V:|[title]-2-[content]|", options: NSLayoutFormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
+            let centerTitleX = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[disable]-18-[title]-10-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
+            let centerContentX = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[disable]-18-[content]-10-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
+            let hConstraintsButton = NSLayoutConstraint.constraints(withVisualFormat: "V:|[title]-2-[content]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
             
             let centerButtonY = NSLayoutConstraint(item: disableButton,
                                                    attribute: .centerY,

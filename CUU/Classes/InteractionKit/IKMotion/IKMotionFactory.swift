@@ -1,12 +1,12 @@
 public protocol IKMotionFactory {
     
-    func motion(_ capturedMotion: UIEventSubtype, type: IKMotionType) -> IKMotion?
+    func motion(_ capturedMotion: UIEvent.EventSubtype, type: IKMotionType) -> IKMotion?
     
 }
 
 
 extension IKMotionFactory {
-    public func populate(_ motion: IKMotion, eventType: UIEventSubtype, ofType type: IKMotionType) -> IKMotion? {
+    public func populate(_ motion: IKMotion, eventType: UIEvent.EventSubtype, ofType type: IKMotionType) -> IKMotion? {
         
         if eventType != .motionShake {
             return nil

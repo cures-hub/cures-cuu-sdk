@@ -31,7 +31,7 @@ public class BKStatusBarWindow: UIWindow {
         // needed, because otherwise the application would crash
         rootViewController = UIViewController()
         
-        windowLevel = UIWindowLevelStatusBar
+        windowLevel = UIWindow.Level.statusBar
         isUserInteractionEnabled = false
         backgroundColor = BKStatusBarWindow.defaultBackgroundColor
         initTextLabel()

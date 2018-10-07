@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-CUU is a project to help analyzing the usage of your app by providing functionality to track user interactions within your app. This data can then be used to track usage of your features.
+CUU is a project to help analyzing the usage of your app by providing functionality to track user interactions within your app. This data can be used to track usage of your features.
                        DESC
 
   s.homepage         = 'https://cuu.ase.in.tum.de'
@@ -32,7 +32,7 @@ CUU is a project to help analyzing the usage of your app by providing functional
 
   s.source_files = 'CUU/Classes/**/*.{swift,xcdatamodeld,mlmodel}'
   s.resources = 'CUU/Classes/InteractionKit/Core/CoreData/IKData.xcdatamodeld'
-  s.swift_version = "4.0"
+  s.swift_version = "4.2"
   
   s.preserve_paths = 'CUU/Classes/InteractionKit/Core/CoreData/IKData.xcdatamodeld','CUU/Classes/BehaviorKit/Models/*/*.mlmodel'
   

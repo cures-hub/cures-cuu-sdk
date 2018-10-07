@@ -12,6 +12,7 @@ enum CUUStartOption: Int {
     case Features = 0
     case Interactions
     case Behavior
+    case Notes
 }
 
 protocol CUUStartViewDelegate : class {
@@ -26,7 +27,7 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
     
     weak var delegate : CUUStartViewDelegate?
     
-    var selectedOptions: [CUUStartOption] = [.Features, .Interactions, .Behavior]
+    var selectedOptions: [CUUStartOption] = [.Features, .Interactions, .Behavior, .Notes]
     
     // MARK: Initialization
     
@@ -46,10 +47,12 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
         self.kitStackView.addArrangedSubview(self.featureKitView)
         self.kitStackView.addArrangedSubview(self.interactionKitView)
         self.kitStackView.addArrangedSubview(self.behaviorKitView)
+        self.kitStackView.addArrangedSubview(self.noteKitView)
         
         self.featureKitView.delegate = self
         self.interactionKitView.delegate = self
         self.behaviorKitView.delegate = self
+        self.noteKitView.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,11 +70,11 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
             let viewsDictionary = ["scroll": scrollView, "background": backgroundView, "title": titleLabel, "content": contentLabel, "stack": kitStackView, "go": goButton] as [String : Any]
             let metrics = ["screenWidth": UIScreen.main.bounds.width] as [String : Any]
             
-            let scrollViewHC = NSLayoutConstraint.constraints(withVisualFormat: "H:|[scroll]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
-            let scrollViewVC = NSLayoutConstraint.constraints(withVisualFormat: "V:|[scroll]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+            let scrollViewHC = NSLayoutConstraint.constraints(withVisualFormat: "H:|[scroll]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+            let scrollViewVC = NSLayoutConstraint.constraints(withVisualFormat: "V:|[scroll]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
             
-            let backgroundViewHC = NSLayoutConstraint.constraints(withVisualFormat: "H:|[background(screenWidth)]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: viewsDictionary)
-            let backgroundViewVC = NSLayoutConstraint.constraints(withVisualFormat: "V:|[background]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+            let backgroundViewHC = NSLayoutConstraint.constraints(withVisualFormat: "H:|[background(screenWidth)]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: metrics, views: viewsDictionary)
+            let backgroundViewVC = NSLayoutConstraint.constraints(withVisualFormat: "V:|[background]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
             
             let backgroundWidth = NSLayoutConstraint(item: backgroundView,
                                            attribute: .width,
@@ -89,11 +92,11 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
                                                      multiplier: 1.0,
                                                      constant: 0.0)
             
-            let centerTitleX = NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[title]-10-|", options: NSLayoutFormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
-            let centerContentX = NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[content]-10-|", options: NSLayoutFormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
-            let hConstraintsStack = NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[stack]-20-|", options: NSLayoutFormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
-            let hConstraintsButton = NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[go]-20-|", options: NSLayoutFormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
-            let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-100-[title]-40-[content]-30-[stack]-(>=30)-[go]-30-|", options: NSLayoutFormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
+            let centerTitleX = NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[title]-10-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
+            let centerContentX = NSLayoutConstraint.constraints(withVisualFormat: "H:|-10-[content]-10-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
+            let hConstraintsStack = NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[stack]-20-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
+            let hConstraintsButton = NSLayoutConstraint.constraints(withVisualFormat: "H:|-20-[go]-20-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
+            let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-100-[title]-40-[content]-30-[stack]-(>=30)-[go]-30-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0),metrics: nil, views: viewsDictionary)
             
             addConstraints(scrollViewHC)
             addConstraints(scrollViewVC)
@@ -147,9 +150,9 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
     var kitStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = UILayoutConstraintAxis.vertical
-        stackView.distribution = UIStackViewDistribution.equalSpacing
-        stackView.alignment = UIStackViewAlignment.leading
+        stackView.axis = NSLayoutConstraint.Axis.vertical
+        stackView.distribution = UIStackView.Distribution.equalSpacing
+        stackView.alignment = UIStackView.Alignment.leading
         stackView.spacing = 24.0
         return stackView
     }()
@@ -178,15 +181,23 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
         return view
     }()
     
+    var noteKitView : CUUStartOptionView = {
+        let view = CUUStartOptionView(frame: .zero, option: .Notes)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.titleLabel.text = "NoteKit"
+        view.contentLabel.text = "Enables you to give us textual feedback whenever you shake your device."
+        return view
+    }()
+    
     var goButton : UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didTapGoButton), for: .touchUpInside)
-        button.setTitle("Continue", for: UIControlState.normal)
+        button.setTitle("Continue", for: UIControl.State.normal)
         button.backgroundColor = #colorLiteral(red: 0.07676978277, green: 0.378797845, blue: 0.8541600571, alpha: 1)
         button.layer.cornerRadius = 15.0
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17.0)
-        button.contentEdgeInsets = UIEdgeInsetsMake(15.0, 35.0, 15.0, 35.0)
+        button.contentEdgeInsets = UIEdgeInsets.init(top: 15.0, left: 35.0, bottom: 15.0, right: 35.0)
         return button
     }()
     

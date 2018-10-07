@@ -1,6 +1,6 @@
-public class BKProdutivenessContext: BKContext {
+public class BKProductivenessContext: BKContext {
     
-    public let type: String = "BKProdutivenessContext"
+    public let type: String = "BKProductivenessContext"
     
     public var _session: String = CUUSessionManager.sharedManager.currentSession
     public var _user: String = CUUUserManager.sharedManager.userId
@@ -11,11 +11,11 @@ public class BKProdutivenessContext: BKContext {
 }
 
 @available(iOS 11.0, *)
-extension BKProdutivenessContext {
+extension BKProductivenessContext {
     
-    static func from(_ output: ProdutivenessContextOutput) -> BKProdutivenessContext? {
+    static func from(_ output: ProdutivenessContextOutput) -> BKProductivenessContext? {
         
-        let context = BKProdutivenessContext()
+        let context = BKProductivenessContext()
         context.timestamp = Date()
         context.state = output.productivenessState
         context.classProbability = output.classProbability

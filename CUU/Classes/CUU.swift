@@ -20,18 +20,8 @@ public class CUU {
         return BehaviorKit.shared
     }
     
-    // - MARK: Methods
     /**
-     * Sets the active CUUConfiguration.
-     */
-    /*public static func set(configuration: CUUConfiguration) {
-        CUU.configuration = configuration
-        
-        iKit.configure(with: configuration.interactionKitConfiguration)
-    }*/
-    
-    /**
-     * Starts InteractionKit.
+     * Starts CUU.
      */
     public static func start() {
         CUU.configuration = configuration
@@ -66,14 +56,19 @@ public class CUU {
             
             bKit.start()
         }
+        
+        if options.contains(.Notes) {
+            NoteKit.start()
+        }
     }
     
     /**
-     * Stops InteractionKit.
+     * Stops CUU.
      */
     public static func stop() {
         FeatureKit.stop()
         iKit.stop()
         bKit.stop()
+        NoteKit.stop()
     }
 }

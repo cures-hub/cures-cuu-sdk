@@ -1,4 +1,4 @@
-class BKProdutivenessFeatureGenerator {
+class BKProductivenessFeatureGenerator {
     
     @available(iOS 11.0, *)
     func features(completion: (ProdutivenessContextInput?)->Void ) {

@@ -22,8 +22,8 @@ class CUUStartViewController: UIViewController, CUUStartViewDelegate {
         let viewsDictionary = ["start": cuuStartView] as [String : Any]
         
         //position constraints
-        let contentConstraint = NSLayoutConstraint.constraints(withVisualFormat: "|[start]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
-        let contentVConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|[start]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+        let contentConstraint = NSLayoutConstraint.constraints(withVisualFormat: "|[start]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+        let contentVConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|[start]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
         
         view.addConstraints(contentConstraint)
         view.addConstraints(contentVConstraint)

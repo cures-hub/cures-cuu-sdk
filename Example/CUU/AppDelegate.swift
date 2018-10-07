@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, IKAppDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Start the CUU framework for tracking features and interactions within the app.
         CUU.start()
         

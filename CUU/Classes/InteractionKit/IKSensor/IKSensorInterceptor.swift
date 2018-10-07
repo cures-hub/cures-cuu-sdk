@@ -64,7 +64,7 @@ public class IKSensorInterceptor: IKInterceptor  {
         })
         
         // Add the timer to the current run loop.
-        RunLoop.current.add(self.timer!, forMode: .defaultRunLoopMode)
+        RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.default)
     }
     
     private func endDeviceMotion() {

@@ -44,7 +44,7 @@ public class IKCoreMotionShakeDetector {
         })
         
         // Add the timer to the current run loop.
-        RunLoop.current.add(self.timer!, forMode: .defaultRunLoopMode)
+        RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.default)
     }
     
     public func stopShakeUpdates() {
@@ -82,7 +82,7 @@ public class IKCoreMotionShakeDetector {
                 
                 let change = fabs(x1-x2+y1-y2+z1-z2);
                 if (sensitivity < change) {
-                    delegate?.report(motion: UIEventSubtype.motionShake, of: .began)
+                    delegate?.report(motion: UIEvent.EventSubtype.motionShake, of: .began)
                 }
             }
         }

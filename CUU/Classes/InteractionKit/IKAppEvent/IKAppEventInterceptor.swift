@@ -50,31 +50,31 @@ public class IKAppEventInterceptor: IKInterceptor {
         
         let mainQueue = OperationQueue.main
 
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidFinishLaunching, object: nil, queue: mainQueue, using: { _ in
+        NotificationCenter.default.addObserver(forName: UIApplication.didFinishLaunchingNotification, object: nil, queue: mainQueue, using: { _ in
             self.log(.didLaunch)
         })
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillTerminate, object: nil, queue: mainQueue, using: { _ in
+        NotificationCenter.default.addObserver(forName: UIApplication.willTerminateNotification, object: nil, queue: mainQueue, using: { _ in
             self.log(.didTerminate)
         })
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: mainQueue, using: { _ in
+        NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: mainQueue, using: { _ in
             self.log(.didBecomeActive)
         })
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillResignActive, object: nil, queue: mainQueue, using: { _ in
+        NotificationCenter.default.addObserver(forName: UIApplication.willResignActiveNotification, object: nil, queue: mainQueue, using: { _ in
             self.log(.didResignActive)
         })
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: mainQueue, using: { _ in
+        NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: mainQueue, using: { _ in
             self.log(.didEnterBackground)
         })
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: mainQueue, using: { _ in
+        NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: mainQueue, using: { _ in
             self.log(.didEnterForeground)
         })
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidReceiveMemoryWarning, object: nil, queue: mainQueue, using: { _ in
+        NotificationCenter.default.addObserver(forName: UIApplication.didReceiveMemoryWarningNotification, object: nil, queue: mainQueue, using: { _ in
             self.log(.didReceiveMemoryWarning)
         })
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardDidShow, object: nil, queue: mainQueue, using: { _ in
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: mainQueue, using: { _ in
             self.log(.keyboardDidShow)
         })
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardDidHide, object: nil, queue: mainQueue, using: { _ in
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidHideNotification, object: nil, queue: mainQueue, using: { _ in
             self.log(.keyboardDidHide)
         })
         

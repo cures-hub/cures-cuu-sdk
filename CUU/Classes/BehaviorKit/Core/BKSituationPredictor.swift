@@ -24,7 +24,7 @@ public class BKSituationPredictor: BKPredictor {
         })
         self.timer = timer
         // Add the timer to the current run loop.
-        RunLoop.current.add(timer, forMode: .defaultRunLoopMode)
+        RunLoop.current.add(timer, forMode: RunLoop.Mode.default)
     }
     
     public func stop() {
