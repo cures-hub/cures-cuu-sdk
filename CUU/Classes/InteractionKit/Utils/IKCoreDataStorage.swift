@@ -49,6 +49,17 @@ class IKCoreDataStorage: IKStorage {
         }
     }
     
+    func commit(_ object: IKInteraction, completion: ((Bool, Error?) -> Void)?) {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                print("Error saving data")
+            }
+        }
+    }
+    
     func fetch<T>(_ type: T.Type, predicate: NSPredicate?, completion: (Array<IKCharacteristics>) -> Void) where T : IKCharacteristics {
         var results : [IKCharacteristics] = []
         let request = NSFetchRequest<IKCharacteristics>(entityName: String(describing: type))
@@ -61,6 +72,22 @@ class IKCoreDataStorage: IKStorage {
         } catch _ {
             print("Error fetching results")
         }   
+        
+        completion(results)
+    }
+    
+    func fetch<T>(_ type: T.Type, predicate: NSPredicate?, completion: (Array<IKInteraction>) -> Void) where T : IKInteraction {
+        var results : [IKInteraction] = []
+        let request = NSFetchRequest<IKInteraction>(entityName: String(describing: type))
+        if let predicate = predicate {
+            request.predicate = predicate
+        }
+        
+        do {
+            results = try persistentContainer.viewContext.fetch(request)
+        } catch _ {
+            print("Error fetching results")
+        }
         
         completion(results)
     }

@@ -102,6 +102,8 @@
 		8BC1AEE69013BF4576E5A4C7A674C700 /* BKSituation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110055F0075C45189404836DE256B405 /* BKSituation.swift */; };
 		8BE13D27602FC973F949748F3A2CE380 /* IKDeviceCharacteristics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D513A94C2566B5D7CE0448F67E55EDBB /* IKDeviceCharacteristics+CoreDataClass.swift */; };
 		8EBB240C359F6485051617FF629B4B2E /* Checked@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D3AE1EC7602895BE26168CAFCFBEA9B /* Checked@3x.png */; };
+		8F4EC68021768E7300D72FCF /* CUUNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4EC67F21768E7300D72FCF /* CUUNetworkManager.swift */; };
+		8F4EC6822176956500D72FCF /* CUUNetworkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4EC6812176956500D72FCF /* CUUNetworkObject.swift */; };
 		8FC645E92764378B414DEB2569A56FF4 /* IKMotionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA722F59E69621A32C5177FD84DA441D /* IKMotionType.swift */; };
 		9031100D650BC1F9F75EE0F187C3D0FF /* Pods-CUU_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD6FF0FAF32B2F92500DFB18D545FB1 /* Pods-CUU_Tests-dummy.m */; };
 		91C177FBDFB5CE11D4E82918ACE7B694 /* IKSensorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D3EDDB257B46BB21AD3196B6BE8B6B /* IKSensorFactory.swift */; };
@@ -301,6 +303,8 @@
 		89793FBC46F710643BF8358E89B7E844 /* BKSmartphoneExperienceFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BKSmartphoneExperienceFactory.swift; sourceTree = "<group>"; };
 		89DDE7EFAAD94CA6E6CCF063CD75DFBC /* CUUConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CUUConstants.swift; sourceTree = "<group>"; };
 		8E6CBE6250A88D0BD9FC54FC7AF4FBB2 /* Pods-CUU_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CUU_Tests.modulemap"; sourceTree = "<group>"; };
+		8F4EC67F21768E7300D72FCF /* CUUNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUUNetworkManager.swift; sourceTree = "<group>"; };
+		8F4EC6812176956500D72FCF /* CUUNetworkObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUUNetworkObject.swift; sourceTree = "<group>"; };
 		900E7933EC910063B4D63C08CA6BFB11 /* IKDefaultEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKDefaultEvent.swift; sourceTree = "<group>"; };
 		90B400343CE07F830F432FC54BE2B173 /* IKCoreDataStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKCoreDataStorage.swift; sourceTree = "<group>"; };
 		9300FC84715E465DC049C7ECCA6AF12C /* IKCoreMotionShakeDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IKCoreMotionShakeDelegate.swift; sourceTree = "<group>"; };
@@ -769,6 +773,8 @@
 				50A943E806150DA65714A1BA3F2F3774 /* CUUUserManager.swift */,
 				EDBB4495D89EB183E9CEB0CAD521D1BF /* CUUUtils.swift */,
 				F2795D78492B98AD789184442D44644A /* CUUViewControllers.swift */,
+				8F4EC67F21768E7300D72FCF /* CUUNetworkManager.swift */,
+				8F4EC6812176956500D72FCF /* CUUNetworkObject.swift */,
 			);
 			name = CUUCore;
 			path = CUU/Classes/CUUCore;
@@ -1188,6 +1194,7 @@
 				16CE70B3EC56819BC32544AC1DEEBF9B /* IKAppDelegate.swift in Sources */,
 				F4CE97A36A759B45F01BC8D06345387D /* IKAppEvent.swift in Sources */,
 				A93C961B070EFA2810EC1FEBA8D2D2FD /* IKAppEventCharacteristics+CoreDataClass.swift in Sources */,
+				8F4EC6822176956500D72FCF /* CUUNetworkObject.swift in Sources */,
 				4D0F20150CB99B531230AFFB81ED677F /* IKAppEventCharacteristics+CoreDataProperties.swift in Sources */,
 				EA24A8C28BE52C03B32095ED763189F2 /* IKAppEventFactory.swift in Sources */,
 				B12C75F01E3A06A83518D7A0CF6B227B /* IKAppEventInterceptor.swift in Sources */,
@@ -1265,6 +1272,7 @@
 				4404CAB2E6378E011665181C05B43591 /* IKViewEventFactory.swift in Sources */,
 				B40A158E5C1A83ACD6CA163FC2C6CF17 /* IKViewEventInterceptor.swift in Sources */,
 				A82A75882DEEFD97F032B10911C5AB4F /* IKViewEventType.swift in Sources */,
+				8F4EC68021768E7300D72FCF /* CUUNetworkManager.swift in Sources */,
 				AED20D77835B0C77FA739B58AB46D676 /* InteractionKit.swift in Sources */,
 				2DB6A3E0B25C27C3CE704CFA3D98CF4F /* MissingInteractionElementContext.mlmodel in Sources */,
 				2474A7601E7E43CAEFD292F3C6DD8962 /* NKDefaultFeedback.swift in Sources */,

@@ -69,6 +69,14 @@ public class InteractionKit {
         }
     }
     
+    public func fetch<T: IKInteraction>(_ type: T.Type, predicate: NSPredicate?, completion: (Array<IKInteraction>)->Void) {
+        
+        if let storage = configuration?.storage {
+            storage.fetch(type, predicate: predicate, completion: completion)
+        } else{
+            completion([])
+        }
+    }
 }
 
 extension InteractionKit: IKInterceptionDelegate {
