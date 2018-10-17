@@ -7,7 +7,10 @@
 
 import Foundation
 
-class CUUNetworkManager {
+public class CUUNetworkManager {
+    
+    static public let shared = CUUNetworkManager()
+    
     var timer : Timer? = nil
     
     var lastFetchDate : Date? {
@@ -16,11 +19,13 @@ class CUUNetworkManager {
         }
     }
     
-    func start() {
-        timer = Timer(timeInterval: 60, target: self, selector: #selector(timerDidFire), userInfo: nil, repeats: true)
+    public func start() {
+        DispatchQueue.main.async {
+            self.timer = Timer.scheduledTimer(timeInterval: 15.0, target: self, selector: #selector(self.timerDidFire), userInfo: nil, repeats: true)
+        }
     }
     
-    @objc func timerDidFire() {
+    @objc func timerDidFire(sender: Timer) {
         // First, get all data from the databases.
         var predicate : NSPredicate? = nil
         if let lastFetchDate = lastFetchDate {
@@ -28,9 +33,11 @@ class CUUNetworkManager {
         }
         var networkObjects : [CUUNetworkObject] = []
         
-        // Reset the date for the last fetch.
-        UserDefaults.standard.set(Date(), forKey: CUUConstants.CUUUserDefaultsKeys.lastFetchDateKey)
+        let currentTimestamp = Date()
         
+        let dispatchGroup: DispatchGroup = DispatchGroup.init()
+        
+        dispatchGroup.enter()
         InteractionKit.shared.fetch(IKInteraction.self, predicate: predicate, completion: { results in
             
             let processedObjects = results.map({ (interaction) -> CUUNetworkObject? in
@@ -51,12 +58,19 @@ class CUUNetworkManager {
             }).map({ $0! })
             
             networkObjects.append(contentsOf: processedObjects)
+            dispatchGroup.leave()
         })
         
-        // Send the request.
+        dispatchGroup.notify(queue: DispatchQueue.global()) {
+            // Send the request.
+            networkObjects.send { (succeeded) in
+                // Reset the date for the last fetch.
+                UserDefaults.standard.set(currentTimestamp, forKey: CUUConstants.CUUUserDefaultsKeys.lastFetchDateKey)
+            }
+        }
     }
     
-    func send(networkObjectsToSend: [CUUNetworkObject]) {
-        
-    }    
+    deinit {
+        timer?.invalidate()
+    }
 }

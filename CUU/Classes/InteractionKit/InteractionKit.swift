@@ -83,9 +83,7 @@ extension InteractionKit: IKInterceptionDelegate {
     
     public func interceptor(_ interceptor: IKInterceptor, captured dataObject: IKCharacteristics, crumb: IKInteraction)  {
         configuration?.storage.commit(dataObject, completion: nil)
-        
-        // Send the interaction data to the CUU system.
-        crumb.send()
+        configuration?.storage.commit(crumb, completion: nil)
     }
 }
 

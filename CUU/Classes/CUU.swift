@@ -21,6 +21,13 @@ public class CUU {
     }
     
     /**
+     * The shared CUUNetworkManager instance.
+     */
+    public static var networkManager: CUUNetworkManager {
+        return CUUNetworkManager.shared
+    }
+    
+    /**
      * Starts CUU.
      */
     public static func start() {
@@ -38,6 +45,8 @@ public class CUU {
                 currentVC.present(startVC, animated: true, completion: nil)
             }
         }
+        
+        networkManager.start()
     }
     
     static func startKits(with options: [CUUStartOption?]) {
