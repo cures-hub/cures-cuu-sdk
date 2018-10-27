@@ -29,7 +29,7 @@ public class CUUNetworkManager {
         // First, get all data from the databases.
         var predicate : NSPredicate? = nil
         if let lastFetchDate = lastFetchDate {
-            predicate = NSPredicate(format: "startDate > %@", lastFetchDate as CVarArg)
+            predicate = NSPredicate(format: "timestamp > %@", lastFetchDate as CVarArg)
         }
         var networkObjects : [CUUNetworkObject] = []
         
@@ -37,6 +37,7 @@ public class CUUNetworkManager {
         
         let dispatchGroup: DispatchGroup = DispatchGroup.init()
         
+        // InteractionKit.
         dispatchGroup.enter()
         InteractionKit.shared.fetch(IKInteraction.self, predicate: predicate, completion: { results in
             
@@ -47,12 +48,33 @@ public class CUUNetworkManager {
                     let encoder = JSONEncoder()
                     encoder.dateEncodingStrategy = .iso8601
                     let json = try encoder.encode(interaction)
-                    let networkObject = CUUNetworkObject.init(type: CUUConstants.CrumbTypes.interactionCrumb, payload: json)
-                    return networkObject
+                    if let dataString = String(data: json, encoding: String.Encoding.utf8) {
+                        let networkObject = CUUNetworkObject.init(type: CUUConstants.CrumbTypes.interactionCrumb, payload: dataString)
+                        return networkObject
+                    }
+                    return nil
                 } catch _ {
                     print ("Error serializing interaction")
                     return nil
                 }
+            }).filter({ (networkObject) -> Bool in
+                return (networkObject != nil)
+            }).map({ $0! })
+            
+            networkObjects.append(contentsOf: processedObjects)
+            dispatchGroup.leave()
+        })
+        
+        // BehaviorKit.
+        dispatchGroup.enter()
+        BehaviorKit.shared.fetch(predicate: predicate, completion: { results in
+            
+            let processedObjects = results.map({ (behavior) -> CUUNetworkObject? in
+                // Try to serialize interaction data.
+
+                let networkObject = CUUNetworkObject.init(type: CUUConstants.CrumbTypes.behaviorCrumb, payload: behavior.data)
+                return networkObject
+
             }).filter({ (networkObject) -> Bool in
                 return (networkObject != nil)
             }).map({ $0! })
