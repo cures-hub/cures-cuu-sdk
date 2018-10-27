@@ -26,6 +26,7 @@ struct CUUConstants {
     struct CrumbTypes {
         static let actionCrumb = "action"
         static let interactionCrumb = "interaction"
+        static let behaviorCrumb = "behavior"
     }
     
     static let projectId: String? = {

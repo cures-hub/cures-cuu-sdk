@@ -57,6 +57,14 @@ public class BehaviorKit {
         isActive = false
     }
     
+    public func fetch(predicate: NSPredicate?, completion: (Array<BKEncodedData>)->Void) {
+        
+        if let storage = configuration?.storage {
+            storage.fetch(predicate: predicate, completion: completion)
+        } else{
+            completion([])
+        }
+    }
 }
 
 extension BehaviorKit: BKPublisher {
@@ -69,20 +77,16 @@ extension BehaviorKit: BKPublisher {
 
 extension BehaviorKit: BKPredictionDelegate {
     public func predictor(_ predictor: BKPredictor, predicted situation: BKSituation) {
+        let storage = configuration!.storage
+        let context = storage.persistentContainer.viewContext
+        
+        let transferObject = BKTransferObject(situation: situation)
+        let dataObject = BKEncodedData(context: context, situation: transferObject)
                  
-        commit(situation, completion: nil)
+        storage.commit(dataObject, completion: nil)
         
         previousSituation = currentSituation
         currentSituation = situation
         notify()
-    }
-}
-
-extension BehaviorKit: BKStorage {
-    public func commit(_ object: BKSituation, completion: ((Bool, Error?) -> Void)?) {
-        //configuration?.storage.commit(object, completion: completion)
-        
-        let dataObject = BKTransferObject(situation: object)
-        dataObject.send()
     }
 }
