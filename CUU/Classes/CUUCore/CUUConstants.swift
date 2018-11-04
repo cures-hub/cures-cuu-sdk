@@ -18,6 +18,7 @@ struct CUUConstants {
         static let userIdKey = "de.tum.in.ase.cuu.featurekit.userid"
         static let optionsKey = "de.tum.in.ase.cuu.options"
         static let lastFetchDateKey = "de.tum.in.ase.cuu.lastFetchDate"
+        static let thinkingAloudFeaturesKey = "de.tum.in.ase.cuu.thinkingaloudkit.features"
     }
     
     /**
