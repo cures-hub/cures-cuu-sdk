@@ -30,4 +30,15 @@ class CUUUserManager {
             return uuid
         }
     }()
+    
+    let completedThinkingAloudFeatures : [String] = {
+        let features = UserDefaults.standard.object(forKey: CUUConstants.CUUUserDefaultsKeys.thinkingAloudFeaturesKey)
+        
+        if let features = features as? [String] {
+            // Return the stored features
+            return features
+        } else {
+            return []
+        }
+    }()
 }

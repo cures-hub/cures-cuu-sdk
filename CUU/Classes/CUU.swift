@@ -6,6 +6,17 @@ public class CUU {
      */
     private(set) public static var configuration = CUUConfiguration()
     
+    // - MARK: Attributes
+    /**
+     * The shared ThinkingAloudKit instance.
+     */
+    public static let thinkingAloudKit = ThinkingAloudKit()
+    
+    /**
+     * The shared FeatureKit instance.
+     */
+    public static let featureKit = FeatureKit()
+    
     /**
      * The shared InteractionKit instance.
      */
@@ -79,5 +90,16 @@ public class CUU {
         iKit.stop()
         bKit.stop()
         NoteKit.stop()
+    }
+    
+    /**
+     *   Open method to handle crumb saving.
+     *   @param name: the name of the crumb to be created and stored
+     **/
+    public static func seed(name: String) {
+        let actionCrumb = FKActionCrumb(name: name)
+        actionCrumb.send()
+        
+        featureKit.handleAdditionalCrumbActionsForFeatures(with: actionCrumb)
     }
 }

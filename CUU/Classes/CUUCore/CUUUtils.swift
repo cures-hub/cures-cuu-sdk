@@ -20,3 +20,7 @@ public class CUUUtils {
         return currentVC
     }
 }
+
+extension Notification.Name {
+    static let didTriggerCrumb = Notification.Name("de.tum.in.ase.cuu.featurekit.didTriggerFeatureCrumb")
+}
