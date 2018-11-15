@@ -10,6 +10,19 @@ import UIKit
 
 class CUUStartViewController: UIViewController, CUUStartViewDelegate {
     
+    let cuuStartView: CUUStartView
+    
+    init(with options: [CUUStartOption]) {
+        self.cuuStartView = CUUStartView(frame: CGRect.zero, options: options)
+        cuuStartView.translatesAutoresizingMaskIntoConstraints = false
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -28,14 +41,6 @@ class CUUStartViewController: UIViewController, CUUStartViewDelegate {
         view.addConstraints(contentConstraint)
         view.addConstraints(contentVConstraint)
     }
-    
-    // MARK: - Getters
-    
-    var cuuStartView : CUUStartView = {
-        let view = CUUStartView(frame: CGRect.zero)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
     
     func didPressContinueButton(with selection: [CUUStartOption]) {
         // Activate the kits

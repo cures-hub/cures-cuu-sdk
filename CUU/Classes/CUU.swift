@@ -1,3 +1,12 @@
+public enum CUUStartOption: Int {
+    case Features = 0
+    case Interactions
+    case Behavior
+    case Notes
+    case ThinkingAloud
+    case Emotions
+}
+
 public class CUU {
     
     // - MARK: Attributes
@@ -10,43 +19,43 @@ public class CUU {
     /**
      * The shared ThinkingAloudKit instance.
      */
-    public static let thinkingAloudKit = ThinkingAloudKit()
+    static let thinkingAloudKit = ThinkingAloudKit()
     
     /**
      * The shared EmotionKit instance.
      */
-    public static let emotionKit = EmotionKit()
+    static let emotionKit = EmotionKit()
     
     /**
      * The shared FeatureKit instance.
      */
-    public static let featureKit = FeatureKit()
+    static let featureKit = FeatureKit()
     
     /**
      * The shared InteractionKit instance.
      */
-    public static var iKit: InteractionKit {
+    static var iKit: InteractionKit {
         return InteractionKit.shared
     }
     
     /**
      * The shared BehaviorKit instance.
      */
-    public static var bKit: BehaviorKit {
+    static var bKit: BehaviorKit {
         return BehaviorKit.shared
     }
     
     /**
      * The shared CUUNetworkManager instance.
      */
-    public static var networkManager: CUUNetworkManager {
+    static var networkManager: CUUNetworkManager {
         return CUUNetworkManager.shared
     }
     
-    /**
-     * Starts CUU.
+    /*
+     * Starts CUU with the given input.
      */
-    public static func start() {
+    public static func start(with options:[CUUStartOption] = [.Behavior, .Notes]) {
         CUU.configuration = configuration
         
         // Check if we already asked before.
@@ -57,7 +66,7 @@ public class CUU {
             // We did not ask before, so do it now.
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 guard let currentVC = CUUUtils.getTopViewController() else { return }
-                let startVC = CUUStartViewController()
+                let startVC = CUUStartViewController(with: options)
                 currentVC.present(startVC, animated: true, completion: nil)
             }
         }

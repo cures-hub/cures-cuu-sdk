@@ -7,11 +7,7 @@
 
 import Foundation
 
-/**
- *  Open class to exhibit FeatureKit behavior.
- **/
-open class FeatureKit {
-    
+class FeatureKit {
     static var isActive = false
     
     static var activatedFeatures: [CUUFeature]? = []

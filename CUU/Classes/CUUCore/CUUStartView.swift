@@ -8,15 +8,6 @@
 import Foundation
 import UIKit
 
-enum CUUStartOption: Int {
-    case Features = 0
-    case Interactions
-    case Behavior
-    case Notes
-    case ThinkingAloud
-    case Emotions
-}
-
 protocol CUUStartViewDelegate : class {
     func didPressContinueButton(with selection: [CUUStartOption]) -> Void
 }
@@ -29,11 +20,15 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
     
     weak var delegate : CUUStartViewDelegate?
     
-    var selectedOptions: [CUUStartOption] = [.Features, .Interactions, .Behavior, .Notes]
+    // Options selected by the user.
+    var selectedOptions : [CUUStartOption] = [.Features, .Interactions]
+    
+    // Options allowed by the developer.
+    var allowedOptions : [CUUStartOption] = [.Features, .Interactions]
     
     // MARK: Initialization
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, options: [CUUStartOption]) {
         super.init(frame: frame)
         
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -53,8 +48,32 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
         
         self.featureKitView.delegate = self
         self.interactionKitView.delegate = self
-        self.behaviorKitView.delegate = self
-        self.noteKitView.delegate = self
+        
+        if options.contains(.Behavior) {
+            self.kitStackView.addArrangedSubview(self.behaviorKitView)
+            self.behaviorKitView.delegate = self
+            self.selectedOptions.append(.Behavior)
+            self.allowedOptions.append(.Behavior)
+        }
+        
+        if options.contains(.Notes) {
+            self.kitStackView.addArrangedSubview(self.noteKitView)
+            self.noteKitView.delegate = self
+            self.selectedOptions.append(.Notes)
+            self.allowedOptions.append(.Behavior)
+        }
+    
+        if options.contains(.ThinkingAloud) {
+            self.kitStackView.addArrangedSubview(self.thinkingAloudKitView)
+            self.thinkingAloudKitView.delegate = self
+            self.allowedOptions.append(.ThinkingAloud)
+        }
+        
+        if options.contains(.Emotions) {
+            self.kitStackView.addArrangedSubview(self.emotionKitView)
+            self.emotionKitView.delegate = self
+            self.allowedOptions.append(.Emotions)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -163,7 +182,9 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
         let view = CUUStartOptionView(frame: .zero, option: .Features)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.titleLabel.text = "FeatureKit"
-        view.contentLabel.text = "Information on whether a feature has been used and how often."
+        view.contentLabel.text = "Tracks if the usage of a feature is started, cancelled, or finished. Cannot be disabled."
+        view.isUserInteractionEnabled = false
+        view.disableButton.isSelected = true
         return view
     }()
     
@@ -171,7 +192,9 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
         let view = CUUStartOptionView(frame: .zero, option: .Interactions)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.titleLabel.text = "InteractionKit"
-        view.contentLabel.text = "Information on application usage and device specifications."
+        view.contentLabel.text = "Collects information on application usage and device specifications. Cannot be disabled."
+        view.isUserInteractionEnabled = false
+        view.disableButton.isSelected = true
         return view
     }()
     
@@ -179,7 +202,8 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
         let view = CUUStartOptionView(frame: .zero, option: .Behavior)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.titleLabel.text = "BehaviorKit"
-        view.contentLabel.text = "Information on analyzed user behavior. Allows to draw conclusions on user gender, age and application usage skill level."
+        view.contentLabel.text = "Analyzes user interactions and device data to draw conclusions about person- and application-related information as well as application-related usability issues.l."
+        view.disableButton.isSelected = true
         return view
     }()
     
@@ -187,7 +211,26 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
         let view = CUUStartOptionView(frame: .zero, option: .Notes)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.titleLabel.text = "NoteKit"
-        view.contentLabel.text = "Enables you to give us textual feedback whenever you shake your device."
+        view.contentLabel.text = "Enables textual feedback by shaking the device."
+        view.disableButton.isSelected = true
+        return view
+    }()
+    
+    var thinkingAloudKitView : CUUStartOptionView = {
+        let view = CUUStartOptionView(frame: .zero, option: .ThinkingAloud)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.titleLabel.text = "ThinkingAloudKit"
+        view.contentLabel.text = "Enables verbal feedback for specific features using the Thinking Aloud method."
+        view.disableButton.isSelected = false
+        return view
+    }()
+    
+    var emotionKitView : CUUStartOptionView = {
+        let view = CUUStartOptionView(frame: .zero, option: .Emotions)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.titleLabel.text = "EmotionKit"
+        view.contentLabel.text = "Derives emotions based on facial expressions to draw conclusions about the usage of a feature."
+        view.disableButton.isSelected = false
         return view
     }()
     
@@ -214,11 +257,11 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
     
     func didPressDisableButton(enabled: Bool, option: CUUStartOption) {
         if (enabled) {
-            if !selectedOptions.contains(option) {
+            if !selectedOptions.contains(option) && allowedOptions.contains(option) {
                 selectedOptions.append(option)
             }
         } else {
-            if selectedOptions.contains(option) {
+            if selectedOptions.contains(option) && allowedOptions.contains(option) {
                 if let index = selectedOptions.index(of: option) {
                     selectedOptions.remove(at: index)
                 }

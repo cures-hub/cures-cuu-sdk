@@ -35,8 +35,6 @@ class CUUStartOptionView: UIView {
         self.addSubview(titleLabel)
         self.addSubview(contentLabel)
         self.addSubview(disableButton)
-        
-        self.disableButton.isSelected = true
     }
     
     required init?(coder aDecoder: NSCoder) {
