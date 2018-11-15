@@ -9,3 +9,4 @@ podfile: Example/Podfile
 before_install:
     - gem install cocoapods
     - pod install --project-directory=Example
+    - cp Example/CUU/CUU.plist.example Example/CUU/CUU.plist
