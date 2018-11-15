@@ -1,16 +1,16 @@
 PODS:
-  - CUU (3.0.0)
+  - CUU (1.4.0)
 
 DEPENDENCIES:
   - CUU (from `../`)
 
 EXTERNAL SOURCES:
   CUU:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  CUU: 3d6d1bff5a6e5da98759b2b829df76ae18ceb21d
+  CUU: c3131c4092cf76e93f3bcfe3cad6b29041e493fd
 
-PODFILE CHECKSUM: 467b1cb3a3d58d0f6cbb7a553d86728bbecc5cdc
+PODFILE CHECKSUM: 1debc30a649e807b99bdee5ee8daf82a78fc04bc
 
 COCOAPODS: 1.4.0

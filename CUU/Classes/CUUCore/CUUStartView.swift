@@ -13,6 +13,8 @@ enum CUUStartOption: Int {
     case Interactions
     case Behavior
     case Notes
+    case ThinkingAloud
+    case Emotions
 }
 
 protocol CUUStartViewDelegate : class {

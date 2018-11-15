@@ -9,7 +9,7 @@ import Foundation
 
 struct CUUNetworkObject: Encodable {
     let type: String
-    let payload: Data
+    let payload: String
 }
 
 extension Array where Element == CUUNetworkObject {

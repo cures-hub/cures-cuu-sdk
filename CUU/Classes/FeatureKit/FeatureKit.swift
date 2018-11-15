@@ -87,16 +87,14 @@ open class FeatureKit {
      *   @parameter crumb: the crumb fo which this action should be performed.
      */
     func handleAdditionalCrumbActionsForFeatures(with crumb: FKActionCrumb) {
-        // Check if any additional actions should be performed on CUU.
-        if let correspondingActivatedFeature = feature(for: crumb) {
-            // Dispatch a notification that a new feature crumb was triggered.
-            let payload = ["crumbId": crumb.id,
-                           "isFirst": isFirst(crumb: crumb, in: correspondingActivatedFeature),
-                           "isLast": isLast(crumb: crumb, in: correspondingActivatedFeature),
-                           "feature": correspondingActivatedFeature
-                ] as [String : Any]
-            NotificationCenter.default.post(name: .didTriggerCrumb, object: nil, userInfo: payload)
-        }
+        // Dispatch a notification that a new feature crumb was triggered.
+        let correspondingActivatedFeature = feature(for: crumb)
+        let payload = ["crumbId": crumb.id,
+                        "isFirst": isFirst(crumb: crumb, in: correspondingActivatedFeature),
+                        "isLast": isLast(crumb: crumb, in: correspondingActivatedFeature),
+                        "feature": correspondingActivatedFeature as Any
+            ] as [String : Any]
+        NotificationCenter.default.post(name: .didTriggerCrumb, object: nil, userInfo: payload)
     }
     
     func feature(for crumb: FKActionCrumb) -> CUUFeature? {
@@ -112,16 +110,20 @@ open class FeatureKit {
         return nil
     }
     
-    func isFirst(crumb: FKActionCrumb, in feature: CUUFeature) -> Bool {
-        if feature.steps.count > 0 && feature.steps.first == crumb.name {
-            return true
+    func isFirst(crumb: FKActionCrumb, in feature: CUUFeature?) -> Bool {
+        if let feature = feature {
+            if feature.steps.count > 0 && feature.steps.first == crumb.name {
+                return true
+            }
         }
         return false
     }
     
-    func isLast(crumb: FKActionCrumb, in feature: CUUFeature) -> Bool {
-        if feature.steps.count > 0 && feature.steps.last == crumb.name {
-            return true
+    func isLast(crumb: FKActionCrumb, in feature: CUUFeature?) -> Bool {
+        if let feature = feature {
+            if feature.steps.count > 0 && feature.steps.last == crumb.name {
+                return true
+            }
         }
         return false
     }

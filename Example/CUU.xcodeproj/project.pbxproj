@@ -14,7 +14,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		6D897C8EB1716DCE2DCC22F7 /* Pods_CUU_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52DD522C5462A681D0003B94 /* Pods_CUU_Tests.framework */; };
 		758CA677AAE1F9BC92B0F02E /* Pods_CUU_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2353057216154182A29EC56 /* Pods_CUU_Example.framework */; };
-		8FA79457218DEF3400F7143A /* CUU.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FA79456218DEF3400F7143A /* CUU.plist */; };
+		8F5C37412198946F006B58FB /* CUU.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F5C37402198946F006B58FB /* CUU.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		738FE0B22489755319DBA3DC /* Pods-CUU_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUU_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CUU_Example/Pods-CUU_Example.release.xcconfig"; sourceTree = "<group>"; };
 		749362C8860E6128BCA83CB4 /* Pods-CUU_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUU_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CUU_Tests/Pods-CUU_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		8FA79456218DEF3400F7143A /* CUU.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CUU.plist; sourceTree = "<group>"; };
+		8F5C37402198946F006B58FB /* CUU.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CUU.plist; sourceTree = "<group>"; };
 		9B979EE06DD7791EE3E80E30 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A2ACAED389B6F796D404F6CB /* Pods-CUU_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CUU_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CUU_Example/Pods-CUU_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E2353057216154182A29EC56 /* Pods_CUU_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CUU_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD41AFB9204008FA782 /* Info.plist */,
-				8FA79456218DEF3400F7143A /* CUU.plist */,
+				8F5C37402198946F006B58FB /* CUU.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -171,7 +171,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				ECF060AB52C4B77C7A38D975 /* [CP] Embed Pods Frameworks */,
-				D00C11F6B37B11E1425A571A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,8 +189,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				AB3730C0AFC9E24D0B79FE4A /* [CP] Embed Pods Frameworks */,
-				7FF7675C0F9796276550DC9D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,7 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FA79457218DEF3400F7143A /* CUU.plist in Resources */,
+				8F5C37412198946F006B58FB /* CUU.plist in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -282,51 +279,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7FF7675C0F9796276550DC9D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CUU_Tests/Pods-CUU_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AB3730C0AFC9E24D0B79FE4A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CUU_Tests/Pods-CUU_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D00C11F6B37B11E1425A571A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CUU_Example/Pods-CUU_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E649C347ABDFF3AF60C380FF /* [CP] Check Pods Manifest.lock */ = {

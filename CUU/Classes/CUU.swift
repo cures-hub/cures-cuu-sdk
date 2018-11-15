@@ -13,6 +13,11 @@ public class CUU {
     public static let thinkingAloudKit = ThinkingAloudKit()
     
     /**
+     * The shared EmotionKit instance.
+     */
+    public static let emotionKit = EmotionKit()
+    
+    /**
      * The shared FeatureKit instance.
      */
     public static let featureKit = FeatureKit()
@@ -80,6 +85,14 @@ public class CUU {
         if options.contains(.Notes) {
             NoteKit.start()
         }
+        
+        if options.contains(.ThinkingAloud) {
+            thinkingAloudKit.start()
+        }
+        
+        if options.contains(.Emotions) {
+            emotionKit.start()
+        }
     }
     
     /**
@@ -90,6 +103,8 @@ public class CUU {
         iKit.stop()
         bKit.stop()
         NoteKit.stop()
+        thinkingAloudKit.stop()
+        emotionKit.stop()
     }
     
     /**
