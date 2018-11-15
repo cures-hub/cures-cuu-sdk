@@ -33,3 +33,5 @@ Carthage
 # Pods/
 Pods/
 Example/Pods/Target\ Support\ Files/
+
+Example/CUU/CUU.plist

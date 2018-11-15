@@ -22,7 +22,8 @@ it, simply add the following line to your Podfile:
 pod 'CUU'
 ```
 
-CUU requires a [`CUU.plist`](Example/CUU/CUU.plist) to be present at build time.
+CUU requires a [`CUU.plist`](Example/CUU/CUU.plist.example) to be present at build time.
+You can rename and use the `CUU.plist.example` file as a starting point.
 As the current commit hash needs to be written to this file, we recommend creating it with your CI/CD system.
 
 ## Setup
