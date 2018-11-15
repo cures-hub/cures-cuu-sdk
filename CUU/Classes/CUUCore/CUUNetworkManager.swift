@@ -48,8 +48,11 @@ public class CUUNetworkManager {
                     let encoder = JSONEncoder()
                     encoder.dateEncodingStrategy = .iso8601
                     let json = try encoder.encode(interaction)
-                    let networkObject = CUUNetworkObject.init(type: CUUConstants.CrumbTypes.interactionCrumb, payload: json)
-                    return networkObject
+                    if let dataString = String(data: json, encoding: String.Encoding.utf8) {
+                        let networkObject = CUUNetworkObject.init(type: CUUConstants.CrumbTypes.interactionCrumb, payload: dataString)
+                        return networkObject
+                    }
+                    return nil
                 } catch _ {
                     print ("Error serializing interaction")
                     return nil

@@ -11,6 +11,12 @@ import Foundation
  *  Protocol for CUUCrumbs.
  **/
 public protocol CUUCrumb : Codable {
+
+    /**
+    *   The id of the crumb.
+    **/
+    var id: String { get }
+
     /**
     *   The name of the crumb.
     **/
