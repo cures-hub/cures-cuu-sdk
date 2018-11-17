@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CUU'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'CUU is a framework to help analyzing th usage of your applications.'
 
 # This description is used to generate tags and improve search results.
@@ -31,13 +31,9 @@ CUU is a project to help analyzing the usage of your app by providing functional
   s.ios.deployment_target = '11.0'
 
   s.source_files = 'CUU/Classes/**/*.{swift,xcdatamodeld,mlmodel}'
-  s.resources = 'CUU/Classes/InteractionKit/Core/CoreData/IKData.xcdatamodeld', 'CUU/Classes/BehaviorKit/Models/CoreData/BKData.xcdatamodeld'
+  s.resources = 'CUU/Assets/*', 'CUU/Classes/InteractionKit/Core/CoreData/IKData.xcdatamodeld', 'CUU/Classes/BehaviorKit/Models/CoreData/BKData.xcdatamodeld'
   s.swift_version = "4.2"
   
   s.preserve_paths = 'CUU/Classes/InteractionKit/Core/CoreData/IKData.xcdatamodeld','CUU/Classes/BehaviorKit/Models/*/*.mlmodel', 'CUU/Classes/BehaviorKit/Models/CoreData/BKData.xcdatamodeld', 'CUU/Classes/ThinkingAloudKit/*.mlmodel'
-  
-  s.resource_bundles = {
-  'CUU' => ['CUU/Assets/*']
-  }
 
 end
