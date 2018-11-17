@@ -97,11 +97,8 @@ class CUUStartOptionView: UIView {
         button.addTarget(self, action: #selector(didTapDisableButton), for: .touchUpInside)
         
         let bundle = Bundle(for: CUUStartOptionView.self)
-        if let url = bundle.url(forResource: "CUU",
-                                withExtension: "bundle"), let bundle = Bundle(url: url) {
-            button.setImage(UIImage(named: "Checked.png", in: bundle, compatibleWith: nil), for: .selected)
-            button.setImage(UIImage(named: "Unchecked.png", in: bundle, compatibleWith: nil), for: .normal)
-        }
+        button.setImage(UIImage(named: "Checked.png", in: bundle, compatibleWith: nil), for: .selected)
+        button.setImage(UIImage(named: "Unchecked.png", in: bundle, compatibleWith: nil), for: .normal)
         
         return button
     }()
