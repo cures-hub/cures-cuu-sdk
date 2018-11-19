@@ -63,10 +63,9 @@ class ViewController: CUUViewController {
 ```
 
 ## Author
-
+- [Jan Ole Johanssen](http://github.com/janjohanssen)
 - [Lara Marie Reimer](http://github.com/laramarie)
 - [Jan Philip Bernius](http://github.com/jpbernius)
-- [Jan Ole Johanßen](http://github.com/janjohanssen)
 
 ## Contributors
 - [Michael Fröhlich](https://github.com/FroeMic)
