@@ -20,7 +20,10 @@ open class CUUPageViewController: UIPageViewController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        emotionsKitSetupTracking()
+        
+        if CUU.isActivated(for: .Emotions) {
+            emotionsKitSetupTracking()
+        }
     }
     
     override open func viewDidAppear(_ animated: Bool) {

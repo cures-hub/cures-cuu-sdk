@@ -39,31 +39,33 @@ class ThinkingAloudController : ThinkingAloudStartViewControllerDelegate, Thinki
     @objc func crumbReceived(notification: NSNotification) {
         let payload = notification.userInfo
         
-        let featureArray = CUUUserManager.sharedManager.completedThinkingAloudFeatures
-        if let payload = payload,
-            let feature = payload["feature"] as? CUUFeature,
-            let isFirst = payload["isFirst"] as? Bool,
-            let isLast = payload["isLast"] as? Bool,
-            let crumbId = payload["crumbId"] as? String {
-            if (!featureArray.contains(String(feature.id))) {
-                if !isActive && isFirst && !isLast {
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        self.currentFeature = feature
-                        self.previousCrumbId = crumbId
-                        self.start()
-                    }
-                } else {
-                    if let currentFeature = currentFeature {
-                        if feature.id == currentFeature.id {
-                            if (isLast) {
-                                guard let id = previousCrumbId else { return }
-                                stop(for: id)
-                                previousCrumbId = crumbId
-                            } else {
-                                guard let id = previousCrumbId else { return }
-                                stopRecording(isLast: false, for: id)
-                                previousCrumbId = crumbId
-                                startRecording()
+        if CUU.isActivated(for: .ThinkingAloud) {
+            let featureArray = CUUUserManager.sharedManager.completedThinkingAloudFeatures
+            if let payload = payload,
+                let feature = payload["feature"] as? CUUFeature,
+                let isFirst = payload["isFirst"] as? Bool,
+                let isLast = payload["isLast"] as? Bool,
+                let crumbId = payload["crumbId"] as? String {
+                if (!featureArray.contains(String(feature.id))) {
+                    if !isActive && isFirst && !isLast {
+                        DispatchQueue.main.asyncAfter(deadline: .now()) {
+                            self.currentFeature = feature
+                            self.previousCrumbId = crumbId
+                            self.start()
+                        }
+                    } else {
+                        if let currentFeature = currentFeature {
+                            if feature.id == currentFeature.id {
+                                if (isLast) {
+                                    guard let id = previousCrumbId else { return }
+                                    stop(for: id)
+                                    previousCrumbId = crumbId
+                                } else {
+                                    guard let id = previousCrumbId else { return }
+                                    stopRecording(isLast: false, for: id)
+                                    previousCrumbId = crumbId
+                                    startRecording()
+                                }
                             }
                         }
                     }
