@@ -59,48 +59,52 @@ public class CUU {
         CUU.configuration = configuration
         
         // Check if we already asked before.
-        if let options = UserDefaults.standard.array(forKey: CUUConstants.CUUUserDefaultsKeys.optionsKey) as? [Int] {
-            let values = options.map({ CUUStartOption(rawValue: $0) })
-            startKits(with: values)
-        } else {
-            // We did not ask before, so do it now.
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                guard let currentVC = CUUUtils.getTopViewController() else { return }
-                let startVC = CUUStartViewController(with: options)
-                currentVC.present(startVC, animated: true, completion: nil)
+        if isCUUAllowed() {
+            if let options = UserDefaults.standard.array(forKey: CUUConstants.CUUUserDefaultsKeys.optionsKey) as? [Int] {
+                let values = options.map({ CUUStartOption(rawValue: $0) })
+                startKits(with: values)
+            } else {
+                // We did not ask before, so do it now.
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    guard let currentVC = CUUUtils.getTopViewController() else { return }
+                    let startVC = CUUStartViewController(with: options)
+                    currentVC.present(startVC, animated: true, completion: nil)
+                }
             }
+            
+            networkManager.start()
         }
-        
-        networkManager.start()
     }
     
     static func startKits(with options: [CUUStartOption?]) {
-        if options.contains(.Features) {
-            FeatureKit.start()
-        }
-        
-        if options.contains(.Interactions) {
-            iKit.configure(with: configuration.interactionKitConfiguration)
+        if isCUUAllowed() {
+            if options.contains(.Features) {
+                FeatureKit.start()
+            }
             
-            iKit.start()
-        }
-        
-        if options.contains(.Behavior) {
-            bKit.configure(with: configuration.behaviorKitConfiguration)
+            if options.contains(.Interactions) {
+                iKit.configure(with: configuration.interactionKitConfiguration)
+                
+                iKit.start()
+            }
             
-            bKit.start()
-        }
-        
-        if options.contains(.Notes) {
-            NoteKit.start()
-        }
-        
-        if options.contains(.ThinkingAloud) {
-            thinkingAloudKit.start()
-        }
-        
-        if options.contains(.Emotions) {
-            emotionKit.start()
+            if options.contains(.Behavior) {
+                bKit.configure(with: configuration.behaviorKitConfiguration)
+                
+                bKit.start()
+            }
+            
+            if options.contains(.Notes) {
+                NoteKit.start()
+            }
+            
+            if options.contains(.ThinkingAloud) {
+                thinkingAloudKit.start()
+            }
+            
+            if options.contains(.Emotions) {
+                emotionKit.start()
+            }
         }
     }
     
@@ -131,6 +135,15 @@ public class CUU {
         if let options = UserDefaults.standard.array(forKey: CUUConstants.CUUUserDefaultsKeys.optionsKey) as? [Int] {
             let values = options.map({ CUUStartOption(rawValue: $0) })
             return values.contains(kit)
+        }
+        return false
+    }
+    
+    static func isCUUAllowed() -> Bool {
+        if let branchName = CUUConstants.branchName {
+            if branchName != "master" && branchName != "develop" && branchName != "development" {
+                return true
+            }
         }
         return false
     }

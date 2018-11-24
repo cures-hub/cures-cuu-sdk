@@ -77,6 +77,18 @@ struct CUUConstants {
         }
     }()
     
+    static let branchName: String? = {
+        if let plist = CUUPlistDictionary {
+            if let url = plist.object(forKey: "CUUBranchName") as? String {
+                return url
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }()
+    
     static var CUUPlistDictionary: NSDictionary? {
         get {
             if let path = Bundle.main.path(forResource: "CUU", ofType: "plist") {
