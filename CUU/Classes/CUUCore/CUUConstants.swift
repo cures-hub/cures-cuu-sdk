@@ -31,10 +31,11 @@ struct CUUConstants {
     }
     
     static let projectId: String? = {
-        if let plist = CUUPlistDictionary {if let projectId = plist.object(forKey: "CUUProjectID") as? String {
-            return projectId
-        } else {
-            return nil
+        if let plist = CUUPlistDictionary {
+            if let projectId = plist.object(forKey: "CUUProjectID") as? String {
+                return projectId
+            } else {
+                return nil
             }
         } else {
             return nil
@@ -89,9 +90,55 @@ struct CUUConstants {
         }
     }()
     
+    static let cameraDescription: String? = {
+        if let plist = InfoPlistDictionary {
+            if let value = plist.object(forKey: "NSCameraUsageDescription") as? String {
+                return value
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }()
+    
+    static let speechRecognitionDescription: String? = {
+        if let plist = InfoPlistDictionary {
+            if let value = plist.object(forKey: "NSSpeechRecognitionUsageDescription") as? String {
+                return value
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }()
+    
+    static let microphoneDescription: String? = {
+        if let plist = InfoPlistDictionary {
+            if let value = plist.object(forKey: "NSMicrophoneUsageDescription") as? String {
+                return value
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }()
+    
     static var CUUPlistDictionary: NSDictionary? {
         get {
             if let path = Bundle.main.path(forResource: "CUU", ofType: "plist") {
+                return NSDictionary(contentsOfFile: path)
+            } else {
+                return nil
+            }
+        }
+    }
+    
+    static var InfoPlistDictionary: NSDictionary? {
+        get {
+            if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
                 return NSDictionary(contentsOfFile: path)
             } else {
                 return nil

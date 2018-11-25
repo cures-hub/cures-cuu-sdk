@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import ARKit
 
 protocol CUUStartViewDelegate : class {
     func didPressContinueButton(with selection: [CUUStartOption]) -> Void
@@ -43,8 +44,6 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
         
         self.kitStackView.addArrangedSubview(self.featureKitView)
         self.kitStackView.addArrangedSubview(self.interactionKitView)
-        self.kitStackView.addArrangedSubview(self.behaviorKitView)
-        self.kitStackView.addArrangedSubview(self.noteKitView)
         
         self.featureKitView.delegate = self
         self.interactionKitView.delegate = self
@@ -63,13 +62,13 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
             self.allowedOptions.append(.Behavior)
         }
     
-        if options.contains(.ThinkingAloud) {
+        if options.contains(.ThinkingAloud) && ThinkingAloudKit.isSupported {
             self.kitStackView.addArrangedSubview(self.thinkingAloudKitView)
             self.thinkingAloudKitView.delegate = self
             self.allowedOptions.append(.ThinkingAloud)
         }
         
-        if options.contains(.Emotions) {
+        if options.contains(.Emotions) && EmotionKit.isSupported {
             self.kitStackView.addArrangedSubview(self.emotionKitView)
             self.emotionKitView.delegate = self
             self.allowedOptions.append(.Emotions)

@@ -21,9 +21,7 @@ open class CUUCollectionViewController: UICollectionViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        if CUU.isActivated(for: .Emotions) {
-            emotionsKitSetupTracking()
-        }
+        emotionsKitSetupTracking()
     }
     
     override open func viewDidAppear(_ animated: Bool) {
@@ -53,13 +51,15 @@ open class CUUCollectionViewController: UICollectionViewController {
 extension CUUCollectionViewController {
     
     private func emotionsKitSetupTracking() {
+        guard EmotionKit.isActive else { return }
+
         emotionsKitArSession.delegate = self
         emotionsKitResetTracking()
         emotionsKitFaceDetector = EKFaceDetectorFactory.instance
     }
     
     private func emotionsKitResetTracking() {
-        guard ARFaceTrackingConfiguration.isSupported else { return }
+        guard EmotionKit.isSupported else { return }
         let configuration = ARFaceTrackingConfiguration()
         emotionsKitArSession.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }

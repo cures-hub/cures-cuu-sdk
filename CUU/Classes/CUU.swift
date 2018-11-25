@@ -131,14 +131,6 @@ public class CUU {
         featureKit.handleAdditionalCrumbActionsForFeatures(with: actionCrumb)
     }
     
-    static func isActivated(for kit: CUUStartOption) -> Bool {
-        if let options = UserDefaults.standard.array(forKey: CUUConstants.CUUUserDefaultsKeys.optionsKey) as? [Int] {
-            let values = options.map({ CUUStartOption(rawValue: $0) })
-            return values.contains(kit)
-        }
-        return false
-    }
-    
     static func isCUUAllowed() -> Bool {
         if let branchName = CUUConstants.branchName {
             if branchName != "master" && branchName != "develop" && branchName != "development" {

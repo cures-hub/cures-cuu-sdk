@@ -54,7 +54,5 @@ extension Dictionary where Key == String, Value == [EKAnyEmotion] {
 
         let task = URLSession.shared.dataTask(with: urlRequest)
         task.resume()
-
-        print("Emotions sent.")
     }
 }

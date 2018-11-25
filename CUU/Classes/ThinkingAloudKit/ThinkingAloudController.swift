@@ -37,35 +37,35 @@ class ThinkingAloudController : ThinkingAloudStartViewControllerDelegate, Thinki
     // MARK: - Thinking Aloud Run Controlling
     
     @objc func crumbReceived(notification: NSNotification) {
+        if !ThinkingAloudKit.isActive { return }
+        
         let payload = notification.userInfo
         
-        if CUU.isActivated(for: .ThinkingAloud) {
-            let featureArray = CUUUserManager.sharedManager.completedThinkingAloudFeatures
-            if let payload = payload,
-                let feature = payload["feature"] as? CUUFeature,
-                let isFirst = payload["isFirst"] as? Bool,
-                let isLast = payload["isLast"] as? Bool,
-                let crumbId = payload["crumbId"] as? String {
-                if (!featureArray.contains(String(feature.id))) {
-                    if !isActive && isFirst && !isLast {
-                        DispatchQueue.main.asyncAfter(deadline: .now()) {
-                            self.currentFeature = feature
-                            self.previousCrumbId = crumbId
-                            self.start()
-                        }
-                    } else {
-                        if let currentFeature = currentFeature {
-                            if feature.id == currentFeature.id {
-                                if (isLast) {
-                                    guard let id = previousCrumbId else { return }
-                                    stop(for: id)
-                                    previousCrumbId = crumbId
-                                } else {
-                                    guard let id = previousCrumbId else { return }
-                                    stopRecording(isLast: false, for: id)
-                                    previousCrumbId = crumbId
-                                    startRecording()
-                                }
+        let featureArray = CUUUserManager.sharedManager.completedThinkingAloudFeatures
+        if let payload = payload,
+            let feature = payload["feature"] as? CUUFeature,
+            let isFirst = payload["isFirst"] as? Bool,
+            let isLast = payload["isLast"] as? Bool,
+            let crumbId = payload["crumbId"] as? String {
+            if (!featureArray.contains(String(feature.id))) {
+                if !isActive && isFirst && !isLast {
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        self.currentFeature = feature
+                        self.previousCrumbId = crumbId
+                        self.start()
+                    }
+                } else {
+                    if let currentFeature = currentFeature {
+                        if feature.id == currentFeature.id {
+                            if (isLast) {
+                                guard let id = previousCrumbId else { return }
+                                stop(for: id)
+                                previousCrumbId = crumbId
+                            } else {
+                                guard let id = previousCrumbId else { return }
+                                stopRecording(isLast: false, for: id)
+                                previousCrumbId = crumbId
+                                startRecording()
                             }
                         }
                     }
@@ -209,7 +209,7 @@ class ThinkingAloudController : ThinkingAloudStartViewControllerDelegate, Thinki
         }))
         alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
             if let previousCrumbId = self.previousCrumbId {
-               self.stop(for: previousCrumbId)
+                self.stop(for: previousCrumbId)
             }
         }))
         topVC.present(alert, animated: true, completion: nil)
