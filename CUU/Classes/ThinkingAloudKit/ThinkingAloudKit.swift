@@ -6,14 +6,16 @@
 //
 
 import Foundation
+import Speech
 
 public class ThinkingAloudKit {
     
     let controller = ThinkingAloudController()
     
     public static var isSupported: Bool {
-        guard let _ = CUUConstants.microphoneDescription, let _ = CUUConstants.speechRecognitionDescription else { return false }
-        return true
+        guard let _ = CUUConstants.microphoneDescription, let _ = CUUConstants.speechRecognitionDescription, let speechRecognizer = SFSpeechRecognizer() else { return false }
+        
+        return speechRecognizer.isAvailable
     }
     
     private(set) static var isActive = false

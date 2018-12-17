@@ -50,10 +50,7 @@ class ThinkingAloudSessionIndicator : UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         let bundle = Bundle(for: ThinkingAloudSessionIndicator.self)
-        if let url = bundle.url(forResource: "CUU",
-                                withExtension: "bundle"), let bundle = Bundle(url: url) {
-            button.setImage(UIImage(named: "cancel.png", in: bundle, compatibleWith:nil), for: .normal)
-        }
+        button.setImage(UIImage(named: "cancel.png", in: bundle, compatibleWith:nil), for: .normal)
         button.addTarget(self, action: #selector(didTapAbort(sender:)), for: .touchUpInside)
         return button
     }()

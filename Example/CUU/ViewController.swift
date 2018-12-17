@@ -15,5 +15,8 @@ class ViewController: CUUViewController {
         CUU.seed(name: "TryFeatureKitButtonTapAction")
     }
     
+    @IBAction func didTapTryAgainButton(_ sender: UIButton) {
+        CUU.seed(name: "TryAgain")
+    }
 }
 

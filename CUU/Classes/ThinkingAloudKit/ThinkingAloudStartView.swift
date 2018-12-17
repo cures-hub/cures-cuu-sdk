@@ -42,6 +42,9 @@ class ThinkingAloudStartView: UIView {
         self.backgroundView.addSubview(contentLabel)
         self.backgroundView.addSubview(goButton)
         self.backgroundView.addSubview(denyButton)
+        
+        goButton.addTarget(self, action: #selector(didTapGoButton), for: .touchUpInside)
+        denyButton.addTarget(self, action: #selector(didTapDenyButton), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -112,10 +115,7 @@ class ThinkingAloudStartView: UIView {
         image.translatesAutoresizingMaskIntoConstraints = false
         
         let bundle = Bundle(for: ThinkingAloudStartView.self)
-        if let url = bundle.url(forResource: "CUU",
-                                withExtension: "bundle"), let bundle = Bundle(url: url) {
-            image.image = UIImage(named: "voice-recorder.png", in: bundle, compatibleWith: nil)
-        }
+        image.image = UIImage(named: "voice-recorder.png", in: bundle, compatibleWith: nil)
         
         view.addSubview(image)
         
@@ -143,9 +143,8 @@ class ThinkingAloudStartView: UIView {
     var goButton : UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(didTapGoButton), for: .touchUpInside)
         button.setTitle("Go!", for: UIControl.State.normal)
-        button.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.2084427476, green: 0.4629764557, blue: 0.8655824065, alpha: 1)
         button.layer.cornerRadius = 15.0
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0)
         button.contentEdgeInsets = UIEdgeInsets(top: 10.0, left: 35.0, bottom: 10.0, right: 35.0)
@@ -160,7 +159,6 @@ class ThinkingAloudStartView: UIView {
         button.layer.cornerRadius = 15.0
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0)
         button.contentEdgeInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-        button.addTarget(self, action: #selector(didTapDenyButton), for: .touchUpInside)
         return button
     }()
     

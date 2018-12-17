@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IjH-hF-RsV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IjH-hF-RsV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeZ-fv-UZC">
-                                <rect key="frame" x="36" y="313" width="303" height="40"/>
+                                <rect key="frame" x="36" y="313.5" width="303" height="40"/>
                                 <color key="backgroundColor" red="0.23414924501319923" green="0.42894779105305392" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zO6-b3-bPt"/>
@@ -41,9 +40,30 @@
                                     <action selector="didTapTryFeatureKitButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qh1-sk-du8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6F-qz-mXn">
+                                <rect key="frame" x="145.5" y="414" width="84" height="40"/>
+                                <color key="backgroundColor" red="0.23414924500000001" green="0.42894779109999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="XQy-hd-Ub5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Try again.">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapTryAgainButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aV9-Hj-g6I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="W6F-qz-mXn" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="24n-KR-QOq"/>
+                            <constraint firstItem="W6F-qz-mXn" firstAttribute="top" secondItem="GeZ-fv-UZC" secondAttribute="bottom" constant="60.5" id="EyN-3Z-zef"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GeZ-fv-UZC" secondAttribute="trailing" constant="20" id="Fkj-Ys-MAu"/>
                             <constraint firstItem="GeZ-fv-UZC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="cgA-b8-gEc"/>
                             <constraint firstItem="GeZ-fv-UZC" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="xsl-MI-sDh"/>

@@ -20,6 +20,17 @@ class RecognitionManager {
     var lastRecognition = ""
     let audioEngine = AVAudioEngine()
     
+    init() {
+        // Set up the audio session.
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(.playAndRecord, mode: .default)
+            try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        } catch {
+            print("An error has occurred while setting the AVAudioSession.")
+        }
+    }
+    
     func recordAndRecognizeSpeech() {
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)
@@ -31,7 +42,7 @@ class RecognitionManager {
         do {
             try audioEngine.start()
         } catch {
-            return print(error)
+            print(error)
         }
         
         guard let myRecognizer = SFSpeechRecognizer() else { return }
