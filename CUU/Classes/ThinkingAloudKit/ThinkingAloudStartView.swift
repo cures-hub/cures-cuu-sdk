@@ -20,7 +20,7 @@ class ThinkingAloudStartView: UIView {
     
     var featureTitle: String = "" {
         didSet {
-            contentLabel.text = "We saw that you started our feature \"\(featureTitle)\".\n\n We are always looking for your opinion. Do you want to start a \"Thinking Aloud\" feedback run now?"
+            contentLabel.text = "Du hast unser Feature \"\(featureTitle)\" gestartet.\n\n Wir freuen uns immer über Feedback. Möchtest du jetzt einen \"Thinking Aloud\" Feedback Run starten?"
         }
     }
     
@@ -100,7 +100,7 @@ class ThinkingAloudStartView: UIView {
         label.font = UIFont.boldSystemFont(ofSize: 22.0)
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.text = "Hey there!"
+        label.text = "Hey!"
         return label
     }()
     
@@ -143,7 +143,7 @@ class ThinkingAloudStartView: UIView {
     var goButton : UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Go!", for: UIControl.State.normal)
+        button.setTitle("Los gehts!", for: UIControl.State.normal)
         button.backgroundColor = #colorLiteral(red: 0.2084427476, green: 0.4629764557, blue: 0.8655824065, alpha: 1)
         button.layer.cornerRadius = 15.0
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0)
@@ -154,7 +154,7 @@ class ThinkingAloudStartView: UIView {
     var denyButton : UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("No, thanks", for: UIControl.State.normal)
+        button.setTitle("Nein, danke", for: UIControl.State.normal)
         button.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         button.layer.cornerRadius = 15.0
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15.0)

@@ -57,15 +57,13 @@ class ThinkingAloudController : ThinkingAloudStartViewControllerDelegate, Thinki
                 } else {
                     if let currentFeature = currentFeature {
                         if feature.id == currentFeature.id {
+                            guard let id = previousCrumbId else { return }
+                            stopRecording(isLast: false, for: id)
+                            previousCrumbId = crumbId
+                            startRecording()
+                            
                             if (isLast) {
-                                guard let id = previousCrumbId else { return }
-                                stop(for: id)
-                                previousCrumbId = crumbId
-                            } else {
-                                guard let id = previousCrumbId else { return }
-                                stopRecording(isLast: false, for: id)
-                                previousCrumbId = crumbId
-                                startRecording()
+                                stop(for: crumbId)
                             }
                         }
                     }
@@ -88,17 +86,18 @@ class ThinkingAloudController : ThinkingAloudStartViewControllerDelegate, Thinki
     }
     
     func stop(for crumb: String) {
-        animateInOut(animateIn: false)
-        
-        self.stopRecording(isLast: true, for: crumb)
-        
-        isActive = false
-        
-        // Store it in user defaults
-        if let id = currentFeature?.id {
-            var featureArray = CUUUserManager.sharedManager.completedThinkingAloudFeatures
-            featureArray.append(String(id))
-            UserDefaults.standard.set(featureArray, forKey: CUUConstants.CUUUserDefaultsKeys.thinkingAloudFeaturesKey)
+        // Give the tester 5 seconds to finish their feedback.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.stopRecording(isLast: true, for: crumb)
+            
+            self.isActive = false
+            
+            // Store it in user defaults
+            if let id = self.currentFeature?.id {
+                var featureArray = CUUUserManager.sharedManager.completedThinkingAloudFeatures
+                featureArray.append(String(id))
+                UserDefaults.standard.set(featureArray, forKey: CUUConstants.CUUUserDefaultsKeys.thinkingAloudFeaturesKey)
+            }
         }
     }
     
@@ -115,6 +114,7 @@ class ThinkingAloudController : ThinkingAloudStartViewControllerDelegate, Thinki
     }
     
     func stopRecording(isLast: Bool, for crumb: String) {
+        print(crumb)
         for manager in recognitionManagers {
             if manager.previousCrumbId == crumb {
                 manager.stopRecording(isLast: isLast, with: { (result, analyzedResult) in
@@ -126,7 +126,9 @@ class ThinkingAloudController : ThinkingAloudStartViewControllerDelegate, Thinki
                         
                         if isLast {
                             let alert = UIAlertController(title: "Du bist fertig!", message: "Danke für dein Feedback!", preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { _ in
+                                self.animateInOut(animateIn: false)
+                            }))
                             
                             if let currentVC = CUUUtils.getTopViewController() {
                                 currentVC.present(alert, animated: true, completion: nil)
