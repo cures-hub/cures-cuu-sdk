@@ -42,8 +42,9 @@ extension IKTouchInterceptor {
         
         for touch in touches {
             let touchObject = touchFactory.touch(touch, type: .touchBegan)
-            let crumb = touchFactory.crumb(from: touchObject)
-            interceptionDelegate.interceptor(self, captured: touchObject, crumb: crumb)
+            let characteristics = touchFactory.characteristics(from: touchObject)
+            let crumb = touchFactory.crumb(with: characteristics, title: touchObject.title)
+            interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
         }
         
         super.touchesBegan(touches, with: event)
@@ -52,8 +53,9 @@ extension IKTouchInterceptor {
     override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
         for touch in touches {
             let touchObject = touchFactory.touch(touch, type: .touchMoved)
-            let crumb = touchFactory.crumb(from: touchObject)
-            interceptionDelegate.interceptor(self, captured: touchObject, crumb: crumb)
+            let characteristics = touchFactory.characteristics(from: touchObject)
+            let crumb = touchFactory.crumb(with: characteristics, title: touchObject.title)
+            interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
         }
         
         super.touchesMoved(touches, with: event)
@@ -62,8 +64,9 @@ extension IKTouchInterceptor {
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
         for touch in touches {
             let touchObject = touchFactory.touch(touch, type: .touchEnded)
-            let crumb = touchFactory.crumb(from: touchObject)
-            interceptionDelegate.interceptor(self, captured: touchObject, crumb: crumb)
+            let characteristics = touchFactory.characteristics(from: touchObject)
+            let crumb = touchFactory.crumb(with: characteristics, title: touchObject.title)
+            interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
         }
         
         super.touchesEnded(touches, with: event)
@@ -72,8 +75,9 @@ extension IKTouchInterceptor {
     override public func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
         for touch in touches {
             let touchObject = touchFactory.touch(touch, type: .touchEnded)
-            let crumb = touchFactory.crumb(from: touchObject)
-            interceptionDelegate.interceptor(self, captured: touchObject, crumb: crumb)
+            let characteristics = touchFactory.characteristics(from: touchObject)
+            let crumb = touchFactory.crumb(with: characteristics, title: touchObject.title)
+            interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
         }
         
         super.touchesCancelled(touches, with: event)
@@ -81,8 +85,9 @@ extension IKTouchInterceptor {
     
     override public func ignore(_ touch: UITouch, for event: UIEvent) {
         let touchObject = touchFactory.touch(touch, type: .touchIgnored)
-        let crumb = touchFactory.crumb(from: touchObject)
-        interceptionDelegate.interceptor(self, captured: touchObject, crumb: crumb)
+        let characteristics = touchFactory.characteristics(from: touchObject)
+        let crumb = touchFactory.crumb(with: characteristics, title: touchObject.title)
+        interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
     }
     
 }

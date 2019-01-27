@@ -64,7 +64,7 @@ public class IKSensorInterceptor: IKInterceptor  {
         })
         
         // Add the timer to the current run loop.
-        RunLoop.current.add(self.timer!, forMode: .defaultRunLoopMode)
+        RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.default)
     }
     
     private func endDeviceMotion() {
@@ -88,8 +88,9 @@ extension IKSensorInterceptor {
         for sensorType in IKSensorType.all {
             if sensorTypes.contains(sensorType) {
                 let sensor = sensorFactory.sensor(capturedDeviceMotion, type: sensorType)
-                let crumb = sensorFactory.crumb(from: sensor)
-                interceptionDelegate.interceptor(self, captured: sensor, crumb: crumb)
+                let characteristics = sensorFactory.characteristics(from: sensor)
+                let crumb = sensorFactory.crumb(with: characteristics, title: sensor.title)
+                interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
             }
         }
     }

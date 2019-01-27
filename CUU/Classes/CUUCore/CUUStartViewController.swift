@@ -10,8 +10,20 @@ import UIKit
 
 class CUUStartViewController: UIViewController, CUUStartViewDelegate {
     
-    // MARK: Lifecycle
+    let cuuStartView: CUUStartView
     
+    init(with options: [CUUStartOption]) {
+        self.cuuStartView = CUUStartView(frame: CGRect.zero, options: options)
+        cuuStartView.translatesAutoresizingMaskIntoConstraints = false
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,21 +34,15 @@ class CUUStartViewController: UIViewController, CUUStartViewDelegate {
         let viewsDictionary = ["start": cuuStartView] as [String : Any]
         
         //position constraints
-        let contentConstraint = NSLayoutConstraint.constraints(withVisualFormat: "|[start]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
-        let contentVConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|[start]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+
+        let contentConstraint = NSLayoutConstraint.constraints(withVisualFormat: "|[start]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
+        let contentVConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|[start]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: viewsDictionary)
         
         view.addConstraints(contentConstraint)
         view.addConstraints(contentVConstraint)
     }
     
-    // MARK: - Getters
-    
-    var cuuStartView : CUUStartView = {
-        let view = CUUStartView(frame: CGRect.zero)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
+
     func didPressContinueButton(with selection: [CUUStartOption]) {
         // Activate the kits
         CUU.startKits(with: selection)
@@ -47,7 +53,6 @@ class CUUStartViewController: UIViewController, CUUStartViewDelegate {
         // Persist state
         let rawValues = selection.map({ $0.rawValue })
         UserDefaults.standard.set(rawValues, forKey: CUUConstants.CUUUserDefaultsKeys.optionsKey)
-
         self.dismiss(animated: true, completion: nil)
     }
 }

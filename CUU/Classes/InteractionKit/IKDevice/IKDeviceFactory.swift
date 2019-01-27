@@ -44,11 +44,21 @@ extension IKDeviceFactory {
         default: return 0
         }
     }
-    
-    func crumb(from: IKDevice) -> IKDeviceCrumb {
-        return IKDeviceCrumb(name: "IKDevice", device: from)
-    }
 
+    func characteristics(from: IKDevice) -> IKDeviceCharacteristics {
+        let config = InteractionKit.shared.configuration
+        let context = config!.storage.persistentContainer.viewContext
+        return IKDeviceCharacteristics(context: context, device: from)
+    }
+    
+    func crumb(with characteristics: IKDeviceCharacteristics, title: String) -> IKInteraction {
+        let config = InteractionKit.shared.configuration
+        let context = config!.storage.persistentContainer.viewContext
+        
+        return IKInteraction(context: context,
+                             name: "IKDevice",
+                             characteristics: characteristics)
+    }
 }
 
 extension UIDevice {

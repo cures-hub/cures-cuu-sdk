@@ -9,6 +9,7 @@
  *  CUUCrumb protocol implementation for Action Crumbs.
  **/
 struct FKActionCrumb : CUUCrumb {
+    let id = UUID().uuidString
     let name: String
     let type = CUUConstants.CrumbTypes.actionCrumb
     let timestamp: Date

@@ -1,4 +1,4 @@
-public enum UKAppEventType: String, CustomStringConvertible {
+public enum IKAppEventType: String, CustomStringConvertible {
     
     case didLaunch
     case didBecomeActive

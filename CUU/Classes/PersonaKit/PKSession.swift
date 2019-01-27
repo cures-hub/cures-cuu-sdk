@@ -58,11 +58,9 @@ struct PKSession {
         }
     }
 
-    mutating func logTouch(crumb: IKTouchCrumb) {
+    mutating func logTouch(for characteristics: IKTouchCharacteristics, crumb: IKInteraction) {
         touchDates.append(crumb.timestamp)
-        if let characteristics = crumb.characteristics as? IKTouchCharacteristics {
-            touchesPrecise.append(characteristics.touchIsPrecise)
-        }
+        touchesPrecise.append(characteristics.touchIsPrecise)
     }
 
     private mutating func updateStatisticsForScene(with name: String, duration: Duration) {

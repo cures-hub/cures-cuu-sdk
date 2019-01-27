@@ -1,12 +1,12 @@
 public protocol IKMotionFactory {
     
-    func motion(_ capturedMotion: UIEventSubtype, type: IKMotionType) -> IKMotion?
+    func motion(_ capturedMotion: UIEvent.EventSubtype, type: IKMotionType) -> IKMotion?
     
 }
 
 
 extension IKMotionFactory {
-    public func populate(_ motion: IKMotion, eventType: UIEventSubtype, ofType type: IKMotionType) -> IKMotion? {
+    public func populate(_ motion: IKMotion, eventType: UIEvent.EventSubtype, ofType type: IKMotionType) -> IKMotion? {
         
         if eventType != .motionShake {
             return nil
@@ -19,8 +19,19 @@ extension IKMotionFactory {
         return motion
     }
     
-    func crumb(from: IKMotion) -> IKMotionCrumb {
-        return IKMotionCrumb(name: "IKMotion :: " + from.title, motion: from)
+    func characteristics(from: IKMotion) -> IKMotionCharacteristics {
+        let config = InteractionKit.shared.configuration
+        let context = config!.storage.persistentContainer.viewContext
+        return IKMotionCharacteristics(context: context, motion: from)
+    }
+    
+    func crumb(with characteristics: IKMotionCharacteristics, title: String) -> IKInteraction {
+        let config = InteractionKit.shared.configuration
+        let context = config!.storage.persistentContainer.viewContext
+        
+        return IKInteraction(context: context,
+                             name: "IKMotion :: " + title,
+                             characteristics: characteristics)
     }
 }
 

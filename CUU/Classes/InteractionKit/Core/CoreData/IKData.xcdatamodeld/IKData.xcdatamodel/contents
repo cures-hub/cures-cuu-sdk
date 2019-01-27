@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="IKAppEventCharacteristics" representedClassName="IKAppEventCharacteristics" parentEntity="IKCharacteristics" syncable="YES">
+        <attribute name="type" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="IKCharacteristics" representedClassName="IKCharacteristics" isAbstract="YES" syncable="YES">
+        <attribute name="endDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="session" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <attribute name="user" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="IKDeviceCharacteristics" representedClassName="IKDeviceCharacteristics" parentEntity="IKCharacteristics" syncable="YES">
+        <attribute name="commonDeviceName" attributeType="String" syncable="YES"/>
+        <attribute name="deviceModel" attributeType="String" syncable="YES"/>
+        <attribute name="deviceName" attributeType="String" syncable="YES"/>
+        <attribute name="screenHeight" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="screenNativeHeight" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="screenNativeWidth" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="screenScale" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="screenSize" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="screenWidth" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="systemName" attributeType="String" syncable="YES"/>
+        <attribute name="systemVersion" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="IKEventCharacteristics" representedClassName="IKEventCharacteristics" parentEntity="IKCharacteristics" syncable="YES">
+        <attribute name="parameter" attributeType="String" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="IKGestureCharacteristics" representedClassName="IKGestureCharacteristics" parentEntity="IKCharacteristics" syncable="YES">
+        <attribute name="direction" attributeType="String" syncable="YES"/>
+        <attribute name="locationX" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="locationY" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="rotation" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="rotationVelocity" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="scale" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="scaleVelocity" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="touchCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="translationX" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="translationY" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <attribute name="velocityX" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="velocityY" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="IKInteraction" representedClassName="IKInteraction" syncable="YES">
+        <attribute name="characteristics" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="sessionId" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="userId" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="IKMotionCharacteristics" representedClassName="IKMotionCharacteristics" parentEntity="IKCharacteristics" syncable="YES">
+        <attribute name="type" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="IKSensorCharacteristics" representedClassName="IKSensorCharacteristics" parentEntity="IKCharacteristics" syncable="YES">
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <attribute name="x" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="y" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="z" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="IKTouchCharacteristics" representedClassName="IKTouchCharacteristics" parentEntity="IKCharacteristics" syncable="YES">
+        <attribute name="force" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="locationX" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="locationY" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="previousLocationX" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="previousLocationY" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tapCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="IKViewEventCharacteristics" representedClassName="IKViewEventCharacteristics" parentEntity="IKCharacteristics" syncable="YES">
+        <attribute name="globalViewOriginX" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="globalViewOriginY" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="subviewCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <attribute name="viewControllerInstance" attributeType="String" syncable="YES"/>
+        <attribute name="viewControllerTitle" attributeType="String" syncable="YES"/>
+        <attribute name="viewControllerType" attributeType="String" syncable="YES"/>
+        <attribute name="viewHeight" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="viewOriginX" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="viewOriginY" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="viewWidth" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="IKAppEventCharacteristics" positionX="477" positionY="333" width="128" height="58"/>
+        <element name="IKCharacteristics" positionX="216" positionY="45" width="128" height="120"/>
+        <element name="IKDeviceCharacteristics" positionX="331" positionY="332" width="128" height="208"/>
+        <element name="IKEventCharacteristics" positionX="403" positionY="143" width="128" height="73"/>
+        <element name="IKGestureCharacteristics" positionX="547" positionY="14" width="128" height="238"/>
+        <element name="IKInteraction" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="IKMotionCharacteristics" positionX="-144" positionY="180" width="128" height="58"/>
+        <element name="IKSensorCharacteristics" positionX="-162" positionY="383" width="128" height="103"/>
+        <element name="IKTouchCharacteristics" positionX="196" positionY="369" width="128" height="148"/>
+        <element name="IKViewEventCharacteristics" positionX="54" positionY="368" width="128" height="208"/>
+    </elements>
+</model>

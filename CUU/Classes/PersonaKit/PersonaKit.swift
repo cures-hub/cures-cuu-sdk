@@ -60,17 +60,17 @@ public class PersonaKit {
 }
 
 extension PersonaKit: IKInterceptionDelegate {
-    public func interceptor(_ interceptor: IKInterceptor, captured dataObject: IKDataObject, crumb: IKCrumb)  {
+    public func interceptor(_ interceptor: IKInterceptor, captured dataObject: IKCharacteristics, crumb: IKInteraction)  {
         //configuration?.storage.commit(dataObject, completion: nil)
 
-        if interceptor is IKAppEventInterceptor, let crumb = crumb as? IKAppEventCrumb {
-            handle(appEventCrumb: crumb)
-        } else if interceptor is IKViewEventInterceptor, let crumb = crumb as? IKViewEventCrumb {
-            handle(viewEventCrumb: crumb)
-        } else if interceptor is IKTouchInterceptor, let crumb = crumb as? IKTouchCrumb {
-            handle(touchCrumb: crumb)
-        } else if interceptor is IKDeviceInterceptor, let crumb = crumb as? IKDeviceCrumb {
-            handle(deviceCrumb: crumb)
+        if interceptor is IKAppEventInterceptor, let characteristics = dataObject as? IKAppEventCharacteristics {
+            handle(appEventCharacteristics: characteristics)
+        } else if interceptor is IKViewEventInterceptor, let characteristics = dataObject as? IKViewEventCharacteristics {
+            handle(viewEventCharacteristics: characteristics)
+        } else if interceptor is IKTouchInterceptor, let characteristics = dataObject as? IKTouchCharacteristics {
+            handle(touchCharacteristics: characteristics, for: crumb)
+        } else if interceptor is IKDeviceInterceptor, let characteristics = dataObject as? IKDeviceCharacteristics {
+            handle(deviceCharacteristics: characteristics)
         }
 
 //        debugPrint(interceptor)
@@ -82,17 +82,17 @@ extension PersonaKit: IKInterceptionDelegate {
 // MARK: Session handling
 
 extension PersonaKit {
-    func handle(appEventCrumb crumb: IKAppEventCrumb) {
-        guard let eventType = IKAppEventType(from: crumb) else { return }
+    func handle(appEventCharacteristics characteristics: IKAppEventCharacteristics) {
+        let eventType = characteristics.type
 
         switch eventType {
-        case .didBecomeActive:
+        case "didBecomeActive":
             // Overwrite currentSession.
             // Should be nil anyway. If it is not nil, the app has not been closed gracefully,
             // so the session end date would be wrong --> We discard the data
-            currentSession = PKSession(cuuSessionId: crumb.sessionId)
+            currentSession = PKSession(cuuSessionId: characteristics.session)
             print("⏱ New session: \(currentSession!)")
-        case .didResignActive:
+        case "didResignActive":
             guard var session = currentSession else {
                 preconditionFailure("⚠️: could not end session, because no currentSession was found.")
             }
@@ -111,11 +111,8 @@ extension PersonaKit {
         }
     }
 
-    func handle(viewEventCrumb crumb: IKViewEventCrumb) {
-        guard let characteristics = crumb.characteristics as? IKViewEventCharacteristics,
-            let viewEventType = IKViewEventType(rawValue: characteristics.title) else {
-            return
-        }
+    func handle(viewEventCharacteristics characteristics: IKViewEventCharacteristics) {
+        guard let viewEventType = IKViewEventType(rawValue: characteristics.title) else { return }
 
         switch viewEventType {
         case .didAppear:
@@ -126,22 +123,18 @@ extension PersonaKit {
         }
     }
 
-    func handle(touchCrumb crumb: IKTouchCrumb) {
-        guard let characteristics = crumb.characteristics as? IKTouchCharacteristics,
-            let touchType = IKTouchType(rawValue: characteristics.title) else {
-                return
-        }
+    func handle(touchCharacteristics characteristics: IKTouchCharacteristics, for crumb: IKInteraction) {
+        guard let touchType = IKTouchType(rawValue: characteristics.title) else { return }
 
         switch touchType {
         case .touchEnded:
-            currentSession?.logTouch(crumb: crumb)
+            currentSession?.logTouch(for: characteristics, crumb: crumb)
         default:
             return
         }
     }
 
-    func handle(deviceCrumb crumb: IKDeviceCrumb) {
-        guard let characteristics = crumb.characteristics as? IKDeviceCharacteristics else { return }
+    func handle(deviceCharacteristics characteristics: IKDeviceCharacteristics) {
 
         deviceType = characteristics.deviceName
         iOSVersion = characteristics.systemVersion
@@ -150,10 +143,7 @@ extension PersonaKit {
 }
 
 private extension IKAppEventType {
-    init?(from crumb: IKAppEventCrumb) {
-        guard let typeString = (crumb.characteristics as? IKAppEventCharacteristics)?.interactionType else {
-            return nil
-        }
-        self.init(rawValue: typeString)
+    init?(from characteristics: IKAppEventCharacteristics) {
+        self.init(rawValue: characteristics.type)
     }
 }

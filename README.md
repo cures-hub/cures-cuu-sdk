@@ -22,7 +22,11 @@ it, simply add the following line to your Podfile:
 pod 'CUU'
 ```
 
+
 CUU requires a [`CUU.plist`](Example/CUU/CUU.plist) to be present at build time.
+=======
+CUU requires a [`CUU.plist`](Example/CUU/CUU.plist.example) to be present at build time.
+You can rename and use the `CUU.plist.example` file as a starting point.
 As the current commit hash needs to be written to this file, we recommend creating it with your CI/CD system.
 
 ## Setup
@@ -56,20 +60,25 @@ For every event you want to track, call CUU's FeatureKit.seed(name: String) meth
 class ViewController: CUUViewController {
     @IBAction func didTapTryFeatureKitButton(_ sender: UIButton) {
         // Notify the FeatureKit component of CUU that a step of a feature was triggered.
-        FeatureKit.seed(name: "TryFeatureKitButtonTapAction")
+        CUU.seed(name: "TryFeatureKitButtonTapAction")
     }
 }
 ```
-
 ## Author
-
+- [Jan Ole Johanssen](http://github.com/janjohanssen)
 - [Lara Marie Reimer](http://github.com/laramarie)
 - [Jan Philip Bernius](http://github.com/jpbernius)
-- [Jan Ole Johanßen](http://github.com/janjohanssen)
+
+## Contributors
+- [Michael Fröhlich](https://github.com/FroeMic)
 
 ## Contributors
 - [Michael Fröhlich](https://github.com/FroeMic)
 
 ## License
 
-CUU is available under the MIT license. See the LICENSE file for more info.
+CUU is available under the MIT license. See the [LICENSE file](LICENSE) for more info.
+
+---
+
+<img src="https://avatars1.githubusercontent.com/u/29952940?s=200&v=4" width="50" />

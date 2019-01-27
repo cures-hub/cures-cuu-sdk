@@ -12,8 +12,11 @@ import CUU
 class ViewController: CUUViewController {
     @IBAction func didTapTryFeatureKitButton(_ sender: UIButton) {
         // Notify the FeatureKit component of CUU that a step of a feature was triggered.
-        FeatureKit.seed(name: "TryFeatureKitButtonTapAction")
+        CUU.seed(name: "TryFeatureKitButtonTapAction")
     }
     
+    @IBAction func didTapTryAgainButton(_ sender: UIButton) {
+        CUU.seed(name: "TryAgain")
+    }
 }
 

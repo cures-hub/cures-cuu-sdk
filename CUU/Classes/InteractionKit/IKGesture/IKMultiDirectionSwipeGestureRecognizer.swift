@@ -5,7 +5,7 @@ public class IKMultiDirectionSwipeGestureRecognizer: UIGestureRecognizer {
     
     // MARK: - Properties
     
-    private let directions: [UISwipeGestureRecognizerDirection] = [.right, .left, .up, .down]
+    private let directions: [UISwipeGestureRecognizer.Direction] = [.right, .left, .up, .down]
     private var recognizers: [UInt: UISwipeGestureRecognizer] = [:]
     private var action: Selector?
     private var target: Any?

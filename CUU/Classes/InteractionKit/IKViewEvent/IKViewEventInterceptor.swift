@@ -41,8 +41,9 @@ public class IKViewEventInterceptor: IKInterceptor {
     private func log(_ viewController: UIViewController, type: IKViewEventType) {
         if isActive {
             let event = viewEventFactory.viewEvent(viewController: viewController, type: type)
-            let crumb = viewEventFactory.crumb(from: event)
-            interceptionDelegate.interceptor(self, captured: event, crumb: crumb)
+            let characteristics = viewEventFactory.characteristics(from: event)
+            let crumb = viewEventFactory.crumb(with: characteristics, title: event.title)
+            interceptionDelegate.interceptor(self, captured: characteristics, crumb: crumb)
         }
     }
     

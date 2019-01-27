@@ -1,5 +1,5 @@
 public protocol IKCoreMotionShakeDelegate {
     
-    func report(motion: UIEventSubtype, of type: IKMotionType)
-    
+    func report(motion: UIEvent.EventSubtype, of type: IKMotionType)
+
 }

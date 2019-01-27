@@ -3,7 +3,7 @@
  **/
 public protocol IKInterceptionDelegate {
     
-    func interceptor(_ interceptor: IKInterceptor, captured dataObject: IKDataObject, crumb: IKCrumb)
+    func interceptor(_ interceptor: IKInterceptor, captured dataObject: IKCharacteristics, crumb: IKInteraction)
     
 }
 
