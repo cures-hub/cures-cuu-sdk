@@ -20,5 +20,12 @@ public class CUUConfiguration {
     var behaviorKitConfiguration: BKConfiguration {
         return BKDefaultConfiguration(forUser: CUUUserManager.sharedManager.userId)
     }
+    
+    /**
+     * The configuration for PersonaKit.
+     */
+    var personaKitConfiguration: PKConfiguration {
+        return PKDefaultConfiguration()
+    }
 }
 

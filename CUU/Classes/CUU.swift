@@ -115,6 +115,8 @@ public class CUU {
             }
             
             if options.contains(.Personas) {
+                pKit.configure(with: configuration.personaKitConfiguration)
+                
                 pKit.start()
             }
         }

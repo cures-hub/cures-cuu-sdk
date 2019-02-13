@@ -14,7 +14,7 @@ public class PersonaKit {
     private let locationDetector = PKLocationDetector()
     private var currentSession: PKSession?
     private(set) var isActive: Bool = false
-    private(set) var configuration: IKConfiguration?
+    private(set) var configuration: PKConfiguration?
 
     // DeviceInformation gets intercepted before session is active, caching values here
     private var deviceType: String?
@@ -25,7 +25,7 @@ public class PersonaKit {
         self.currentSession = PKSession()
     }
 
-    public func configure(with configuration: IKConfiguration) {
+    public func configure(with configuration: PKConfiguration) {
         let shouldRestart = isActive
         stop()
 
@@ -83,7 +83,7 @@ extension PersonaKit: IKInterceptionDelegate {
 
 extension PersonaKit {
     func handle(appEventCharacteristics characteristics: IKAppEventCharacteristics) {
-        let eventType = characteristics.type
+        let eventType = characteristics.title
 
         switch eventType {
         case "didBecomeActive":

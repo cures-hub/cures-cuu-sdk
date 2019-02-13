@@ -14,7 +14,7 @@ class PKDefaultConfiguration: PKConfiguration {
 
     init(interceptors: [IKInterceptor]? = nil) {
         self.interceptors = interceptors ?? PKDefaultConfiguration.defaultInterceptors
-        self.storage = PKDefaultStorage();
+        self.storage = PKDefaultStorage()
     }
 
     static var defaultInterceptors: [IKInterceptor] {
