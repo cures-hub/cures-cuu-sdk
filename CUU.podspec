@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CUU'
-  s.version          = '2.2.0'
+  s.version          = '2.3.0'
   s.summary          = 'CUU is a framework to help analyzing the usage of your applications.'
 
 # This description is used to generate tags and improve search results.
