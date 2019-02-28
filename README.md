@@ -71,9 +71,7 @@ class ViewController: CUUViewController {
 
 ## Contributors
 - [Michael Fröhlich](https://github.com/FroeMic)
-
-## Contributors
-- [Michael Fröhlich](https://github.com/FroeMic)
+- [Florian Fittschen](https://github.com/ffittschen)
 
 ## License
 
