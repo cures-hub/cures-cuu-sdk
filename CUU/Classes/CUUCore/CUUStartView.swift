@@ -275,7 +275,7 @@ class CUUStartView: UIView, CUUStartViewOptionDelegate {
             }
         } else {
             if selectedOptions.contains(option) && allowedOptions.contains(option) {
-                if let index = selectedOptions.index(of: option) {
+                if let index = selectedOptions.firstIndex(of: option) {
                     selectedOptions.remove(at: index)
                 }
             }

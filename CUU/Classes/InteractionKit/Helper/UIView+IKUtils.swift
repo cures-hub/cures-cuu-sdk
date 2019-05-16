@@ -1,6 +1,6 @@
 public extension UIView {
     
-    public var subviewCount: Int {
+    var subviewCount: Int {
         if (self.subviews.count == 0) {
             return 1
         }

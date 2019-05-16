@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Reachability
 
 class PKReachabilityPolicy: PKLocationDetectionPolicy {
     let reachability: Reachability
