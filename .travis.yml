@@ -1,9 +1,9 @@
-osx_image: xcode10.1
+osx_image: xcode10.2
 language: objective-c
 xcode_workspace: Example/CUU.xcworkspace
 xcode_scheme: CUU-Example
-xcode_sdk: iphonesimulator12.0
-xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone XS
+xcode_sdk: iphonesimulator12.2
+xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone XS
 podfile: Example/Podfile
 
 before_install:
