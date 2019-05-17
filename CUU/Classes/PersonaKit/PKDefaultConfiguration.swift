@@ -8,13 +8,11 @@
 import Foundation
 
 class PKDefaultConfiguration: PKConfiguration {
-    var storage: PKStorage
 
     var interceptors: [IKInterceptor]
 
     init(interceptors: [IKInterceptor]? = nil) {
         self.interceptors = interceptors ?? PKDefaultConfiguration.defaultInterceptors
-        self.storage = PKDefaultStorage()
     }
 
     static var defaultInterceptors: [IKInterceptor] {
