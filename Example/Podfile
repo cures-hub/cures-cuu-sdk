@@ -2,6 +2,7 @@ use_frameworks!
 
 target 'CUU_Example' do
   pod 'CUU', :path => '../'
+  platform :ios, '11.0'
 
   target 'CUU_Tests' do
     inherit! :search_paths

@@ -76,6 +76,8 @@ class RecognitionManager {
                     completion(true)
                 case .notDetermined:
                     completion(true)
+                @unknown default:
+                    completion(false)
                 }
             }
         }

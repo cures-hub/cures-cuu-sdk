@@ -1,10 +1,10 @@
  public extension UIViewController {
     
-    public var typeName: String {
+    var typeName: String {
         return String(describing: type(of: self))
     }
     
-    public var instanceIdentifier: String {
+    var instanceIdentifier: String {
         let pointer = Unmanaged.passUnretained(self).toOpaque()
         let address = String(describing: pointer)
         

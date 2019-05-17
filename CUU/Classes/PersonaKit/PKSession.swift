@@ -177,7 +177,3 @@ extension PKSession {
         return numberOfShortVisits > 0
     }
 }
-
-extension PKSession: Identifiable {
-    static let idKey = \PKSession.sessionId
-}

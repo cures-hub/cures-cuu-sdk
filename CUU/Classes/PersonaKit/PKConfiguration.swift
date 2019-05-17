@@ -8,6 +8,5 @@
 import Foundation
 
 public protocol PKConfiguration {
-    var storage: PKStorage { get }
     var interceptors: [IKInterceptor] { get }
 }

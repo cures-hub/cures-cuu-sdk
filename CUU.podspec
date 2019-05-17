@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CUU'
-  s.version          = '2.3.1'
+  s.version          = '2.3.2'
   s.summary          = 'CUU is a framework to help analyzing the usage of your applications.'
 
 # This description is used to generate tags and improve search results.
@@ -27,6 +27,7 @@ CUU is a project to help analyzing the usage of your app by providing functional
   s.source           = { :git => 'https://github.com/cures-hub/cures-cuu-sdk.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '11.0'
+  s.ios.dependency 'ReachabilitySwift'
 
   s.source_files = 'CUU/Classes/**/*.{swift,xcdatamodeld,mlmodel}'
   s.resources = 'CUU/Assets/*', 'CUU/Classes/InteractionKit/Core/CoreData/IKData.xcdatamodeld', 'CUU/Classes/BehaviorKit/Models/CoreData/BKData.xcdatamodeld'
